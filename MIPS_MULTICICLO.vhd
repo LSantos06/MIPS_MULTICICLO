@@ -80,47 +80,82 @@ architecture comportamento of MIPS_MULTICICLO is
 	
 	-- 2x1
 			-- Multiplexador Registrador de Escrita
+			
 			component MIPS_Mux2x1_5bits_RegEscrita is
-				Port ( Rt : in  STD_LOGIC_VECTOR (4 downto 0);
+				Port ( 
+				-- entradas
+					Rt : in  STD_LOGIC_VECTOR (4 downto 0);
 					Rd : in  STD_LOGIC_VECTOR (4 downto 0);
 					Seletor_RegDst : in  STD_LOGIC;
+				--saida
 					Saida_5bits : out  STD_LOGIC_VECTOR (4 downto 0));
 				end component;
+			
 			-- Multiplexador dado para escrita
+			
 			component MIPS_Mux2x1_32bits_MemparaReg is
-				Port ( RegDadoMem : in  STD_LOGIC_VECTOR (31 downto 0);
+				Port ( 
+				--entradas
+						RegDadoMem : in  STD_LOGIC_VECTOR (31 downto 0);
 						SaidaALU : in  STD_LOGIC_VECTOR (31 downto 0);
 						Seletor_MemparaReg : in  STD_LOGIC;
+				--saida
 						Saida_32bits : out  STD_LOGIC_VECTOR (31 downto 0));
 				end component;
-			-- Multiplexador dado entrada A da ULA
-				component MIPS_Mux2x1_32bits_OrigAALU is
-					 Port ( RegA : in  STD_LOGIC_VECTOR (31 downto 0);
+		
+		-- Multiplexador dado entrada A da ULA
+	
+			component MIPS_Mux2x1_32bits_OrigAALU is
+					 Port ( 
+					-- entradas
+							  RegA : in  STD_LOGIC_VECTOR (31 downto 0);
 							  RegPC : in  STD_LOGIC_VECTOR (31 downto 0);
 							  Seletor_OrigAALU : in  STD_LOGIC;
+					-- saida  
 							  Saida_32bits_ALU : out  STD_LOGIC_VECTOR (31 downto 0));
 				end component;
 	
 	-- 3x1
+	
 	--Multiplexador que atualiza o valor do PC
-	 component MIPS_Mux3x1_32bits_OrigPC is
-    Port ( PCmais4 : in  STD_LOGIC_VECTOR (31 downto 0);
+	
+	component MIPS_Mux3x1_32bits_OrigPC is
+    Port ( 
+			-- entradas
+			  PCmais4 : in  STD_LOGIC_VECTOR (31 downto 0);
            PC_saidaALU_BEQ : in  STD_LOGIC_VECTOR (31 downto 0);
 			  PC_Jump : in  STD_LOGIC_VECTOR (31 downto 0);
            Seletor_OrigPC : in  STD_LOGIC_vector(1 downto 0);
-           Saida_32bits_PC : out  STD_LOGIC_VECTOR (31 downto 0));
+         -- saida		
+			  Saida_32bits_PC : out  STD_LOGIC_VECTOR (31 downto 0));
 	end component;
+	
 	-- 4x1
+	
 	-- Mux da entrada B da ULA notar que a entrada sempre é 4 entre foi omitida está porta
+	
 	component MIPS_Mux4x1_32bits_OrigBALU is
-		 Port ( RegB : in  STD_LOGIC_VECTOR (31 downto 0);
+		 Port ( 
+		 -- entradas
+				  RegB : in  STD_LOGIC_VECTOR (31 downto 0);
 				  Extensao_sinal : in  STD_LOGIC_VECTOR (31 downto 0);
 				  Extensao_sinal_deslocado2bits : in  STD_LOGIC_VECTOR (31 downto 0);
 				  Seletor_OrigBALU : in  STD_LOGIC_vector(1 downto 0);
+		-- saida		
 				  Saida_32bits_BALU : out  STD_LOGIC_VECTOR (31 downto 0));
 	end component;
-		
-	
+------------------------------------------------------------------------------------------------------------		
+-- binario para 7 segmentos
+			component converter_bin_para_7seg is
+			Port (
+			-- entrada
+						DADOSBIN:in STD_LOGIC_VECTOR(3 downto 0);
+			-- saida			
+						saida:out STD_LOGIC_VECTOR (7 downto 0));
+			end component;
+-- fim dos components
+-------------------------------------------------------------------------------------------------------------
+
 	begin
 
 end architecture;
