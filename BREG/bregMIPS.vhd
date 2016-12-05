@@ -13,10 +13,11 @@ use ieee.numeric_std.ALL;
 entity bregMIPS is
 generic (WSIZE : natural := 32);
 port (
-clk, wren : in std_logic;
-radd1, radd2, wadd : in std_logic_vector(4 downto 0);
-wdata : in std_logic_vector(WSIZE-1 downto 0);
-r1, r2 : out std_logic_vector(WSIZE-1 downto 0));
+		Clk, Wren : in std_logic;
+		Radd1, Radd2, Wadd : in std_logic_vector(4 downto 0);
+		Wdata : in std_logic_vector(WSIZE-1 downto 0);
+		R1, R2 : out std_logic_vector(WSIZE-1 downto 0)
+		);
 end bregMIPS;
 -----------------------------------------------------------------------------------------------
 -- WSIZE é o tamanho da palavra do banco de registradores--------------------------------------

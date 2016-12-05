@@ -23,12 +23,12 @@ architecture comportamento of MIPS_MULTICICLO is
 	component RAM_MIPS is
 		port (
 				-- Entradas
-				address				: in std_logic_vector (7 DOWNTO 0);
-				clk					: in std_logic;
-				data					: in std_logic_vector ((WSIZE-1) DOWNTO 0);
-				wrenBreg				: in std_logic;
+				Address				: in std_logic_vector (7 DOWNTO 0);
+				Clk					: in std_logic;
+				Data					: in std_logic_vector ((WSIZE-1) DOWNTO 0);
+				WrenBreg				: in std_logic;
 				-- Saidas
-				q						: out std_logic_vector ((WSIZE-1) DOWNTO 0)
+				Q						: out std_logic_vector ((WSIZE-1) DOWNTO 0)
 				);
 	end component;
 	
@@ -38,11 +38,11 @@ architecture comportamento of MIPS_MULTICICLO is
 	component bregMIPS is
 		port (
 				-- Entradas
-				clk, wren : in std_logic;
-				radd1, radd2, wadd : in std_logic_vector(4 downto 0);
-				wdata : in std_logic_vector(WSIZE-1 downto 0);
+				Clk, Wren 			 : in std_logic;
+				Radd1, Radd2, Wadd : in std_logic_vector(4 downto 0);
+				Wdata 				 : in std_logic_vector(WSIZE-1 downto 0);
 				-- Saidas
-				r1, r2 : out std_logic_vector(WSIZE-1 downto 0)
+				R1, R2 				 : out std_logic_vector(WSIZE-1 downto 0)
 				);
 	end component;
 	
@@ -50,11 +50,11 @@ architecture comportamento of MIPS_MULTICICLO is
 	component ULA_OAC is
 		port (
 				-- Entradas
-				opcode				: in std_logic_vector(3 downto 0);
+				Opcode				: in std_logic_vector(3 downto 0);
 				A, B					: in std_logic_vector((WSIZE-1) downto 0);
 				-- Saidas
 				Z						: out std_logic_vector((WSIZE-1) downto 0);
-				vai, zero, ovfl	: out std_logic 
+				Vai, Zero, Ovfl	: out std_logic 
 				);
 	end component;
 	
@@ -65,13 +65,32 @@ architecture comportamento of MIPS_MULTICICLO is
 	component extend_signal is
 		port (
 				-- Entradas
-				V_in : in  STD_LOGIC_VECTOR (15 downto 0);
+				K16	: in  STD_LOGIC_VECTOR (15 downto 0);
 				-- Saidas
-				V_out : out  STD_LOGIC_VECTOR (31 downto 0)
+				SK16  : out  STD_LOGIC_VECTOR ((WSIZE-1) downto 0)
 				);
 	end component;	
 	
-	-- Deslocamento de 2 a esquerda
+	-- Deslocamento de 2 a esquerda (32 bits)
+	component SHIFT_2LEFT_32 is
+		port (
+				-- Entradas
+				SK16 		: in std_logic_vector((WSIZE-1) downto 0);
+				-- Saidas
+				K32	 	: out std_logic_vector ((WSIZE-1) downto 0)
+				);				
+	end component;
+	
+	-- Deslocamento de 2 a esquerda (26 bits) + Concatenacao
+	component SHIFT_2LEFT_26 is
+		port (
+				-- Entradas
+				PC			: in std_logic_vector(31 downto 0);
+				K26 		: in std_logic_vector(25 downto 0);
+				-- Saidas
+				K32 		: out std_logic_vector (31 downto 0)
+				);
+	end component;		
 	
 	-- Controle da ULA
 	
@@ -79,10 +98,61 @@ architecture comportamento of MIPS_MULTICICLO is
 	---- Multiplexadores
 	
 	-- 2x1
+	component MIPS_Mux2x1_5bits_RegEscrita is
+		 port ( 
+				 -- Entradas
+				 Rt 				 : in  STD_LOGIC_VECTOR (4 downto 0);
+				 Rd 				 : in  STD_LOGIC_VECTOR (4 downto 0);
+				 Seletor_RegDst : in  STD_LOGIC;				 
+				 -- Saidas 
+				 Saida_5bits 	 : out  STD_LOGIC_VECTOR (4 downto 0)
+				 );
+	end component;	
+	
+	component MIPS_Mux2x1_32bits_MemparaReg is
+		 port (
+				 -- Entradas
+				 RegDadoMem 		  : in  STD_LOGIC_VECTOR ((WSIZE-1) downto 0);
+				 SaidaALU 			  : in  STD_LOGIC_VECTOR ((WSIZE-1) downto 0);
+				 Seletor_MemparaReg : in  STD_LOGIC;
+				 -- Saidas
+				 Saida_32bits 		  : out  STD_LOGIC_VECTOR ((WSIZE-1) downto 0)
+				 );
+	end component;	
+	
+	component MIPS_Mux2x1_32bits_OrigAALU is
+		 port (
+				 -- Entradas
+				 RegA 				: in  STD_LOGIC_VECTOR ((WSIZE-1) downto 0);
+				 RegPC 				: in  STD_LOGIC_VECTOR ((WSIZE-1) downto 0);
+				 Seletor_OrigAALU : in  STD_LOGIC;
+				 -- Saidas
+				 Saida_32bits_ALU : out  STD_LOGIC_VECTOR ((WSIZE-1) downto 0));
+	end component;	
 	
 	-- 3x1
-	
+	component MIPS_Mux3x1_32bits_OrigPC is
+		 port (
+				 -- Entradas
+				 PCmais4 		  : in  STD_LOGIC_VECTOR ((WSIZE-1) downto 0);
+				 PC_saidaALU_BEQ : in  STD_LOGIC_VECTOR ((WSIZE-1) downto 0);
+				 PC_Jump 		  : in  STD_LOGIC_VECTOR ((WSIZE-1) downto 0);
+				 Seletor_OrigPC  : in  STD_LOGIC_vector(1 downto 0);
+				 -- Saidas
+				 Saida_32bits_PC : out  STD_LOGIC_VECTOR ((WSIZE-1) downto 0));
+	end component;	
+		
 	-- 4x1
+	component MIPS_Mux4x1_32bits_OrigBALU is
+		 port (
+				 -- Entradas
+				 RegB 								 : in  STD_LOGIC_VECTOR ((WSIZE-1) downto 0);
+				 Extensao_sinal 					 : in  STD_LOGIC_VECTOR ((WSIZE-1) downto 0);
+				 Extensao_sinal_deslocado2bits : in  STD_LOGIC_VECTOR ((WSIZE-1) downto 0);
+				 Seletor_OrigBALU 				 : in  STD_LOGIC_vector(1 downto 0);
+				 -- Saidas
+				 Saida_32bits_BALU 				 : out  STD_LOGIC_VECTOR ((WSIZE-1) downto 0));
+	end component;	
 	
 	begin
 

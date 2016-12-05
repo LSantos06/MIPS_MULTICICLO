@@ -17,10 +17,10 @@ use ieee.numeric_std.all;
 entity ULA_OAC is
 	generic (WSIZE 		: natural := 32);
 	port ( 
-			opcode				: in std_logic_vector(3 downto 0);
+			Opcode				: in std_logic_vector(3 downto 0);
 			A, B					: in std_logic_vector((WSIZE-1) downto 0);
 			Z						: out std_logic_vector((WSIZE-1) downto 0);
-			vai, zero, ovfl	: out std_logic 
+			Vai, Zero, Ovfl	: out std_logic 
 			);
 end ULA_OAC;
 

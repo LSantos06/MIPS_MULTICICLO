@@ -42,11 +42,11 @@ USE altera_mf.all;
 ENTITY RAM_MIPS IS
 	PORT
 	(
-		address		: IN STD_LOGIC_VECTOR (7 DOWNTO 0);
-		clock		: IN STD_LOGIC  := '1';
-		data		: IN STD_LOGIC_VECTOR (31 DOWNTO 0);
-		wren		: IN STD_LOGIC ;
-		q		: OUT STD_LOGIC_VECTOR (31 DOWNTO 0)
+		Address	: IN STD_LOGIC_VECTOR (7 DOWNTO 0);
+		Clock		: IN STD_LOGIC  := '1';
+		Data		: IN STD_LOGIC_VECTOR (31 DOWNTO 0);
+		Wren		: IN STD_LOGIC ;
+		Q			: OUT STD_LOGIC_VECTOR (31 DOWNTO 0)
 	);
 END RAM_MIPS;
 
