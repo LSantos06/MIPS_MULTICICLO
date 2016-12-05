@@ -16,16 +16,16 @@ O diagrama acima não suporta a execução de todas as instruções do MIPS. As 
 básicas a serem implementadas são as seguintes:
   - [ ] LW;
   - [ ] SW;
-  - [ ] ADD;
+  - [ ] ADD (já implementado na ULA);
   - [ ] ADDi;
-  - [ ] SUB;
+  - [ ] SUB (já implementado na ULA);
   - [ ] SUBi;
-  - [ ] AND;
-  - [ ] NAND;
-  - [ ] OR;
-  - [ ] NOR;
-  - [ ] XOR;
-  - [ ] SLT;
+  - [ ] AND (já implementado na ULA);
+  - [ ] NAND (já implementado na ULA);
+  - [ ] OR (já implementado na ULA);
+  - [ ] NOR (já implementado na ULA);
+  - [ ] XOR (já implementado na ULA);
+  - [ ] SLT (já implementado na ULA);
   - [ ] J;
   - [ ] BEQ;
   - [ ] BNE.
@@ -33,8 +33,8 @@ básicas a serem implementadas são as seguintes:
 As instruções adicionais a serem implementadas são as seguintes:
   - [ ] ORi;
   - [ ] ANDi;
-  - [ ] SLL;
-  - [ ] SRL;
+  - [ ] SLL (já implementado na ULA);
+  - [ ] SRL (já implementado na ULA);
   - [ ] BGEZ;
   - [ ] BLTZ;
   - [ ] SLTI;
