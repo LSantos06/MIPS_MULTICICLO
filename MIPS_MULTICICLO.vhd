@@ -114,6 +114,17 @@ architecture comportamento of MIPS_MULTICICLO is
 					-- saida  
 							  Saida_32bits_ALU : out  STD_LOGIC_VECTOR (31 downto 0));
 				end component;
+		--	Multiplexador que decide se PC vai ser entrada da ULA ou do outro Mux
+			
+					component MIPS_Mux2x1_32bits_IouD is
+						 Port ( -- entrada
+								  RegPC : in  STD_LOGIC_VECTOR (31 downto 0);
+								  SaidaALU_beq : in  STD_LOGIC_VECTOR (31 downto 0);
+								  Seletor_IouD : in  STD_LOGIC;
+								  -- saida
+								  Saida_32bits_IouD : out  STD_LOGIC_VECTOR (31 downto 0));
+					end component;
+	
 	
 	-- 3x1
 	
