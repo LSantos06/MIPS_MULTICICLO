@@ -27,3 +27,5 @@
 *.rpt
 *.summary
 incremental_db/README
+*.qws
+*.tmw_info
