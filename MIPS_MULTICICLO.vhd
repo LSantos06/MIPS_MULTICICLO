@@ -98,6 +98,7 @@ architecture comportamento of MIPS_MULTICICLO is
 	---- Multiplexadores
 	
 	-- 2x1
+	-- Multiplexador Registrador de Escrita
 	component MIPS_Mux2x1_5bits_RegEscrita is
 		 port ( 
 				 -- Entradas
@@ -108,7 +109,8 @@ architecture comportamento of MIPS_MULTICICLO is
 				 Saida_5bits 	 : out  STD_LOGIC_VECTOR (4 downto 0)
 				 );
 	end component;	
-	
+			
+	-- Multiplexador dado para escrita
 	component MIPS_Mux2x1_32bits_MemparaReg is
 		 port (
 				 -- Entradas
@@ -118,8 +120,10 @@ architecture comportamento of MIPS_MULTICICLO is
 				 -- Saidas
 				 Saida_32bits 		  : out  STD_LOGIC_VECTOR ((WSIZE-1) downto 0)
 				 );
-	end component;	
+	end component;		
 	
+		
+	-- Multiplexador dado entrada A da ULA	
 	component MIPS_Mux2x1_32bits_OrigAALU is
 		 port (
 				 -- Entradas
@@ -128,9 +132,22 @@ architecture comportamento of MIPS_MULTICICLO is
 				 Seletor_OrigAALU : in  STD_LOGIC;
 				 -- Saidas
 				 Saida_32bits_ALU : out  STD_LOGIC_VECTOR ((WSIZE-1) downto 0));
-	end component;	
+	end component;
+	
+	--	Multiplexador que decide se PC vai ser entrada da ULA ou do outro Mux
+		
+	component MIPS_Mux2x1_32bits_IouD is
+		 Port ( -- Entradas
+				  RegPC 				  : in  STD_LOGIC_VECTOR ((WSIZE-1) downto 0);
+				  SaidaALU_beq 	  : in  STD_LOGIC_VECTOR ((WSIZE-1) downto 0);
+				  Seletor_IouD 	  : in  STD_LOGIC;
+				  -- Saidas
+				  Saida_32bits_IouD : out  STD_LOGIC_VECTOR ((WSIZE-1) downto 0));
+	end component;
 	
 	-- 3x1
+	--Multiplexador que atualiza o valor do PC
+
 	component MIPS_Mux3x1_32bits_OrigPC is
 		 port (
 				 -- Entradas
@@ -141,8 +158,10 @@ architecture comportamento of MIPS_MULTICICLO is
 				 -- Saidas
 				 Saida_32bits_PC : out  STD_LOGIC_VECTOR ((WSIZE-1) downto 0));
 	end component;	
-		
+	
+
 	-- 4x1
+	-- Mux da entrada B da ULA notar que a entrada sempre é 4 entre foi omitida está porta	
 	component MIPS_Mux4x1_32bits_OrigBALU is
 		 port (
 				 -- Entradas
@@ -154,6 +173,20 @@ architecture comportamento of MIPS_MULTICICLO is
 				 Saida_32bits_BALU 				 : out  STD_LOGIC_VECTOR ((WSIZE-1) downto 0));
 	end component;	
 	
+
+------------------------------------------------------------------------------------------------------------		
+	-- Binario para 7 segmentos
+	component converter_bin_para_7seg is
+		port (
+				-- Entradas
+				DADOSBIN : in STD_LOGIC_VECTOR(3 downto 0);
+				-- Saidas			
+				saida 	: out STD_LOGIC_VECTOR (7 downto 0)
+				);
+	end component;
+-- fim dos components
+-------------------------------------------------------------------------------------------------------------
+
 	begin
 
 end architecture;
