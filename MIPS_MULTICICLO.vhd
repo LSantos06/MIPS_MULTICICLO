@@ -122,7 +122,6 @@ architecture comportamento of MIPS_MULTICICLO is
 				 );
 	end component;		
 	
-		
 	-- Multiplexador dado entrada A da ULA	
 	component MIPS_Mux2x1_32bits_OrigAALU is
 		 port (
@@ -135,7 +134,6 @@ architecture comportamento of MIPS_MULTICICLO is
 	end component;
 	
 	--	Multiplexador que decide se PC vai ser entrada da ULA ou do outro Mux
-		
 	component MIPS_Mux2x1_32bits_IouD is
 		 Port ( -- Entradas
 				  RegPC 				  : in  STD_LOGIC_VECTOR ((WSIZE-1) downto 0);
