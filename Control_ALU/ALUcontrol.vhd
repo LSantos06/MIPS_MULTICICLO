@@ -43,7 +43,9 @@ begin
 						when "100110" =>Saida_seletorALU<="1001";
 					--SLT (já implementado na ULA); Opcode = 000000 Funct = 10 1010
 						when "101010" =>Saida_seletorALU<="0110";	
-					--NAND (já implementado na ULA); Opcode = 000000 Funct =????
+					--NAND (já implementado na ULA); Opcode = 000000 Funct =???? -- dado que nand é do tipo R ,funct  inventado !!!!!!
+					when "000111" =>Saida_seletorALU<="0111";	
+					
 						when others => Saida_seletorALU <="0000";
 					end case;			
 							
