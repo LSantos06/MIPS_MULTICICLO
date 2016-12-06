@@ -18,7 +18,7 @@ architecture microCodigo_op of microCodigo is
 		microCmds   : microComandos_T;
 		nextAddress : nextAddress_T;
 	end RECORD;  
-	TYPE microPrograma_T is array (0 to 11) of microInstrucao_T;
+	TYPE microPrograma_T is array (0 to 12) of microInstrucao_T;
 	
 	-- Valores para o campo de sequenciamento
 	constant SEQ     : nextAddress_T := "11";
