@@ -18,13 +18,13 @@ básicas a serem implementadas são as seguintes:
   - [ ] SW;Opcode = 100011
   - [ ] ADD (já implementado na ULA); Opcode = 000000 Funct =10 0000 
   - [ ] ADDi; Opcode = 00 1000
-  - [ ] SUB (já implementado na ULA); Opcode = 000000 Funct =
+  - [ ] SUB (já implementado na ULA); Opcode = 000000 Funct = 10 0010
   - [ ] SUBi;Opcode = ????????
   - [ ] AND (já implementado na ULA);  Opcode = 000000 Funct =10 0100
   - [ ] NAND (já implementado na ULA); Opcode = 000000 Funct =????
   - [ ] OR (já implementado na ULA); Opcode = 000000 Funct =10 0101
   - [ ] NOR (já implementado na ULA);Opcode = 000000 Funct =10 0111
-  - [ ] XOR (já implementado na ULA); Opcode = 000000 Funct = ?????
+  - [ ] XOR (já implementado na ULA); Opcode = 000000 Funct = 10 0110
   - [ ] SLT (já implementado na ULA); Opcode = 000000 Funct = 10 1010
   - [ ] J;    Opcode = 00 0010 
   - [ ] BEQ;  Opcode = 00 0100
