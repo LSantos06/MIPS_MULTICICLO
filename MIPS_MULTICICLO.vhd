@@ -235,14 +235,14 @@ architecture comportamento of MIPS_MULTICICLO is
 			-- Saida do Mux Orig PC
 			signal SaidaOrigPC	: std_logic_vector((WSIZE-1) downto 0);
 			-- Saida do PC
-			signal SaidaPC			: std_logic_vector((WSIZE-1) downto 0);
+			signal SaidaPC			: std_logic_vector((WSIZE-1) downto 0):=X"00000000";
 	
 	---- MUX IouD
 		-- Entradas
 			-- PC
 			-- Saida da ULA
 			signal SaidaALU_8bits : std_LOGIC_VECTOR(7 downto 0);
-			signal RegALU			: std_logic_vector((WSIZE-1) downto 0);
+			signal RegALU			: std_logic_vector((WSIZE-1) downto 0):=X"00000000";
 		-- Saidas
 			-- Cntr_IouD	
 			-- Saida IouD
@@ -265,7 +265,7 @@ architecture comportamento of MIPS_MULTICICLO is
 			-- Dados lidos da memoria			
 		-- Saidas
 			-- Saida do RI
-			signal SaidaRI			: std_logic_vector((WSIZE-1) downto 0);
+			signal SaidaRI			: std_logic_vector((WSIZE-1) downto 0):=X"00000000";
 		
 			-- Sinais RI
 			signal RI_Opcode		: std_logic_vector(5 downto 0);
@@ -284,7 +284,7 @@ architecture comportamento of MIPS_MULTICICLO is
 			-- Dados lidos da memoria
 		-- Saidas
 			-- Saida do RDM
-			signal SaidaRDM		: std_logic_vector((WSIZE-1) downto 0);
+			signal SaidaRDM		: std_logic_vector((WSIZE-1) downto 0):=X"00000000";
 				
 	---- CONTROLE
 		-- Entradas
