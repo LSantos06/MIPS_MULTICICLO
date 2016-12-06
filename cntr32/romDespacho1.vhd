@@ -11,11 +11,18 @@ architecture romDespacho1_op of romDespacho1 is
 begin
 
 	with Op select
-		Valor <= "0110" when "000000",
+		Valor <= 
+		-- Tipo R 
+			"0110" when "000000",
+		-- Jump
 			"1001" when "000010",
+		-- Beq
 			"1000" when "000100",
+		--LoadWord	StoreWord
 			"0010" when "100011"|"101011",
-			"1010" when "001000",
+		-- Tipo I	
+			"1010" when "001000"|"001101"|"001100"|"001010",
+		-- Bne	
 			"1100" when "000101",
 			"0000" when others;
 

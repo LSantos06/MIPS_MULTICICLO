@@ -54,6 +54,13 @@ begin
 			   	case Opcode_ALU is 
 					 --ADDi; Opcode = 00 1000
 					   	when "001000" =>Saida_seletorALU<="0010";
+					 --ANDi; Opcode = 00 1100
+	    					when "001100" =>Saida_seletorALU<="0000";
+					 --ORi; Opcode =  00 1101
+							when "001101" =>Saida_seletorALU<="0001";
+					 --SLTi; Opcode = 00 1010
+							when "001010" =>Saida_seletorALU<="0110";
+							
 					      when others => Saida_seletorALU <="0000";
 					end case;	
 				

@@ -451,5 +451,10 @@ architecture comportamento of MIPS_MULTICICLO is
 		
 		-- Desvios
 		PC_DESVIOS: Pc_enable_combinacional port map(Cntr_EscrevePCBeq, Cntr_EscrevePCBne, ZeroALU, Cntr_EscrevePC, WrEnPC);
-		
+		-- associação das saidas aos respectivos sinais 
+			PC	<=	SaidaPC;	
+			RI	<= SaidaRI;				
+			RDM <= SaidaRDM;			
+			SaidaALU	<= RegALU;		
+			
 end architecture;
