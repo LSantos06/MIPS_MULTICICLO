@@ -34,6 +34,15 @@ architecture comportamento of MIPS_MULTICICLO is
 	
 	-- Componente CONTROLE
 	
+	component cntrMIPS is
+		port( clk : in std_logic;
+				OP : in std_logic_vector(5 downto 0);
+				OpALU, OrigBALU, OrigPC : out std_logic_vector(1 downto 0);
+				OrigAALU : out std_logic;
+				EscreveReg, RegDst, MemparaReg, EscrevePC, EscrevePCCond, IouD, EscreveMem, LeMem, EscreveIR : out std_logic_vector;
+				CtlEnd : out std_logic_vector(1 downto 0));
+	end component;
+	
 	-- Componente BREG
 	component bregMIPS is
 		port (
