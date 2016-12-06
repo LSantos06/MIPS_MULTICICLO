@@ -94,6 +94,16 @@ architecture comportamento of MIPS_MULTICICLO is
 	
 	-- Controle da ULA
 	
+	component ALUcontrol is
+		 Port ( 
+			--entradas   
+				Opcode_ALU : in  STD_LOGIC_VECTOR (5 downto 0);
+				funct_ALU: in  STD_LOGIC_VECTOR (5 downto 0);
+				Seletor_OPALU : in  STD_LOGIC_vector(1 downto 0);
+			--saida
+				  Saida_seletorALU : out  STD_LOGIC_VECTOR (3 downto 0));
+	end component;
+
 	-------------------------------------------------------------------------------------------------------------
 	---- Multiplexadores
 	
