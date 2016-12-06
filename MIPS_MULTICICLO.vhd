@@ -39,7 +39,7 @@ architecture comportamento of MIPS_MULTICICLO is
 				OP : in std_logic_vector(5 downto 0);
 				OpALU, OrigBALU, OrigPC : out std_logic_vector(1 downto 0);
 				OrigAALU : out std_logic;
-				EscreveReg, RegDst, MemparaReg, EscrevePC, EscrevePCCond, IouD, EscreveMem, LeMem, EscreveIR : out std_logic_vector;
+				EscreveReg, RegDst, MemparaReg, EscrevePC, EscrevePCBeq, IouD, EscreveMem, LeMem, EscreveIR,EscrevePCBne : out std_logic_vector;
 				CtlEnd : out std_logic_vector(1 downto 0));
 	end component;
 	
