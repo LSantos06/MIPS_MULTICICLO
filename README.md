@@ -14,32 +14,32 @@ Montar e simular uma versão do processador MIPS Muticilo, no ambiente *Quartus*
 ## Descrição
 O diagrama acima não suporta a execução de todas as instruções do MIPS. As instruções
 básicas a serem implementadas são as seguintes:
-  - [ ] LW;
-  - [ ] SW;
-  - [ ] ADD (já implementado na ULA);
-  - [ ] ADDi;
-  - [ ] SUB (já implementado na ULA);
-  - [ ] SUBi;
-  - [ ] AND (já implementado na ULA);
-  - [ ] NAND (já implementado na ULA);
-  - [ ] OR (já implementado na ULA);
-  - [ ] NOR (já implementado na ULA);
-  - [ ] XOR (já implementado na ULA);
-  - [ ] SLT (já implementado na ULA);
-  - [ ] J;
-  - [ ] BEQ;
-  - [ ] BNE.
+  - [ ] LW; Opcode = 101011
+  - [ ] SW;Opcode = 100011
+  - [ ] ADD (já implementado na ULA); Opcode = 000000 Funct =10 0000 
+  - [ ] ADDi; Opcode = 00 1000
+  - [ ] SUB (já implementado na ULA); Opcode = 000000 Funct =
+  - [ ] SUBi;Opcode = ????????
+  - [ ] AND (já implementado na ULA);  Opcode = 000000 Funct =10 0100
+  - [ ] NAND (já implementado na ULA); Opcode = 000000 Funct =????
+  - [ ] OR (já implementado na ULA); Opcode = 000000 Funct =10 0101
+  - [ ] NOR (já implementado na ULA);Opcode = 000000 Funct =10 0111
+  - [ ] XOR (já implementado na ULA); Opcode = 000000 Funct = ?????
+  - [ ] SLT (já implementado na ULA); Opcode = 000000 Funct = 10 1010
+  - [ ] J;    Opcode = 00 0010 
+  - [ ] BEQ;  Opcode = 00 0100
+  - [ ] BNE.  Opcode = 00 0101
 
 As instruções adicionais a serem implementadas são as seguintes:
-  - [ ] ORi;
-  - [ ] ANDi;
-  - [ ] SLL (já implementado na ULA);
-  - [ ] SRL (já implementado na ULA);
-  - [ ] BGEZ;
-  - [ ] BLTZ;
-  - [ ] SLTI;
-  - [ ] JAL;
-  - [ ] JR.
+  - [ ] ORi;Opcode = 00 1101
+  - [ ] ANDi;Opcode =00 1100
+  - [ ] SLL (já implementado na ULA);Opcode = 000000 Funct = 
+  - [ ] SRL (já implementado na ULA);Opcode = 000000 Funct =
+  - [ ] BGEZ;Opcode = ?????
+  - [ ] BLTZ;Opcode = ?????
+  - [ ] SLTI;Opcode =00 1010
+  - [ ] JAL;Opcode = 00 0011
+  - [ ] JR Opcode = Opcode = 000000 Funct = 00 1000
 
 O processador deve ser simulado no *ModelSim* e implementado em *FPGA*. Neste caso, para verificação de seu funcionamento, deve-se observar o **PC**, o **RI**, o **RDM** e a **SaidaALU** através dos mostradores de 7 segmentos.
 
