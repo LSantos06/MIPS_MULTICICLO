@@ -33,8 +33,8 @@ básicas a serem implementadas são as seguintes:
 As instruções adicionais a serem implementadas são as seguintes:
   - [ ] ORi;Opcode = 00 1101
   - [ ] ANDi;Opcode =00 1100
-  - [ ] SLL (já implementado na ULA);Opcode = 000000 Funct = 
-  - [ ] SRL (já implementado na ULA);Opcode = 000000 Funct =
+  - [ ] SLL (já implementado na ULA);Opcode = 000000 Funct = 000000
+  - [ ] SRL (já implementado na ULA);Opcode = 000000 Funct = 000010
   - [ ] BGEZ;Opcode = ?????
   - [ ] BLTZ;Opcode = ?????
   - [ ] SLTI;Opcode =00 1010
