@@ -177,7 +177,7 @@ Para entrada e saída de dados deve-se utilizar:
  
 O **PC** deve ter 32 bits. A memória tem apenas 256 palavras de 32 bits, de forma que apenas 8 bits do **PC** devem ser utilizados no seu endereçamento. 
 
-Para executar um programa gerado pelo *MARS*, devem ser carregados o código e os dados do programa.
+Para executar um programa gerado pelo *MARS*, devem ser carregados o *código* e os *dados do programa*.
 
 Os endereços da área de dados devem ser mapeados para a região de memória que
 começa no endereço **128** no *FPGA*. Assim, o endereço de dado deve ser gerado
