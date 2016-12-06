@@ -48,13 +48,7 @@ básicas a serem implementadas são as seguintes:
     <td>00 0000</td>
     <td>10 0010</td>
     <td>Sim</td>
-  </tr>
-  <tr>
-    <td><b>SUBi</b></td>
-    <td>?? ????</td>
-    <td></td>
-    <td>Sim</td>
-  </tr>  
+  </tr> 
   <tr>
     <td><b>AND</b></td>
     <td>00 0000</td>
