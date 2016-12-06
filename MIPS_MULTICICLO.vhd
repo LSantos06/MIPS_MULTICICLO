@@ -168,13 +168,13 @@ architecture comportamento of MIPS_MULTICICLO is
 	end component;
 	
 	--	Multiplexador que decide se PC vai ser entrada da ULA ou do outro Mux
-	component MIPS_Mux2x1_32bits_IouD is
+	component MIPS_Mux2x1_8bits_IouD is
 		 port ( -- Entradas
 				 RegPC 					: in  STD_LOGIC_VECTOR (7 downto 0);
 				 SaidaALU_beq 			: in  STD_LOGIC_VECTOR (7 downto 0);
 				 Seletor_IouD 			: in  STD_LOGIC;
 				 -- Saidas
-				 Saida_32bits_IouD 	: out  STD_LOGIC_VECTOR (7 downto 0));
+				 Saida_8bits_IouD 	: out  STD_LOGIC_VECTOR (7 downto 0));
 	end component;
 	
 	-- 3x1
@@ -230,12 +230,12 @@ architecture comportamento of MIPS_MULTICICLO is
 		-- Entradas
 			-- Clock
 			-- Enable de escrita PC
-			signal WrEnPC		: std_logic;
+			signal WrEnPC			: std_logic;
 		-- Saidas
 			-- Saida do Mux Orig PC
 			signal SaidaOrigPC	: std_logic_vector((WSIZE-1) downto 0);
 			-- Saida do PC
-			signal SaidaPC		: std_logic_vector((WSIZE-1) downto 0);
+			signal SaidaPC			: std_logic_vector((WSIZE-1) downto 0);
 	
 	---- MUX IouD
 		-- Entradas
@@ -303,7 +303,7 @@ architecture comportamento of MIPS_MULTICICLO is
 			-- rd
 		-- Saidas
 			-- Saida do Mux RegDst
-			signal SaidaRegDst				: std_logic_vector(4 downto 0);
+			signal SaidaRegDst						: std_logic_vector(4 downto 0);
 				
 	---- MUX MemParaReg
 		-- Entradas
@@ -311,7 +311,7 @@ architecture comportamento of MIPS_MULTICICLO is
 			-- SaidaRDM
 		-- Saidas
 			-- Saida do Mux MemParaReg
-			signal SaidaMemParaReg			: std_logic_vector((WSIZE-1) downto 0);	
+			signal SaidaMemParaReg					: std_logic_vector((WSIZE-1) downto 0);	
 	
 	---- BREG
 		-- Entradas
@@ -321,35 +321,35 @@ architecture comportamento of MIPS_MULTICICLO is
 			-- SaidaMemParaReg
 		-- Saidas
 			-- RegA e RegB
-			signal RegA, RegB 				: std_logic_vector(31 downto 0);
+			signal RegA, RegB 						: std_logic_vector((WSIZE-1) downto 0);
 	
 	---- Registradores A e B
 		-- Entradas
 			-- A: RegA
 			-- B: RegB
 		-- Saidas	
-			signal SaidaRegA, SaidaRegB 			: std_logic_vector(31 downto 0);
+			signal SaidaRegA, SaidaRegB 			: std_logic_vector((WSIZE-1) downto 0);
 			
 	---- MUX OrigAALU e OrigBALU		
 		-- Entradas
 			-- A: SaidaPC, SaidaRegA
 			-- B: SaidaRegB, 4, SaidaExtSinal, SaidaExtDesloc 
 		-- Saidas	
-			signal SaidaOrigAALU, SaidaOrigBALU : std_logic_vector(31 downto 0);
+			signal SaidaOrigAALU, SaidaOrigBALU : std_logic_vector((WSIZE-1) downto 0);
 	
 	---- Extensao de Sinal
 		-- Entradas
 			-- K16
 		-- Saidas
 			-- Signed K16
-			signal SaidaExtSinal 					: std_logic_vector(31 downto 0);
+			signal SaidaExtSinal 					: std_logic_vector((WSIZE-1) downto 0);
 	
 	---- Deslocamento de 2 bits (32)
 		-- Entradas
 			-- SaidaExtSinal
 		-- Saidas
 			-- SaidaExt deslocada de 2 bits
-			signal SaidaExtDesloc		 			: std_logic_vector(31 downto 0);
+			signal SaidaExtDesloc		 			: std_logic_vector((WSIZE-1) downto 0);
 	
 	----- Controle ALU
 		-- Entradas
@@ -364,7 +364,7 @@ architecture comportamento of MIPS_MULTICICLO is
 			-- k26
 		-- Saidas
 			-- PC[31:38] & k26 & 00
-			signal EndJump 						: std_LOGIC_VECTOR(31 downto 0);
+			signal EndJump 							: std_LOGIC_VECTOR((WSIZE-1) downto 0);
 	
 	-- ALU
 		-- Entradas
@@ -372,7 +372,7 @@ architecture comportamento of MIPS_MULTICICLO is
 			-- SaidaOrigBALU
 			-- OperacaoALU
 		-- Saidas
-			signal SaidaULA 							: std_LOGIC_VECTOR(31 downto 0);
+			signal SaidaULA 							: std_LOGIC_VECTOR((WSIZE-1) downto 0);
 			signal VaiALU,ZeroALU,OvflALU 		: std_LOGIC;
 	
 	------------------------------------------------------------------------------------------------------------
@@ -382,7 +382,7 @@ architecture comportamento of MIPS_MULTICICLO is
 		PC_32: reg32 port map (Clock, WrEnPC, SaidaOrigPC, SaidaPC);
 		
 		---- MUXIouD
-		MUXIouD: MIPS_Mux2x1_32bits_IouD port map (SaidaPC(7 downto 0), ('1' & RegALU(8 downto 2)), Cntr_IouD, SaidaIouD);
+		MUXIouD: MIPS_Mux2x1_8bits_IouD port map (SaidaPC(7 downto 0), ('1' & RegALU(8 downto 2)), Cntr_IouD, SaidaIouD);
 		
 		---- MEM
 		MEM: RAM_MIPS port map (SaidaIouD, Clock, SaidaB, Cntr_EscreveMem, DadosMem);

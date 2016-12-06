@@ -18,13 +18,13 @@
 #
 # Quartus II 64-Bit
 # Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
-# Date created = 17:33:38  December 05, 2016
+# Date created = 16:46:51  December 06, 2016
 #
 # -------------------------------------------------------------------------- #
 
 QUARTUS_VERSION = "13.0"
-DATE = "17:33:38  December 05, 2016"
+DATE = "16:46:51  December 06, 2016"
 
 # Revisions
 
-PROJECT_REVISION = "MIPS_MULTICILO"
+PROJECT_REVISION = "MIPS_MULTICICLO"
