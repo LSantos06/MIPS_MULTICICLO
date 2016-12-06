@@ -57,7 +57,7 @@ básicas a serem implementadas são as seguintes:
   </tr>   
   <tr>
     <td><b>NAND</b></td>
-    <td>?? ????</td>
+    <td>00 0000</td>
     <td>?? ????</td>
     <td>Sim</td>
   </tr>    
@@ -124,12 +124,6 @@ As instruções adicionais a serem implementadas são as seguintes:
     <td>00 1100</td>
     <td></td>
     <td>Sim</td>
-  </tr>  
-  <tr>
-    <td><b>ORi</b></td>
-    <td>00 1101</td>
-    <td></td>
-    <td></td>
   </tr>  
   <tr>
     <td><b>SLL</b></td>
