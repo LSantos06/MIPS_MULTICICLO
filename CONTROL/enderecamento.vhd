@@ -3,6 +3,7 @@ use IEEE.STD_LOGIC_1164.ALL;
 
 entity enderecamento is
     Port ( opcode : in  STD_LOGIC_VECTOR (5 downto 0);
+			  funct : in  STD_LOGIC_VECTOR (5 downto 0);	
            somador : in  STD_LOGIC_VECTOR (3 downto 0);
            CtlEnd : in  STD_LOGIC_VECTOR (1 downto 0);
 			  PE : out STD_LOGIC_VECTOR(3 downto 0));
@@ -12,6 +13,7 @@ architecture enderecamento_op of enderecamento is
 	-- Tabela de despacho 1
 	component romDespacho1 is
     Port ( Op : in  STD_LOGIC_VECTOR (5 downto 0);
+			  funct : in  STD_LOGIC_VECTOR (5 downto 0);	
            Valor : out  STD_LOGIC_VECTOR (3 downto 0));
 	end component;
 	-- Tabela de despacho 2
@@ -29,7 +31,7 @@ architecture enderecamento_op of enderecamento is
 	signal despacho1, despacho2 : STD_LOGIC_VECTOR(3 downto 0);
 begin
 	-- Conectando os blocos da l�gica de sele��o de endere�o
-	rom1 : romDespacho1 port map (opcode, despacho1);
+	rom1 : romDespacho1 port map (opcode,funct, despacho1);
 	rom2 : romDespacho2 port map (opcode, despacho2);
 	mux : mux4 port map ("0000", despacho1, despacho2, somador, CtlEnd, PE);
 		

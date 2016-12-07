@@ -3,7 +3,9 @@ use IEEE.STD_LOGIC_1164.ALL;
 
 entity microCodigo is
 	port( estado : in STD_LOGIC_VECTOR(3 downto 0);
-			OpALU, OrigBALU, OrigPC : out STD_LOGIC_VECTOR(1 downto 0);
+			OpALU					:out std_LOGIC_VECTOR(1 downto 0);
+			OrigBALU				:out std_LOGIC_VECTOR(2 downto 0);		
+			OrigPC 				: out STD_LOGIC_VECTOR(1 downto 0);
 			OrigAALU : out STD_LOGIC;
 			EscreveReg, RegDst, MemparaReg, EscrevePC, EscrevePCBeq, IouD, EscreveMem, LeMem, EscreveIR, EscrevePCBne : out STD_LOGIC;
 			CtlEnd : out STD_LOGIC_VECTOR(1 downto 0));
@@ -12,13 +14,13 @@ end microCodigo;
 architecture microCodigo_op of microCodigo is
 
 	-- Definindo o formato do microprograma
-	SUBTYPE microComandos_T is std_logic_vector(0 to 16);
+	SUBTYPE microComandos_T is std_logic_vector(0 to 17);
 	SUBTYPE nextAddress_T is std_logic_vector(0 to 1);  
 	TYPE microInstrucao_T is RECORD
 		microCmds   : microComandos_T;
 		nextAddress : nextAddress_T;
 	end RECORD;  
-	TYPE microPrograma_T is array (0 to 12) of microInstrucao_T;
+	TYPE microPrograma_T is array (0 to 14) of microInstrucao_T;
 	
 	-- Valores para o campo de sequenciamento
 	constant SEQ     : nextAddress_T := "11";
@@ -28,20 +30,22 @@ architecture microCodigo_op of microCodigo is
 	
 	-- Micro programa: listar os sinais de saida na ordem da figura
 	-- Microinstrucao | ALU Cntr | SRC 1 | SRC 2 | Regs | Mem | PC Write | Seq
-	-- Microinstrucao | [OpALU(1),OpALU(0)] | OrigAALU | [OrigBALU(1),OrigBALU(0)] | EscreveReg,RegDst,MemparaReg | LeMem,EscreveMem,IouD,EscreveIR | [OrigPC(1),OrigPC(0)],EscrevePC, EscrevePCBeq, EscrevePCBne| [CtlEnd(1),CtlEnd(0)]
-	constant	mFETCH : microInstrucao_T := ("00001000100100100", SEQ);
-	constant	mAUX0 : microInstrucao_T := ("00011000000000000", DISPATCH_1);
-	constant	mMEM1 : microInstrucao_T := ("00110000000000000", DISPATCH_2);
-	constant	mLW2 : microInstrucao_T := ("00000000101000000", SEQ);
-	constant	mAUX1 : microInstrucao_T := ("00000101000000000", FETCH);
-	constant	mSW2 : microInstrucao_T := ("00000000011000000", FETCH);
-	constant	mRformat1 : microInstrucao_T := ("10100000000000000", SEQ);
-	constant	mAUX2 : microInstrucao_T := ("00000110000000000", FETCH);
-	constant	mBEQ1 : microInstrucao_T := ("01100000000001010", FETCH);
-	constant	mJUMP1 : microInstrucao_T := ("00000000000010100", FETCH);
-	constant	mIformat1 : microInstrucao_T := ("11110000000000000", SEQ);
-	constant	mIAUX2 : microInstrucao_T := ("00000110000000000", FETCH);
-	constant	mBNE1 : microInstrucao_T := ("01100000000001001", FETCH);
+	-- Microinstrucao | [OpALU(1),OpALU(0)] | OrigAALU | [OrigBALU(2),OrigBALU(1),OrigBALU(0)] | EscreveReg,RegDst,MemparaReg | LeMem,EscreveMem,IouD,EscreveIR | [OrigPC(1),OrigPC(0)],EscrevePC, EscrevePCBeq, EscrevePCBne| [CtlEnd(1),CtlEnd(0)]
+	constant	mFETCH : microInstrucao_T := ("000001000100100100", SEQ);
+	constant	mAUX0 : microInstrucao_T := ("000011000000000000", DISPATCH_1);
+	constant	mMEM1 : microInstrucao_T := ("001010000000000000", DISPATCH_2);
+	constant	mLW2 : microInstrucao_T := ("000000000101000000", SEQ);
+	constant	mAUX1 : microInstrucao_T := ("000000101000000000", FETCH);
+	constant	mSW2 : microInstrucao_T := ("000000000011000000", FETCH);
+	constant	mRformat1 : microInstrucao_T := ("101000000000000000", SEQ);
+	constant	mAUX2 : microInstrucao_T := ("000000110000000000", FETCH);
+	constant	mBEQ1 : microInstrucao_T := ("011000000000001010", FETCH);
+	constant	mJUMP1 : microInstrucao_T := ("000000000000010100", FETCH);
+	constant	mIformat1 : microInstrucao_T := ("111010000000000000", SEQ);
+	constant	mIAUX2 : microInstrucao_T := ("000000110000000000", FETCH);
+	constant	mBNE1 : microInstrucao_T := ("011000000000001001", FETCH);
+	constant	mSRLformat : microInstrucao_T := ("101100000000000000", SEQ);
+	constant	mSRLAUX : microInstrucao_T := ("000000110000000000", FETCH);
 	
 	-- Sinais auxiliares
 	signal microPrograma : microPrograma_T;
@@ -63,6 +67,9 @@ begin
 	microPrograma(10) <= mIformat1;
 	microPrograma(11) <= mIAUX2;
 	microPrograma(12) <= mBNE1;
+	microPrograma(13) <= mIAUX2;
+	microPrograma(14) <= mBNE1;
+	
 	
 	-- Sele��o da micro instru��o a partir do codigo de estado
 	with estado select
@@ -79,23 +86,26 @@ begin
 			microPrograma(10) when "1010",
 			microPrograma(11) when "1011",
 			microPrograma(12) when "1100",
+			microPrograma(13) when "1101",
+			microPrograma(14) when "1110",
+			
 			microInstrucao when others;
 	
 	-- Separando os campos da instru��o atual
 	OpALU <= microInstrucao.microCmds(0 to 1);
 	OrigAALU <= microInstrucao.microCmds(2);
-	OrigBALU <= microInstrucao.microCmds(3 to 4);
-	EscreveReg <= microInstrucao.microCmds(5);
-	RegDst <= microInstrucao.microCmds(6);
-	MemparaReg <= microInstrucao.microCmds(7);
-	LeMem <= microInstrucao.microCmds(8);
-	EscreveMem <= microInstrucao.microCmds(9);
-	IouD <= microInstrucao.microCmds(10);
-	EscreveIR <= microInstrucao.microCmds(11);
-	OrigPC <= microInstrucao.microCmds(12 to 13);
-	EscrevePC <= microInstrucao.microCmds(14);
-	EscrevePCBeq <= microInstrucao.microCmds(15);
-	EscrevePCBne <= microInstrucao.microCmds(16);
+	OrigBALU <= microInstrucao.microCmds(3 to 5);
+	EscreveReg <= microInstrucao.microCmds(6);
+	RegDst <= microInstrucao.microCmds(7);
+	MemparaReg <= microInstrucao.microCmds(8);
+	LeMem <= microInstrucao.microCmds(9);
+	EscreveMem <= microInstrucao.microCmds(10);
+	IouD <= microInstrucao.microCmds(11);
+	EscreveIR <= microInstrucao.microCmds(12);
+	OrigPC <= microInstrucao.microCmds(13 to 14);
+	EscrevePC <= microInstrucao.microCmds(15);
+	EscrevePCBeq <= microInstrucao.microCmds(16);
+	EscrevePCBne <= microInstrucao.microCmds(17);
 	CtlEnd <= microInstrucao.nextAddress;
 			
 end microCodigo_op;

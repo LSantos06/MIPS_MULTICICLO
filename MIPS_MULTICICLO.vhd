@@ -8,7 +8,9 @@ entity MIPS_MULTICICLO is
 			-- Entradas
 			Clock					: in std_logic;
 			-- Saidas
-			OpALU, OrigBALU, OrigPC 		 : out STD_LOGIC_VECTOR(1 downto 0);
+			OpALU						   		 :out std_LOGIC_VECTOR(1 downto 0);
+			OrigBALU								 :out std_LOGIC_VECTOR(2 downto 0);		
+			OrigPC 						       : out STD_LOGIC_VECTOR(1 downto 0);
 			OrigAALU 							 : out STD_LOGIC;
 			EscreveReg, RegDst, MemparaReg, EscrevePC, EscrevePCBeq, IouD, EscreveMem, 
 			LeMem, EscreveIR, EscrevePCBne : out STD_LOGIC;
@@ -45,8 +47,11 @@ architecture comportamento of MIPS_MULTICICLO is
 				-- Entradas
 				clk 									 : in STD_LOGIC;
 				OP 									 : in STD_LOGIC_VECTOR(5 downto 0);
+				funct 								 :	in  STD_LOGIC_VECTOR (5 downto 0);
 				-- Saidas
-				OpALU, OrigBALU, OrigPC 		 : out STD_LOGIC_VECTOR(1 downto 0);
+				OpALU						   		 :out std_LOGIC_VECTOR(1 downto 0);
+				OrigBALU								 :out std_LOGIC_VECTOR(2 downto 0);		
+				OrigPC 						       : out STD_LOGIC_VECTOR(1 downto 0);
 				OrigAALU 							 : out STD_LOGIC;
 				EscreveReg, RegDst, MemparaReg, EscrevePC, EscrevePCBeq, IouD, EscreveMem, 
 				LeMem, EscreveIR, EscrevePCBne : out STD_LOGIC;
@@ -89,8 +94,13 @@ architecture comportamento of MIPS_MULTICICLO is
 				-- Saidas
 				SK16  : out  STD_LOGIC_VECTOR ((WSIZE-1) downto 0)
 				);
-	end component;	
-	
+	end component;
+	-- Extensão do Shamt pra entrar na ALU(ULA)	
+		component extend_shamt is
+		Port ( Shamt : in  STD_LOGIC_VECTOR (4 downto 0);
+           ShamtALU : out  STD_LOGIC_VECTOR (31 downto 0));
+		end component;
+
 	-- Deslocamento de 2 a esquerda (32 bits)
 	component SHIFT_2LEFT_32 is
 		port (
@@ -205,7 +215,8 @@ architecture comportamento of MIPS_MULTICICLO is
 				 RegB 								 : in  STD_LOGIC_VECTOR ((WSIZE-1) downto 0);
 				 Extensao_sinal 					 : in  STD_LOGIC_VECTOR ((WSIZE-1) downto 0);
 				 Extensao_sinal_deslocado2bits : in  STD_LOGIC_VECTOR ((WSIZE-1) downto 0);
-				 Seletor_OrigBALU 				 : in  STD_LOGIC_vector(1 downto 0);
+				 Shamt_Extendido : in  STD_LOGIC_VECTOR (31 downto 0);			  
+             Seletor_OrigBALU : in  STD_LOGIC_vector(2 downto 0);
 				 -- Saidas
 				 Saida_32bits_BALU 				 : out  STD_LOGIC_VECTOR ((WSIZE-1) downto 0));
 	end component;	
@@ -299,7 +310,8 @@ architecture comportamento of MIPS_MULTICICLO is
 			-- Clock
 			-- Opcode
 		-- Saidas
-			signal Cntr_OpALU, Cntr_OrigBALU, Cntr_OrigPC	   : std_logic_vector(1 downto 0);	
+			signal Cntr_OrigBALU					: STD_LOGIC_VECTOR(2 DOWNTO 0);
+			signal Cntr_OpALU,Cntr_OrigPC	   : std_logic_vector(1 downto 0);	
 			signal Cntr_OrigAALU, Cntr_EscreveReg, Cntr_RegDst, 
 			Cntr_MemparaReg, Cntr_EscrevePC, Cntr_EscrevePCBeq	: std_logic;
 			signal Cntr_IouD, Cntr_EscreveMem, Cntr_LeMem, 
@@ -342,7 +354,7 @@ architecture comportamento of MIPS_MULTICICLO is
 	---- MUX OrigAALU e OrigBALU		
 		-- Entradas
 			-- A: SaidaPC, SaidaRegA
-			-- B: SaidaRegB, 4, SaidaExtSinal, SaidaExtDesloc 
+			-- B: SaidaRegB, 4, SaidaExtSinal, SaidaExtDesloc ,ShamtExtendido
 		-- Saidas	
 			signal SaidaOrigAALU, SaidaOrigBALU : std_logic_vector((WSIZE-1) downto 0);
 	
@@ -352,6 +364,13 @@ architecture comportamento of MIPS_MULTICICLO is
 		-- Saidas
 			-- Signed K16
 			signal SaidaExtSinal 					: std_logic_vector((WSIZE-1) downto 0);
+	---- Extensao do Shamt
+		-- Entradas
+			--Shamt
+		-- Saidas
+			-- Shamt extendido e preparado pra ir pra ALU
+			signal ShamtExtendido 					: std_logic_vector((WSIZE-1) downto 0);
+	
 	
 	---- Deslocamento de 2 bits (32)
 		-- Entradas
@@ -413,7 +432,7 @@ architecture comportamento of MIPS_MULTICICLO is
 		RDM_32: reg32 port map (Clock,'1', DadosMem, SaidaRDM);
 		
 		---- CONTROLE
-		CONTROLE: cntrMIPS port map(Clock, Ri_Opcode, Cntr_OpALU, Cntr_OrigBALU, Cntr_OrigPC, Cntr_OrigAALU, 
+		CONTROLE: cntrMIPS port map(Clock, Ri_Opcode,Ri_Funct, Cntr_OpALU, Cntr_OrigBALU, Cntr_OrigPC, Cntr_OrigAALU, 
 		Cntr_EscreveReg, Cntr_RegDst, Cntr_MemparaReg, Cntr_EscrevePC, Cntr_EscrevePCBeq, Cntr_IouD, Cntr_EscreveMem,
 		Cntr_LeMem, Cntr_EscreveIR, Cntr_EscrevePCBne, Cntr_cntEnd);
 		
@@ -429,6 +448,9 @@ architecture comportamento of MIPS_MULTICICLO is
 		-- Extensao de Sinal 
 		EXT_SINAL: extend_signal port map(RI_K_16, SaidaExtSinal);
 		
+		--Extensao do Shamt
+		EXT_SHAMT: extend_shamt port map(RI_shamt,ShamtExtendido);
+		
 		-- deslocamento 2bits
 		DESLOC: SHIFT_2LEFT_32 port map(SaidaExtSinal, SaidaExtDesloc);
 		
@@ -442,7 +464,7 @@ architecture comportamento of MIPS_MULTICICLO is
 		MUX_A: mipS_Mux2x1_32bits_OrigAALU port map(SaidaRegA, SaidaOrigPC, Cntr_OrigAALU, SaidaOrigAALU);
 		
 		-- Mux B
-		MUX_B: mipS_Mux4x1_32bits_OrigBALU port map(SaidaRegB, SaidaExtSinal, SaidaExtDesloc, Cntr_OrigBALU, SaidaOrigBALU);
+		MUX_B: mipS_Mux4x1_32bits_OrigBALU port map(SaidaRegB, SaidaExtSinal, SaidaExtDesloc, ShamtExtendido, Cntr_OrigBALU, SaidaOrigBALU);
 		
 		-- Controle ALU
 		CONTROLE_ALU: ALUcontrol port map(RI_Opcode, RI_funct, Cntr_OpALU, OperacaoALU);
