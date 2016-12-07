@@ -106,6 +106,8 @@ básicas a serem implementadas são as seguintes:
 </table>
 
 As instruções adicionais a serem implementadas são as seguintes:
+#### (ANDi, SRL, BGEZ, BLTZ, SLTI)
+
 <table align="center">
   <tr>
     <th></th>
