@@ -46,3 +46,5 @@ timing
 *example*
 *sopc_*
 PLLJ_PLLSPE_INFO.txt # The generated PLL specification file
+MIPS_MULTICICLO_assignment_defaults.qdf
+simulation/vsim.wlf
