@@ -494,7 +494,7 @@ architecture comportamento of MIPS_MULTICICLO is
 				EscrevePC <= cntr_EscrevePC;
 				EscrevePCBeq<= cntr_EscrevePCBeq;
 				IouD <= cntr_IouD;
-				EscreveMem <= cntr_IouD; 
+				EscreveMem <= cntr_EscreveMem; 
 				LeMem <= cntr_LeMem;
 				EscreveIR<=cntr_EscreveIR;
 				EscrevePCBne<= cntr_EscrevePCBne; 

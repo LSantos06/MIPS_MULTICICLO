@@ -17,7 +17,8 @@ ARCHITECTURE behavior OF MIPS_MULTICICLO_tb IS
 			-- Entradas
 			Clock					: in std_logic;
 			-- Saidas
-			OpALU, OrigBALU, OrigPC 		 : out STD_LOGIC_VECTOR(1 downto 0);
+			OpALU, OrigPC 		 : out STD_LOGIC_VECTOR(1 downto 0);
+			OrigBALU 							 : out STD_LOGIC_VECTOR(2 downto 0);
 			OrigAALU 							 : out STD_LOGIC;
 			EscreveReg, RegDst, MemparaReg, EscrevePC, EscrevePCBeq, IouD, EscreveMem, 
 			LeMem, EscreveIR, EscrevePCBne : out STD_LOGIC;
@@ -37,7 +38,7 @@ END COMPONENT;
 
  	--Outputs
    signal OpALU : std_logic_vector(1 downto 0);
-   signal OrigBALU : std_logic_vector(1 downto 0);
+   signal OrigBALU : std_logic_vector(2 downto 0);
    signal OrigPC : std_logic_vector(1 downto 0);
    signal OrigAALU : std_logic;
    signal EscreveReg : std_logic;

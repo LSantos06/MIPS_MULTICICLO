@@ -1,0 +1,342 @@
+# Reading C:/altera/13.0/modelsim_ase/tcl/vsim/pref.tcl 
+# do MIPS_MULTICICLO_run_msim_rtl_vhdl.do 
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Copying C:\altera\13.0\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# ** Warning: Copied C:\altera\13.0\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini.
+#          Updated modelsim.ini.
+# 
+# vcom -93 -work work {C:/altera/13.0/projects/multiciclo32/EXTEND_SIGNAL/EXTEND_SHAMT.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity extend_shamt
+# -- Compiling architecture extend_H_arch of extend_SHAMT
+# vcom -93 -work work {C:/altera/13.0/projects/multiciclo32/MUX/Mux2x1/MIPS_Mux2x1_8bits_IouD.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity MIPS_Mux2x1_8bits_IouD
+# -- Compiling architecture Mux2x1_8bits_IouD of MIPS_Mux2x1_8bits_IouD
+# vcom -93 -work work {C:/altera/13.0/projects/multiciclo32/SHIFT_2LEFT/32bits/SHIFT_2LEFT_32.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity SHIFT_2LEFT_32
+# -- Compiling architecture comportamento of SHIFT_2LEFT_32
+# vcom -93 -work work {C:/altera/13.0/projects/multiciclo32/SHIFT_2LEFT/26bits/SHIFT_2LEFT_26.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity SHIFT_2LEFT_26
+# -- Compiling architecture comportamento of SHIFT_2LEFT_26
+# vcom -93 -work work {C:/altera/13.0/projects/multiciclo32/REG32/reg32.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity reg32
+# -- Compiling architecture reg32_op of reg32
+# vcom -93 -work work {C:/altera/13.0/projects/multiciclo32/PC_BRANCH/PC_enable_combinacional.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity PC_enable_combinacional
+# -- Compiling architecture Behavioral of PC_enable_combinacional
+# vcom -93 -work work {C:/altera/13.0/projects/multiciclo32/MUX/Mux4x1/MIPS_Mux4x1_32bits_ORIGBALU.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity MIPS_Mux4x1_32bits_OrigBALU
+# -- Compiling architecture Mux4x1_32bits_BALU of MIPS_Mux4x1_32bits_OrigBALU
+# vcom -93 -work work {C:/altera/13.0/projects/multiciclo32/MUX/Mux3x1/Mux3x1_32bits_OrigPC.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity MIPS_Mux3x1_32bits_OrigPC
+# -- Compiling architecture Mux3x1_32bits_OrigPC of MIPS_Mux3x1_32bits_OrigPC
+# vcom -93 -work work {C:/altera/13.0/projects/multiciclo32/MUX/Mux2x1/MIPS_Mux2x1_32bits_OrigAALU.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity MIPS_Mux2x1_32bits_OrigAALU
+# -- Compiling architecture Mux2x1_32bits_ALU of MIPS_Mux2x1_32bits_OrigAALU
+# vcom -93 -work work {C:/altera/13.0/projects/multiciclo32/MUX/Mux2x1/MIPS_Mux2x1_32bits_MemparaReg.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity MIPS_Mux2x1_32bits_MemparaReg
+# -- Compiling architecture Mux2x1_32bits of MIPS_Mux2x1_32bits_MemparaReg
+# vcom -93 -work work {C:/altera/13.0/projects/multiciclo32/MUX/Mux2x1/MIPS_Mux2x1_5bits_RegEscrita.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity MIPS_Mux2x1_5bits_RegEscrita
+# -- Compiling architecture Mux2x1_5bits of MIPS_Mux2x1_5bits_RegEscrita
+# vcom -93 -work work {C:/altera/13.0/projects/multiciclo32/MEM/RAM_MIPS.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity RAM_MIPS
+# -- Compiling architecture SYN of ram_mips
+# vcom -93 -work work {C:/altera/13.0/projects/multiciclo32/EXTEND_SIGNAL/EXTEND_SIGNAL.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity extend_signal
+# -- Compiling architecture extend_signal_arch of extend_signal
+# vcom -93 -work work {C:/altera/13.0/projects/multiciclo32/CONTROL/somador.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity somador
+# -- Compiling architecture somador_op of somador
+# vcom -93 -work work {C:/altera/13.0/projects/multiciclo32/CONTROL/romDespacho2.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity romDespacho2
+# -- Compiling architecture romDespacho2_op of romDespacho2
+# vcom -93 -work work {C:/altera/13.0/projects/multiciclo32/CONTROL/romDespacho1.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity romDespacho1
+# -- Compiling architecture romDespacho1_op of romDespacho1
+# vcom -93 -work work {C:/altera/13.0/projects/multiciclo32/CONTROL/mux4.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity mux4
+# -- Compiling architecture mux4_op of mux4
+# vcom -93 -work work {C:/altera/13.0/projects/multiciclo32/CONTROL/microPC.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity microPC
+# -- Compiling architecture microPC_op of microPC
+# vcom -93 -work work {C:/altera/13.0/projects/multiciclo32/CONTROL/microCodigo.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity microCodigo
+# -- Compiling architecture microCodigo_op of microCodigo
+# vcom -93 -work work {C:/altera/13.0/projects/multiciclo32/CONTROL/enderecamento.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity enderecamento
+# -- Compiling architecture enderecamento_op of enderecamento
+# vcom -93 -work work {C:/altera/13.0/projects/multiciclo32/CONTROL/cntrMIPS.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity cntrMIPS
+# -- Compiling architecture cntrMIPS_op of cntrMIPS
+# vcom -93 -work work {C:/altera/13.0/projects/multiciclo32/BREG/bregMIPS.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity bregMIPS
+# -- Compiling architecture Behavioral of bregMIPS
+# vcom -93 -work work {C:/altera/13.0/projects/multiciclo32/ALU_CONTROL/ALUcontrol.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity ALUcontrol
+# -- Compiling architecture ALUcontrol of ALUcontrol
+# vcom -93 -work work {C:/altera/13.0/projects/multiciclo32/ALU/ULA_OAC.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity ULA_OAC
+# -- Compiling architecture comportamento of ULA_OAC
+# ** Warning: C:/altera/13.0/projects/multiciclo32/ALU/ULA_OAC.vhd(113): (vcom-1074) Non-locally static OTHERS choice is allowed only if it is the only choice of the only association.
+# 
+# vcom -93 -work work {C:/altera/13.0/projects/multiciclo32/MIPS_MULTICICLO.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity MIPS_MULTICICLO
+# -- Compiling architecture comportamento of MIPS_MULTICICLO
+# 
+# vcom -93 -work work {C:/altera/13.0/projects/multiciclo32/MIPS_MULTICILO_tb.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity MIPS_MULTICICLO_tb
+# -- Compiling architecture behavior of MIPS_MULTICICLO_tb
+# 
+# vsim -t 1ps -L altera -L lpm -L sgate -L altera_mf -L altera_lnsim -L cycloneii -L rtl_work -L work -voptargs="+acc"  MIPS_MULTICICLO_tb
+# vsim -L altera -L lpm -L sgate -L altera_mf -L altera_lnsim -L cycloneii -L rtl_work -L work -voptargs=\"+acc\" -t 1ps MIPS_MULTICICLO_tb 
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.mips_multiciclo_tb(behavior)
+# Loading ieee.numeric_std(body)
+# Loading work.mips_multiciclo(comportamento)
+# Loading work.reg32(reg32_op)
+# Loading work.mips_mux2x1_8bits_ioud(mux2x1_8bits_ioud)
+# Loading work.ram_mips(syn)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading altera_mf.altera_common_conversion(body)
+# Loading altera_mf.altera_device_families(body)
+# Loading altera_mf.altsyncram(translated)
+# Loading work.cntrmips(cntrmips_op)
+# Loading work.enderecamento(enderecamento_op)
+# Loading work.romdespacho1(romdespacho1_op)
+# Loading work.romdespacho2(romdespacho2_op)
+# Loading work.mux4(mux4_op)
+# Loading work.micropc(micropc_op)
+# Loading work.somador(somador_op)
+# Loading work.microcodigo(microcodigo_op)
+# Loading work.mips_mux2x1_5bits_regescrita(mux2x1_5bits)
+# Loading work.mips_mux2x1_32bits_memparareg(mux2x1_32bits)
+# Loading work.bregmips(behavioral)
+# Loading work.extend_signal(extend_signal_arch)
+# Loading work.extend_shamt(extend_h_arch)
+# Loading work.shift_2left_32(comportamento)
+# Loading work.mips_mux2x1_32bits_origaalu(mux2x1_32bits_alu)
+# Loading work.mips_mux4x1_32bits_origbalu(mux4x1_32bits_balu)
+# Loading work.alucontrol(alucontrol)
+# Loading work.shift_2left_26(comportamento)
+# Loading work.ula_oac(comportamento)
+# Loading work.mips_mux3x1_32bits_origpc(mux3x1_32bits_origpc)
+# Loading work.pc_enable_combinacional(behavioral)
+# 
+# add wave *
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# run -all
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /mips_multiciclo_tb/uut/ULA
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /mips_multiciclo_tb/uut/BREG
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /mips_multiciclo_tb/uut/BREG
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /mips_multiciclo_tb/uut/BREG
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 50 ps  Iteration: 5  Instance: /mips_multiciclo_tb/uut/BREG
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 150 ps  Iteration: 2  Instance: /mips_multiciclo_tb/uut/MEM/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 150 ps  Iteration: 2  Instance: /mips_multiciclo_tb/uut/MEM/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 150 ps  Iteration: 2  Instance: /mips_multiciclo_tb/uut/MEM/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 150 ps  Iteration: 2  Instance: /mips_multiciclo_tb/uut/MEM/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 150 ps  Iteration: 2  Instance: /mips_multiciclo_tb/uut/MEM/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 150 ps  Iteration: 2  Instance: /mips_multiciclo_tb/uut/MEM/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 200 ps  Iteration: 2  Instance: /mips_multiciclo_tb/uut/MEM/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 200 ps  Iteration: 2  Instance: /mips_multiciclo_tb/uut/MEM/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 200 ps  Iteration: 2  Instance: /mips_multiciclo_tb/uut/MEM/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 200 ps  Iteration: 2  Instance: /mips_multiciclo_tb/uut/MEM/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 200 ps  Iteration: 2  Instance: /mips_multiciclo_tb/uut/MEM/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 200 ps  Iteration: 2  Instance: /mips_multiciclo_tb/uut/MEM/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 200 ps  Iteration: 2  Instance: /mips_multiciclo_tb/uut/MEM/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 200 ps  Iteration: 2  Instance: /mips_multiciclo_tb/uut/MEM/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 250 ps  Iteration: 2  Instance: /mips_multiciclo_tb/uut/MEM/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 250 ps  Iteration: 2  Instance: /mips_multiciclo_tb/uut/MEM/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 250 ps  Iteration: 2  Instance: /mips_multiciclo_tb/uut/MEM/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 250 ps  Iteration: 2  Instance: /mips_multiciclo_tb/uut/MEM/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 250 ps  Iteration: 2  Instance: /mips_multiciclo_tb/uut/MEM/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 250 ps  Iteration: 2  Instance: /mips_multiciclo_tb/uut/MEM/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 300 ps  Iteration: 2  Instance: /mips_multiciclo_tb/uut/MEM/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 300 ps  Iteration: 2  Instance: /mips_multiciclo_tb/uut/MEM/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 300 ps  Iteration: 2  Instance: /mips_multiciclo_tb/uut/MEM/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 300 ps  Iteration: 2  Instance: /mips_multiciclo_tb/uut/MEM/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 300 ps  Iteration: 2  Instance: /mips_multiciclo_tb/uut/MEM/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 300 ps  Iteration: 2  Instance: /mips_multiciclo_tb/uut/MEM/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 300 ps  Iteration: 2  Instance: /mips_multiciclo_tb/uut/MEM/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 300 ps  Iteration: 2  Instance: /mips_multiciclo_tb/uut/MEM/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 350 ps  Iteration: 2  Instance: /mips_multiciclo_tb/uut/MEM/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 350 ps  Iteration: 2  Instance: /mips_multiciclo_tb/uut/MEM/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 350 ps  Iteration: 2  Instance: /mips_multiciclo_tb/uut/MEM/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 350 ps  Iteration: 2  Instance: /mips_multiciclo_tb/uut/MEM/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 350 ps  Iteration: 2  Instance: /mips_multiciclo_tb/uut/MEM/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 350 ps  Iteration: 2  Instance: /mips_multiciclo_tb/uut/MEM/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 400 ps  Iteration: 2  Instance: /mips_multiciclo_tb/uut/MEM/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 400 ps  Iteration: 2  Instance: /mips_multiciclo_tb/uut/MEM/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 400 ps  Iteration: 2  Instance: /mips_multiciclo_tb/uut/MEM/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 400 ps  Iteration: 2  Instance: /mips_multiciclo_tb/uut/MEM/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 400 ps  Iteration: 2  Instance: /mips_multiciclo_tb/uut/MEM/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 400 ps  Iteration: 2  Instance: /mips_multiciclo_tb/uut/MEM/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 400 ps  Iteration: 2  Instance: /mips_multiciclo_tb/uut/MEM/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 400 ps  Iteration: 2  Instance: /mips_multiciclo_tb/uut/MEM/altsyncram_component
