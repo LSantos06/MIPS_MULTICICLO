@@ -15,15 +15,6 @@ Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
 -- Compiling entity SHIFT_2LEFT_26
 -- Compiling architecture comportamento of SHIFT_2LEFT_26
 
-} {} {}} C:/Users/User/Desktop/MIPS_MULTICILO/REG32/reg32.vhd {1 {vcom -work work -2002 -explicit C:/Users/User/Desktop/MIPS_MULTICILO/REG32/reg32.vhd
-Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
--- Loading package STANDARD
--- Loading package TEXTIO
--- Loading package std_logic_1164
--- Loading package NUMERIC_STD
--- Compiling entity reg32
--- Compiling architecture reg32_op of reg32
-
 } {} {}} C:/Users/User/Desktop/MIPS_MULTICILO/CONTROL/microPC.vhd {1 {vcom -work work -2002 -explicit C:/Users/User/Desktop/MIPS_MULTICILO/CONTROL/microPC.vhd
 Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
 -- Loading package STANDARD
@@ -31,6 +22,14 @@ Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
 -- Loading package std_logic_1164
 -- Compiling entity microPC
 -- Compiling architecture microPC_op of microPC
+
+} {} {}} C:/Users/User/Desktop/MIPS_MULTICILO/REG32/reg32.vhd {1 {vcom -work work -2002 -explicit C:/Users/User/Desktop/MIPS_MULTICILO/REG32/reg32.vhd
+Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity reg32
+-- Compiling architecture reg32_op of reg32
 
 } {} {}} C:/Users/User/Desktop/MIPS_MULTICILO/SHIFT_2LEFT/32bits/SHIFT_2LEFT_32.vhd {1 {vcom -work work -2002 -explicit C:/Users/User/Desktop/MIPS_MULTICILO/SHIFT_2LEFT/32bits/SHIFT_2LEFT_32.vhd
 Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
@@ -60,14 +59,6 @@ Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
 -- Compiling entity RAM_MIPS
 -- Compiling architecture SYN of ram_mips
 
-} {} {}} C:/Users/User/Desktop/MIPS_MULTICILO/MIPS_MULTICILO_tb.vhd {1 {vcom -work work -2002 -explicit C:/Users/User/Desktop/MIPS_MULTICILO/MIPS_MULTICILO_tb.vhd
-Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
--- Loading package STANDARD
--- Loading package TEXTIO
--- Loading package std_logic_1164
--- Compiling entity MIPS_MULTICICLO_tb
--- Compiling architecture behavior of MIPS_MULTICICLO_tb
-
 } {} {}} C:/Users/User/Desktop/MIPS_MULTICILO/CONTROL/microCodigo.vhd {1 {vcom -work work -2002 -explicit C:/Users/User/Desktop/MIPS_MULTICILO/CONTROL/microCodigo.vhd
 Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
 -- Loading package STANDARD
@@ -76,13 +67,13 @@ Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
 -- Compiling entity microCodigo
 -- Compiling architecture microCodigo_op of microCodigo
 
-} {} {}} C:/Users/User/Desktop/MIPS_MULTICILO/MUX/Mux2x1/MIPS_Mux2x1_5bits_RegEscrita.vhd {1 {vcom -work work -2002 -explicit C:/Users/User/Desktop/MIPS_MULTICILO/MUX/Mux2x1/MIPS_Mux2x1_5bits_RegEscrita.vhd
+} {} {}} C:/Users/User/Desktop/MIPS_MULTICILO/MIPS_MULTICILO_tb.vhd {1 {vcom -work work -2002 -explicit C:/Users/User/Desktop/MIPS_MULTICILO/REG32/reg32_sem_clock_e_sem_enable.vhd
 Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
 -- Loading package STANDARD
 -- Loading package TEXTIO
 -- Loading package std_logic_1164
--- Compiling entity MIPS_Mux2x1_5bits_RegEscrita
--- Compiling architecture Mux2x1_5bits of MIPS_Mux2x1_5bits_RegEscrita
+-- Compiling entity reg32_sem_clock_e_sem_enable
+-- Compiling architecture reg32_op_nor of reg32_sem_clock_e_sem_enable
 
 } {} {}} C:/Users/User/Desktop/MIPS_MULTICILO/CONTROL/cntrMIPS.vhd {1 {vcom -work work -2002 -explicit C:/Users/User/Desktop/MIPS_MULTICILO/CONTROL/cntrMIPS.vhd
 Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
@@ -91,6 +82,14 @@ Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
 -- Loading package std_logic_1164
 -- Compiling entity cntrMIPS
 -- Compiling architecture cntrMIPS_op of cntrMIPS
+
+} {} {}} C:/Users/User/Desktop/MIPS_MULTICILO/MUX/Mux2x1/MIPS_Mux2x1_5bits_RegEscrita.vhd {1 {vcom -work work -2002 -explicit C:/Users/User/Desktop/MIPS_MULTICILO/MUX/Mux2x1/MIPS_Mux2x1_5bits_RegEscrita.vhd
+Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity MIPS_Mux2x1_5bits_RegEscrita
+-- Compiling architecture Mux2x1_5bits of MIPS_Mux2x1_5bits_RegEscrita
 
 } {} {}} C:/Users/User/Desktop/MIPS_MULTICILO/BREG/bregMIPS.vhd {1 {vcom -work work -2002 -explicit C:/Users/User/Desktop/MIPS_MULTICILO/BREG/bregMIPS.vhd
 Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
@@ -142,14 +141,6 @@ Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
 -- Compiling entity MIPS_MULTICICLO
 -- Compiling architecture comportamento of MIPS_MULTICICLO
 
-} {} {}} C:/Users/User/Desktop/MIPS_MULTICILO/MUX/Mux3x1/Mux3x1_32bits_OrigPC.vhd {1 {vcom -work work -2002 -explicit C:/Users/User/Desktop/MIPS_MULTICILO/MUX/Mux3x1/Mux3x1_32bits_OrigPC.vhd
-Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
--- Loading package STANDARD
--- Loading package TEXTIO
--- Loading package std_logic_1164
--- Compiling entity MIPS_Mux3x1_32bits_OrigPC
--- Compiling architecture Mux3x1_32bits_OrigPC of MIPS_Mux3x1_32bits_OrigPC
-
 } {} {}} C:/Users/User/Desktop/MIPS_MULTICILO/CONTROL/somador.vhd {1 {vcom -work work -2002 -explicit C:/Users/User/Desktop/MIPS_MULTICILO/CONTROL/somador.vhd
 Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
 -- Loading package STANDARD
@@ -158,6 +149,14 @@ Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
 -- Loading package NUMERIC_STD
 -- Compiling entity somador
 -- Compiling architecture somador_op of somador
+
+} {} {}} C:/Users/User/Desktop/MIPS_MULTICILO/MUX/Mux3x1/Mux3x1_32bits_OrigPC.vhd {1 {vcom -work work -2002 -explicit C:/Users/User/Desktop/MIPS_MULTICILO/MUX/Mux3x1/Mux3x1_32bits_OrigPC.vhd
+Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity MIPS_Mux3x1_32bits_OrigPC
+-- Compiling architecture Mux3x1_32bits_OrigPC of MIPS_Mux3x1_32bits_OrigPC
 
 } {} {}} C:/Users/User/Desktop/MIPS_MULTICILO/CONTROL/romDespacho1.vhd {1 {vcom -work work -2002 -explicit C:/Users/User/Desktop/MIPS_MULTICILO/CONTROL/romDespacho1.vhd
 Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012

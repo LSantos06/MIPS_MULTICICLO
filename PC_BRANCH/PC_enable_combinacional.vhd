@@ -15,19 +15,27 @@ entity PC_enable_combinacional is
 			-- entradas
 			  s_PCBeq : in  STD_LOGIC;
            s_PCBne : in  STD_LOGIC;
-           s_Zero : in  STD_LOGIC;
+			  s_PCBgez : in  STD_LOGIC;
+			  s_PCBltz : in  STD_LOGIC;
+			  s_RtSinal : in  STD_LOGIC;
+			  s_Zero : in  STD_LOGIC;
            s_EscrevePC : in  STD_LOGIC;
 			 --saidas 
            PCenable : out  STD_LOGIC);
 end PC_enable_combinacional;
 
 architecture Behavioral of PC_enable_combinacional is
-signal aux1,aux2:std_logic;
+signal aux1,aux2,aux3,aux4,aux5:std_logic;
 begin
 aux1 <= s_PCBeq and s_Zero;
 
 aux2 <= s_PCBne and not(s_Zero);
 
-PCenable<= aux1 or aux2 or s_EscrevePC;
+aux3 <= s_PCBgez and s_RtSinal;
+
+aux4 <= s_PCBltz and not(s_RtSinal);
+
+aux5 <= aux1 or aux2 or aux3 or aux4;
+PCenable<= aux5 or s_EscrevePC;
 end Behavioral;
 

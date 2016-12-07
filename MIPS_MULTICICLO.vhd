@@ -13,7 +13,7 @@ entity MIPS_MULTICICLO is
 			OrigPC 						       : out STD_LOGIC_VECTOR(1 downto 0);
 			OrigAALU 							 : out STD_LOGIC;
 			EscreveReg, RegDst, MemparaReg, EscrevePC, EscrevePCBeq, IouD, EscreveMem, 
-			LeMem, EscreveIR, EscrevePCBne : out STD_LOGIC;
+			LeMem, EscreveIR, EscrevePCBne ,EscrevePCBgez,EscrevePCBltz: out STD_LOGIC;
 			CtlEnd 								 : out STD_LOGIC_VECTOR(1 downto 0);
 			Opcode_ALU				: out std_logic_vector(3 downto 0);
 			A_ALU, B_ALU					: out std_logic_vector((WSIZE-1) downto 0);
@@ -48,13 +48,15 @@ architecture comportamento of MIPS_MULTICICLO is
 				clk 									 : in STD_LOGIC;
 				OP 									 : in STD_LOGIC_VECTOR(5 downto 0);
 				funct 								 :	in  STD_LOGIC_VECTOR (5 downto 0);
+				reg_rt_cntr							 :	in  STD_LOGIC_VECTOR (4 downto 0);
+				
 				-- Saidas
 				OpALU						   		 :out std_LOGIC_VECTOR(1 downto 0);
 				OrigBALU								 :out std_LOGIC_VECTOR(2 downto 0);		
 				OrigPC 						       : out STD_LOGIC_VECTOR(1 downto 0);
 				OrigAALU 							 : out STD_LOGIC;
 				EscreveReg, RegDst, MemparaReg, EscrevePC, EscrevePCBeq, IouD, EscreveMem, 
-				LeMem, EscreveIR, EscrevePCBne : out STD_LOGIC;
+				LeMem, EscreveIR, EscrevePCBne, EscrevePCBgez, EscrevePCBltz : out STD_LOGIC;
 				CtlEnd 								 : out STD_LOGIC_VECTOR(1 downto 0)
 				);
 	end component;
@@ -134,15 +136,18 @@ architecture comportamento of MIPS_MULTICICLO is
 	end component;
 
 	component PC_enable_combinacional is
-		 port ( 
-				 -- Entradas
-				 s_PCBeq 				: in  STD_LOGIC;
-				 s_PCBne 				: in  STD_LOGIC;
-				 s_Zero 					: in  STD_LOGIC;
-				 s_EscrevePC 			: in  STD_LOGIC;
-				 -- Saidas 
-				 PCenable 				: out  STD_LOGIC
-				 );
+		Port ( 
+			-- entradas
+			  s_PCBeq : in  STD_LOGIC;
+           s_PCBne : in  STD_LOGIC;
+			  s_PCBgez : in  STD_LOGIC;
+			  s_PCBltz : in  STD_LOGIC;
+			  s_RtSinal : in  STD_LOGIC;
+			  s_Zero : in  STD_LOGIC;
+           s_EscrevePC : in  STD_LOGIC;
+			 --saidas 
+           PCenable : out  STD_LOGIC
+			  );
 	end component;	
 	
 	-------------------------------------------------------------------------------------------------------------
@@ -295,7 +300,7 @@ architecture comportamento of MIPS_MULTICICLO is
 			signal RI_rd			: std_logic_vector(4 downto 0);
 			signal RI_K_16			: std_logic_vector(15 downto 0);
 			signal RI_K_26			: std_logic_vector(25 downto 0);	
-		
+			signal RI_Rs_Sinal   : std_logic;
 	---- RDM
 		-- Entradas
 			-- Clock
@@ -315,7 +320,7 @@ architecture comportamento of MIPS_MULTICICLO is
 			signal Cntr_OrigAALU, Cntr_EscreveReg, Cntr_RegDst, 
 			Cntr_MemparaReg, Cntr_EscrevePC, Cntr_EscrevePCBeq	: std_logic;
 			signal Cntr_IouD, Cntr_EscreveMem, Cntr_LeMem, 
-			Cntr_EscreveIR, Cntr_EscrevePCBne						: std_logic;
+			Cntr_EscreveIR, Cntr_EscrevePCBne, Cntr_EscrevePCBgez, Cntr_EscrevePCBltz					: std_logic;
 			signal Cntr_cntEnd											: std_logic_vector(1 downto 0);
 	
 	---- MUX RegDst
@@ -427,14 +432,15 @@ architecture comportamento of MIPS_MULTICICLO is
 			 Ri_Rd<= SaidaRI(15 downto 11);
 			 Ri_K_16<= SaidaRI(15 downto 0);
 			 Ri_K_26<= SaidaRI(25 downto 0);
+			 Ri_Rs_Sinal <= Ri_Rs(4);
 			
 		---- RDM
 		RDM_32: reg32 port map (Clock,'1', DadosMem, SaidaRDM);
 		
 		---- CONTROLE
-		CONTROLE: cntrMIPS port map(Clock, Ri_Opcode,Ri_Funct, Cntr_OpALU, Cntr_OrigBALU, Cntr_OrigPC, Cntr_OrigAALU, 
+		CONTROLE: cntrMIPS port map(Clock, Ri_Opcode, Ri_Funct, Ri_Rt, Cntr_OpALU, Cntr_OrigBALU, Cntr_OrigPC, Cntr_OrigAALU, 
 		Cntr_EscreveReg, Cntr_RegDst, Cntr_MemparaReg, Cntr_EscrevePC, Cntr_EscrevePCBeq, Cntr_IouD, Cntr_EscreveMem,
-		Cntr_LeMem, Cntr_EscreveIR, Cntr_EscrevePCBne, Cntr_cntEnd);
+		Cntr_LeMem, Cntr_EscreveIR, Cntr_EscrevePCBne, Cntr_EscrevePCBgez , Cntr_EscrevePCBltz, Cntr_cntEnd);
 		
 		-- MUX RegDst
 		MUX_REGDST: MIPS_Mux2x1_5bits_RegEscrita port map(RI_rt, RI_rd, Cntr_RegDst, SaidaRegDst);
@@ -482,8 +488,11 @@ architecture comportamento of MIPS_MULTICICLO is
 		MUX_ORIGPC: MipS_Mux3x1_32bits_OrigPC port map (SaidaULA, RegALU, EndJump, Cntr_OrigPC, SaidaOrigPC);
 		
 		-- Desvios
-		PC_DESVIOS: Pc_enable_combinacional port map(Cntr_EscrevePCBeq, Cntr_EscrevePCBne, ZeroALU, Cntr_EscrevePC, WrEnPC);
+		PC_DESVIOS: Pc_enable_combinacional port map(Cntr_EscrevePCBeq, Cntr_EscrevePCBne, Cntr_EscrevePCBgez, Cntr_EscrevePCBltz, Ri_Rs_Sinal ,ZeroALU, Cntr_EscrevePC, WrEnPC);
+			
+		
 		-- associaÃƒÂ§ÃƒÂ£o das saidas aos respectivos sinais 
+			-- sinais de controle 	
 				OpALU <= cntr_OpALU;
 				OrigBALU<= cntr_origBALU;
 				OrigPC <= cntr_OrigPC;
@@ -498,12 +507,20 @@ architecture comportamento of MIPS_MULTICICLO is
 				LeMem <= cntr_LeMem;
 				EscreveIR<=cntr_EscreveIR;
 				EscrevePCBne<= cntr_EscrevePCBne; 
+				EscrevePCBgez <= cntr_EscrevePCBgez;
+				EscrevePCBltz <= cntr_EscrevePCBltz;
 				CtlEnd <= cntr_cntEnd;							
+				
+				
+		-- registradores especiais 		
 				PC	<=SaidaPC;	
 			   RI	<= SaidaRI;				
 		    	RDM <= SaidaRDM;			
 			   SaidaALU	<= RegALU;		
+		
+			--ULA  e seus membros 
 				OPCode_ALU <=OperacaoALU;
 				A_ALU <= SaidaOrigAALU;
 				B_ALU <=SaidaOrigBALU;
+				
 end architecture;

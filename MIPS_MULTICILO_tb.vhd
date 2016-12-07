@@ -17,10 +17,12 @@ ARCHITECTURE behavior OF MIPS_MULTICICLO_tb IS
 			-- Entradas
 			Clock					: in std_logic;
 			-- Saidas
-			OpALU, OrigBALU, OrigPC 		 : out STD_LOGIC_VECTOR(1 downto 0);
+			OpALU, OrigPC 		 : out STD_LOGIC_VECTOR(1 downto 0);
+			OrigBALU 		 : out STD_LOGIC_VECTOR(2 downto 0);
+			
 			OrigAALU 							 : out STD_LOGIC;
 			EscreveReg, RegDst, MemparaReg, EscrevePC, EscrevePCBeq, IouD, EscreveMem, 
-			LeMem, EscreveIR, EscrevePCBne : out STD_LOGIC;
+			LeMem, EscreveIR, EscrevePCBne, EscrevePCBgez, EscrevePCBltz : out STD_LOGIC;
 			CtlEnd 								 : out STD_LOGIC_VECTOR(1 downto 0);
 			Opcode_ALU				: out std_logic_vector(3 downto 0);
 			A_ALU, B_ALU					: out std_logic_vector((31) downto 0);
@@ -37,7 +39,7 @@ END COMPONENT;
 
  	--Outputs
    signal OpALU : std_logic_vector(1 downto 0);
-   signal OrigBALU : std_logic_vector(1 downto 0);
+   signal OrigBALU : std_logic_vector(2 downto 0);
    signal OrigPC : std_logic_vector(1 downto 0);
    signal OrigAALU : std_logic;
    signal EscreveReg : std_logic;
@@ -50,6 +52,9 @@ END COMPONENT;
    signal LeMem : std_logic;
    signal EscreveIR : std_logic;
    signal EscrevePCBne : std_logic;
+   signal EscrevePCBGEZ : std_logic;
+   signal EscrevePCBLTZ : std_logic;
+   
    signal CtlEnd : std_logic_vector(1 downto 0);
    signal PC : std_logic_vector(31 downto 0);
    signal RI : std_logic_vector(31 downto 0);
@@ -80,6 +85,8 @@ BEGIN
           LeMem => LeMem,
           EscreveIR => EscreveIR,
           EscrevePCBne => EscrevePCBne,
+		  EscrevePCBLTZ => EscrevePCBLTZ,
+		  EscrevePCBGEZ => EscrevePCBGEZ,
           CtlEnd => CtlEnd,
           PC => PC,
           RI => RI,
