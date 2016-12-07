@@ -8,6 +8,13 @@ entity MIPS_MULTICICLO is
 			-- Entradas
 			Clock					: in std_logic;
 			-- Saidas
+			OpALU, OrigBALU, OrigPC 		 : out STD_LOGIC_VECTOR(1 downto 0);
+			OrigAALU 							 : out STD_LOGIC;
+			EscreveReg, RegDst, MemparaReg, EscrevePC, EscrevePCBeq, IouD, EscreveMem, 
+			LeMem, EscreveIR, EscrevePCBne : out STD_LOGIC;
+			CtlEnd 								 : out STD_LOGIC_VECTOR(1 downto 0);
+			Opcode_ALU				: out std_logic_vector(3 downto 0);
+			A_ALU, B_ALU					: out std_logic_vector((WSIZE-1) downto 0);
 			PC						: out std_logic_vector((WSIZE-1) downto 0);
 			RI						: out std_logic_vector((WSIZE-1) downto 0);
 			RDM					: out std_logic_vector((WSIZE-1) downto 0);
@@ -191,7 +198,7 @@ architecture comportamento of MIPS_MULTICICLO is
 	end component;	
 	
 	-- 4x1
-	-- Mux da entrada B da ULA notar que a entrada sempre é 4 entao foi omitida está porta	
+	-- Mux da entrada B da ULA notar que a entrada sempre ÃƒÂ© 4 entao foi omitida estÃƒÂ¡ porta	
 	component MIPS_Mux4x1_32bits_OrigBALU is
 		 port (
 				 -- Entradas
@@ -208,7 +215,8 @@ architecture comportamento of MIPS_MULTICICLO is
 	component reg32 is
 		port (
 				-- Entradas
-				clk, enable 	: in STD_LOGIC;
+				clk 	: in STD_LOGIC;
+            enable 	: in STD_LOGIC;
             estado_in 		: in  STD_LOGIC_VECTOR ((WSIZE-1) downto 0);
             -- Saidas
 				estado_out 		: out  STD_LOGIC_VECTOR ((WSIZE-1) downto 0));
@@ -233,7 +241,7 @@ architecture comportamento of MIPS_MULTICICLO is
 			signal WrEnPC			: std_logic;
 		-- Saidas
 			-- Saida do Mux Orig PC
-			signal SaidaOrigPC	: std_logic_vector((WSIZE-1) downto 0);
+			signal SaidaOrigPC	: std_logic_vector((WSIZE-1) downto 0):=X"00000000";
 			-- Saida do PC
 			signal SaidaPC			: std_logic_vector((WSIZE-1) downto 0):=X"00000000";
 	
@@ -378,19 +386,19 @@ architecture comportamento of MIPS_MULTICICLO is
 	
 	------------------------------------------------------------------------------------------------------------
 	begin
-
+		
 		---- PC
-		PC_32: reg32 port map (Clock, WrEnPC, SaidaOrigPC, SaidaPC);
+		PC_32: reg32 port map (clock,WrEnPC, SaidaOrigPC, SaidaPC);
 		
 		---- MUXIouD
-		 SaidaALU_8bits <= '1' & RegALU(8 downto 2);
+		 SaidaALU_8bits <= '1' & SaidaULA(8 downto 2);
 		MUXIouD: MIPS_Mux2x1_8bits_IouD port map (SaidaPC(7 downto 0), SaidaALU_8bits, Cntr_IouD, SaidaIouD);
 		
 		---- MEM
 		MEM: RAM_MIPS port map (SaidaIouD, Clock, SaidaB, Cntr_EscreveMem, DadosMem);
 	
 		---- RI
-		RI_32: reg32 port map (Clock, Cntr_EscreveIR, DadosMem, SaidaRI);
+		RI_32: reg32 port map (clock,Cntr_EscreveIR, DadosMem, SaidaRI);
 		---- Sinais RI,destrinchado
 			 Ri_Opcode <= SaidaRI(31 downto 26);
 			 Ri_funct<= SaidaRI(5 downto 0);
@@ -402,7 +410,7 @@ architecture comportamento of MIPS_MULTICICLO is
 			 Ri_K_26<= SaidaRI(25 downto 0);
 			
 		---- RDM
-		RDM_32: reg32 port map (Clock, '1', DadosMem, SaidaRDM);
+		RDM_32: reg32 port map (Clock,'1', DadosMem, SaidaRDM);
 		
 		---- CONTROLE
 		CONTROLE: cntrMIPS port map(Clock, Ri_Opcode, Cntr_OpALU, Cntr_OrigBALU, Cntr_OrigPC, Cntr_OrigAALU, 
@@ -425,13 +433,13 @@ architecture comportamento of MIPS_MULTICICLO is
 		DESLOC: SHIFT_2LEFT_32 port map(SaidaExtSinal, SaidaExtDesloc);
 		
 		-- Reg A
-		REG_A_32: reg32 port map(Clock, '1', RegA, SaidaRegA);
+		REG_A_32: reg32 port map(Clock,'1', RegA, SaidaRegA);
 		
 		-- Reg B
 		REG_B_32: reg32 port map(Clock, '1', RegB, SaidaRegB);
 		
 		-- Mux A
-		MUX_A: mipS_Mux2x1_32bits_OrigAALU port map(SaidaRegA, SaidaPC, Cntr_OrigAALU, SaidaOrigAALU);
+		MUX_A: mipS_Mux2x1_32bits_OrigAALU port map(SaidaRegA, SaidaOrigPC, Cntr_OrigAALU, SaidaOrigAALU);
 		
 		-- Mux B
 		MUX_B: mipS_Mux4x1_32bits_OrigBALU port map(SaidaRegB, SaidaExtSinal, SaidaExtDesloc, Cntr_OrigBALU, SaidaOrigBALU);
@@ -453,10 +461,27 @@ architecture comportamento of MIPS_MULTICICLO is
 		
 		-- Desvios
 		PC_DESVIOS: Pc_enable_combinacional port map(Cntr_EscrevePCBeq, Cntr_EscrevePCBne, ZeroALU, Cntr_EscrevePC, WrEnPC);
-		-- associação das saidas aos respectivos sinais 
-			PC	<=	SaidaPC;	
-			RI	<= SaidaRI;				
-			RDM <= SaidaRDM;			
-			SaidaALU	<= RegALU;		
-			
+		-- associaÃƒÂ§ÃƒÂ£o das saidas aos respectivos sinais 
+				OpALU <= cntr_OpALU;
+				OrigBALU<= cntr_origBALU;
+				OrigPC <= cntr_OrigPC;
+				OrigAALU <= cntr_OrigAALU; 							 
+				EscreveReg <= cntr_EscreveReg;
+				RegDst <= cntr_RegDst;
+				MemparaReg <= cntr_MemParaReg;
+				EscrevePC <= cntr_EscrevePC;
+				EscrevePCBeq<= cntr_EscrevePCBeq;
+				IouD <= cntr_IouD;
+				EscreveMem <= cntr_IouD; 
+				LeMem <= cntr_LeMem;
+				EscreveIR<=cntr_EscreveIR;
+				EscrevePCBne<= cntr_EscrevePCBne; 
+				CtlEnd <= cntr_cntEnd;							
+				PC	<=SaidaPC;	
+			   RI	<= SaidaRI;				
+		    	RDM <= SaidaRDM;			
+			   SaidaALU	<= RegALU;		
+				OPCode_ALU <=OperacaoALU;
+				A_ALU <= SaidaOrigAALU;
+				B_ALU <=SaidaOrigBALU;
 end architecture;
