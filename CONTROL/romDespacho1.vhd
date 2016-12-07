@@ -14,7 +14,7 @@ begin
 --	if(Op = "000000" and funct = "00 0010") then 
 	--				valor <= "1101";
 --	end if;			
-
+	Op_e_funct<= Op & funct;
 	with Op_e_funct select
 		Valor <= 
    	-- SRL
