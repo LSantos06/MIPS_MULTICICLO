@@ -11,27 +11,34 @@ architecture romDespacho1_op of romDespacho1 is
 signal Op_e_funct	: std_logic_vector(11 downto 0);
 begin
 -- para nao alterar muito no codigo foi feito uma verificação antes de tudo  para ver se é SRL
---	if(Op = "000000" and funct = "00 0010") then 
-	--				valor <= "1101";
---	end if;			
-	Op_e_funct<= Op & funct;
-	with Op_e_funct select
-		Valor <= 
-   	-- SRL
-			"1101" when "000000000010",	
-		-- Tipo R 
-			"0110" when "000000------",
-		-- Jump
-			"1001" when "000010------",
+
+
+
+process(Op,funct)
+	begin
+		case OP is 
+			when "000000" =>  
+							case funct is
+									-- SRL
+									when "000010" => valor <= "1101";
+									-- Tipo R
+									when others =>   valor <= "0110";
+							end case;
+			-- Jump
+			when "000010" => valor <= "1001";		
 		-- Beq
-			"1000" when "000100------",
+			when "000100" => valor <= "1000";
 		--LoadWord	StoreWord
-			"0010" when "100011------"|"101011------",
+			when "100011" => valor <= "0010";
+			when "101011" => valor <= "0010";
 		-- Tipo I	
-			"1010" when "001000------"|"001101------"|"001100------"|"001010------",
+			when "001000" => valor <= "1010";
+			when "001101" => valor <= "1010";
+			when "001100" => valor <= "1010";
+			when "001010" => valor <= "1010";
 		-- Bne	
-			"1100" when "000101------",
-			"0000" when others;
-
+			when "000101" => valor <= "1100";
+			when others => valor <= "0000";
+		end case;
+	end process;	
 end romDespacho1_op;
-
