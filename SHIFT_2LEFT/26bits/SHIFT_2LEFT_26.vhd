@@ -16,7 +16,7 @@ architecture comportamento of SHIFT_2LEFT_26 is
 
 	begin
 	
-		process (K26) begin
+		process (K26,PC) begin
 		
 			K32 <= PC(31 downto 28)& k26 & "00";
 			

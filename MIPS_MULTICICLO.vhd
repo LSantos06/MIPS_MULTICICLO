@@ -277,8 +277,8 @@ architecture comportamento of MIPS_MULTICICLO is
 	---- MEM
 		-- Entradas
 			-- Saida IouD
-			-- Saida B
-			signal SaidaB			: std_logic_vector((WSIZE-1) downto 0):=(others => '0');
+			-- Saida B 
+					-- SaidaRegB
 			-- Cntr_EscreveMem
 		-- Saidas
 			-- Dados lidos da memoria
@@ -421,11 +421,11 @@ architecture comportamento of MIPS_MULTICICLO is
 		PC_32: reg32 port map (clk_negado,WrEnPC, SaidaOrigPC, SaidaPC);
 		
 		---- MUXIouD
-		 SaidaALU_8bits <= '1' & SaidaULA(8 downto 2);
+		 SaidaALU_8bits <= '1' & RegALU(8 downto 2);
 		MUXIouD: MIPS_Mux2x1_8bits_IouD port map (SaidaPC(7 downto 0), SaidaALU_8bits, Cntr_IouD, SaidaIouD);
 		
 		---- MEM
-		MEM: RAM_MIPS port map (SaidaIouD, Clock, SaidaB, Cntr_EscreveMem, DadosMem);
+		MEM: RAM_MIPS port map (SaidaIouD, Clock, SaidaRegB, Cntr_EscreveMem, DadosMem);
 	
 		---- RI
 		RI_32: reg32 port map (clk_negado,Cntr_EscreveIR, DadosMem, SaidaRI);
@@ -444,7 +444,7 @@ architecture comportamento of MIPS_MULTICICLO is
 		RDM_32: reg32 port map (Clk_negado,'1', DadosMem, SaidaRDM);
 		
 		---- CONTROLE
-		CONTROLE: cntrMIPS port map(Clock, Ri_Opcode, Ri_Funct, Ri_Rt, Cntr_OpALU, Cntr_OrigBALU, Cntr_OrigPC, Cntr_OrigAALU, 
+		CONTROLE: cntrMIPS port map( Clk_negado, Ri_Opcode, Ri_Funct, Ri_Rt, Cntr_OpALU, Cntr_OrigBALU, Cntr_OrigPC, Cntr_OrigAALU, 
 		Cntr_EscreveReg, Cntr_RegDst, Cntr_MemparaReg, Cntr_EscrevePC, Cntr_EscrevePCBeq, Cntr_IouD, Cntr_EscreveMem,
 		Cntr_LeMem, Cntr_EscreveIR, Cntr_EscrevePCBne, Cntr_EscrevePCBgez , Cntr_EscrevePCBltz, Cntr_cntEnd);
 		

@@ -20,7 +20,7 @@ end MIPS_Mux2x1_32bits_OrigAALU;
 architecture Mux2x1_32bits_ALU of MIPS_Mux2x1_32bits_OrigAALU is
 
 begin
-	process(Seletor_OrigAALU)
+	process(Seletor_OrigAALU,RegPC,RegA)
 			begin 
 			case Seletor_OrigAALU is 
 				when '0' => Saida_32bits_ALU <= RegPC;

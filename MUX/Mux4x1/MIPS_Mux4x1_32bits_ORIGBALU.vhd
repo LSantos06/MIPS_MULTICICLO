@@ -22,7 +22,7 @@ end MIPS_Mux4x1_32bits_OrigBALU;
 architecture Mux4x1_32bits_BALU of MIPS_Mux4x1_32bits_OrigBALU is
 
 begin
-	process(Seletor_OrigBALU)
+	process(Seletor_OrigBALU,RegB,extensao_sinal,extensao_sinal_deslocado2bits,Shamt_Extendido)
 			begin 
 			case Seletor_OrigBALU is 
 				when "000" => Saida_32bits_BALU <= RegB;

@@ -93,7 +93,7 @@ architecture reg32_op of reg32 is
 
 begin
 
-	process (clk) begin
+	process (clk,enable) begin
 		if (enable = '1' and rising_edge(clk)) then
 			estado_out <= estado_in;
 		end if;

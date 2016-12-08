@@ -75,7 +75,8 @@ begin
 	
 	-- Sele��o da micro instru��o a partir do codigo de estado
 	with estado select
-		microInstrucao <= microPrograma(0) when "00000",
+		microInstrucao <= 
+			microPrograma(0) when "00000",
 			microPrograma(1) when "00001",
 			microPrograma(2) when "00010",
 			microPrograma(3) when "00011",
@@ -92,7 +93,7 @@ begin
 			microPrograma(14) when "01110",
 			microPrograma(15) when "01111",
 			microPrograma(16) when "10000",	
-			microInstrucao when others;
+			microPrograma(0) when others;
 	
 	-- Separando os campos da instru��o atual
 	OpALU <= microInstrucao.microCmds(0 to 1);
