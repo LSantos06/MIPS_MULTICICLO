@@ -522,7 +522,7 @@ architecture comportamento of MIPS_MULTICICLO is
 		-- registradores especiais 		
 				PC	<=SaidaPC;	
 			   RI	<= SaidaRI;				
-		    	RDM <= SaidaRDM;			
+		    	RDM <= DadosMem;			
 			   SaidaALU	<= SaidaULA;		
 		
 			--ULA  e seus membros 

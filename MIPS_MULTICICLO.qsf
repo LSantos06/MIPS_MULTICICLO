@@ -84,3 +84,9 @@ set_global_assignment -name VHDL_FILE ALU/ULA_OAC.vhd
 set_global_assignment -name VHDL_FILE MIPS_MULTICICLO.vhd
 set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
 set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
+set_global_assignment -name EDA_TEST_BENCH_ENABLE_STATUS TEST_BENCH_MODE -section_id eda_simulation
+set_global_assignment -name EDA_NATIVELINK_SIMULATION_TEST_BENCH tb -section_id eda_simulation
+set_global_assignment -name EDA_TEST_BENCH_NAME tb -section_id eda_simulation
+set_global_assignment -name EDA_DESIGN_INSTANCE_NAME uut -section_id tb
+set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME MIPS_MULTICICLO_tb -section_id tb
+set_global_assignment -name EDA_TEST_BENCH_FILE MIPS_MULTICILO_tb.vhd -section_id tb

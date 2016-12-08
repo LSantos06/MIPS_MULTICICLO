@@ -93,7 +93,7 @@ begin
 			microPrograma(14) when "01110",
 			microPrograma(15) when "01111",
 			microPrograma(16) when "10000",	
-			microPrograma(0) when others;
+			microInstrucao when others;
 	
 	-- Separando os campos da instru��o atual
 	OpALU <= microInstrucao.microCmds(0 to 1);
