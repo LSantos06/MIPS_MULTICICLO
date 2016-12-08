@@ -15,7 +15,7 @@ L13
 Vc<j;Nd>ihVN:Rn:<3KC:o2
 Z7 OV;C;10.1d;51
 31
-Z8 !s108 1481126862.139000
+Z8 !s108 1481204307.616000
 Z9 !s90 -reportprogress|300|-93|-work|work|C:/altera/13.0/projects/multiciclo32/ALU_CONTROL/ALUcontrol.vhd|
 Z10 !s107 C:/altera/13.0/projects/multiciclo32/ALU_CONTROL/ALUcontrol.vhd|
 Z11 o-93 -work work -O0
@@ -39,7 +39,7 @@ R12
 !s100 Jo9m8JN2f07Yc6kG7dQ1<3
 !i10b 1
 Ebregmips
-Z13 w1481121839
+Z13 w1481199440
 Z14 DPx4 ieee 11 numeric_std 0 22 O3PF8EB`?j9=z7KT`fn941
 R2
 R3
@@ -51,7 +51,7 @@ L13
 V<UjdL<_9>_`n5Y8i=EX7B3
 R7
 31
-Z17 !s108 1481126861.816000
+Z17 !s108 1481204307.194000
 Z18 !s90 -reportprogress|300|-93|-work|work|C:/altera/13.0/projects/multiciclo32/BREG/bregMIPS.vhd|
 Z19 !s107 C:/altera/13.0/projects/multiciclo32/BREG/bregMIPS.vhd|
 R11
@@ -87,7 +87,7 @@ L9
 VFj<JmF3@_gg[5ZRLdPToi2
 R7
 31
-Z23 !s108 1481126861.286000
+Z23 !s108 1481204306.685000
 Z24 !s90 -reportprogress|300|-93|-work|work|C:/altera/13.0/projects/multiciclo32/CONTROL/cntrMIPS.vhd|
 Z25 !s107 C:/altera/13.0/projects/multiciclo32/CONTROL/cntrMIPS.vhd|
 R11
@@ -122,7 +122,7 @@ L4
 VIzVC_2NMHHhH7O7W`VD6I0
 R7
 31
-Z28 !s108 1481126860.894000
+Z28 !s108 1481204306.305000
 Z29 !s90 -reportprogress|300|-93|-work|work|C:/altera/13.0/projects/multiciclo32/CONTROL/enderecamento.vhd|
 Z30 !s107 C:/altera/13.0/projects/multiciclo32/CONTROL/enderecamento.vhd|
 R11
@@ -157,7 +157,7 @@ L5
 VaXYcMM?U>Z:IO10ZmJN523
 R7
 31
-Z33 !s108 1481126852.922000
+Z33 !s108 1481204294.734000
 Z34 !s90 -reportprogress|300|-93|-work|work|C:/altera/13.0/projects/multiciclo32/EXTEND_SIGNAL/EXTEND_SHAMT.vhd|
 Z35 !s107 C:/altera/13.0/projects/multiciclo32/EXTEND_SIGNAL/EXTEND_SHAMT.vhd|
 R11
@@ -192,7 +192,7 @@ L5
 VIUc2cPX809NEl<Wk_5zAk2
 R7
 31
-Z38 !s108 1481126858.154000
+Z38 !s108 1481204303.036000
 Z39 !s90 -reportprogress|300|-93|-work|work|C:/altera/13.0/projects/multiciclo32/EXTEND_SIGNAL/EXTEND_SIGNAL.vhd|
 Z40 !s107 C:/altera/13.0/projects/multiciclo32/EXTEND_SIGNAL/EXTEND_SIGNAL.vhd|
 R11
@@ -227,7 +227,7 @@ L4
 V0gA=Wa=cVLOB=8UCnQRS=1
 R7
 31
-Z43 !s108 1481126860.542000
+Z43 !s108 1481204305.925000
 Z44 !s90 -reportprogress|300|-93|-work|work|C:/altera/13.0/projects/multiciclo32/CONTROL/microCodigo.vhd|
 Z45 !s107 C:/altera/13.0/projects/multiciclo32/CONTROL/microCodigo.vhd|
 R11
@@ -262,7 +262,7 @@ L4
 VJD[iaMYY1c0TYRT]Q_fbd2
 R7
 31
-Z48 !s108 1481126860.123000
+Z48 !s108 1481204305.390000
 Z49 !s90 -reportprogress|300|-93|-work|work|C:/altera/13.0/projects/multiciclo32/CONTROL/microPC.vhd|
 Z50 !s107 C:/altera/13.0/projects/multiciclo32/CONTROL/microPC.vhd|
 R11
@@ -286,7 +286,7 @@ R12
 !s100 2aMDHGVD5z97;85mj[GSA3
 !i10b 1
 Emips_multiciclo
-Z51 w1481126765
+Z51 w1481202834
 R14
 R2
 R3
@@ -298,7 +298,7 @@ L5
 VFBh6TXQ@ZkJXPTk098;8o1
 R7
 31
-Z54 !s108 1481126862.861000
+Z54 !s108 1481204308.565000
 Z55 !s90 -reportprogress|300|-93|-work|work|C:/altera/13.0/projects/multiciclo32/MIPS_MULTICICLO.vhd|
 Z56 !s107 C:/altera/13.0/projects/multiciclo32/MIPS_MULTICICLO.vhd|
 R11
@@ -310,9 +310,9 @@ R14
 R2
 R3
 DEx4 work 15 mips_multiciclo 0 22 FBh6TXQ@ZkJXPTk098;8o1
-l407
+l406
 L27
-VO7;IcQ5KzKJAjKb5:z@g`0
+V<^Pfze=NMA^=6fCzcT0`U2
 R7
 31
 R54
@@ -320,7 +320,7 @@ R55
 R56
 R11
 R12
-!s100 _NYe^MMIh:7o4n9WezO;D2
+!s100 z8VFO<h6C?k4H@_[n]=Z70
 !i10b 1
 Emips_multiciclo_tb
 Z57 w1481126834
@@ -336,7 +336,7 @@ VHkd08@51^XaCo9[i3UD@`0
 R7
 31
 !i10b 1
-Z60 !s108 1481126863.329000
+Z60 !s108 1481204309.043000
 Z61 !s90 -reportprogress|300|-93|-work|work|C:/altera/13.0/projects/multiciclo32/MIPS_MULTICILO_tb.vhd|
 Z62 !s107 C:/altera/13.0/projects/multiciclo32/MIPS_MULTICILO_tb.vhd|
 R11
@@ -369,7 +369,7 @@ L13
 VVjVlhIz_;A^n3CHMfJBh?3
 R7
 31
-Z66 !s108 1481126856.863000
+Z66 !s108 1481204301.605000
 Z67 !s90 -reportprogress|300|-93|-work|work|C:/altera/13.0/projects/multiciclo32/MUX/Mux2x1/MIPS_Mux2x1_32bits_MemparaReg.vhd|
 Z68 !s107 C:/altera/13.0/projects/multiciclo32/MUX/Mux2x1/MIPS_Mux2x1_32bits_MemparaReg.vhd|
 R11
@@ -404,7 +404,7 @@ L13
 V>33L4AH^7Jn[a=XXnazQB0
 R7
 31
-Z71 !s108 1481126856.482000
+Z71 !s108 1481204301.032000
 Z72 !s90 -reportprogress|300|-93|-work|work|C:/altera/13.0/projects/multiciclo32/MUX/Mux2x1/MIPS_Mux2x1_32bits_OrigAALU.vhd|
 Z73 !s107 C:/altera/13.0/projects/multiciclo32/MUX/Mux2x1/MIPS_Mux2x1_32bits_OrigAALU.vhd|
 R11
@@ -439,7 +439,7 @@ L13
 VBI`W6D>Oa78aU0XjCD8`J2
 R7
 31
-Z76 !s108 1481126857.235000
+Z76 !s108 1481204302.071000
 Z77 !s90 -reportprogress|300|-93|-work|work|C:/altera/13.0/projects/multiciclo32/MUX/Mux2x1/MIPS_Mux2x1_5bits_RegEscrita.vhd|
 Z78 !s107 C:/altera/13.0/projects/multiciclo32/MUX/Mux2x1/MIPS_Mux2x1_5bits_RegEscrita.vhd|
 R11
@@ -474,7 +474,7 @@ L13
 VeRlK:6^:JbG9E=[?b_=;M0
 R7
 31
-Z81 !s108 1481126853.341000
+Z81 !s108 1481204295.243000
 Z82 !s90 -reportprogress|300|-93|-work|work|C:/altera/13.0/projects/multiciclo32/MUX/Mux2x1/MIPS_Mux2x1_8bits_IouD.vhd|
 Z83 !s107 C:/altera/13.0/projects/multiciclo32/MUX/Mux2x1/MIPS_Mux2x1_8bits_IouD.vhd|
 R11
@@ -509,7 +509,7 @@ L13
 VzAWAH_Hjo3ie:3fA1I:]93
 R7
 31
-Z87 !s108 1481126855.974000
+Z87 !s108 1481204300.419000
 Z88 !s90 -reportprogress|300|-93|-work|work|C:/altera/13.0/projects/multiciclo32/MUX/Mux3x1/Mux3x1_32bits_OrigPC.vhd|
 Z89 !s107 C:/altera/13.0/projects/multiciclo32/MUX/Mux3x1/Mux3x1_32bits_OrigPC.vhd|
 R11
@@ -544,7 +544,7 @@ L13
 Vo_L?8fY?Go;V`DlYLniRQ3
 R7
 31
-Z92 !s108 1481126855.650000
+Z92 !s108 1481204299.902000
 Z93 !s90 -reportprogress|300|-93|-work|work|C:/altera/13.0/projects/multiciclo32/MUX/Mux4x1/MIPS_Mux4x1_32bits_ORIGBALU.vhd|
 Z94 !s107 C:/altera/13.0/projects/multiciclo32/MUX/Mux4x1/MIPS_Mux4x1_32bits_ORIGBALU.vhd|
 R11
@@ -579,7 +579,7 @@ L4
 Vo@IlY?;F:4L7X7;JQcgG23
 R7
 31
-Z97 !s108 1481126859.733000
+Z97 !s108 1481204304.926000
 Z98 !s90 -reportprogress|300|-93|-work|work|C:/altera/13.0/projects/multiciclo32/CONTROL/mux4.vhd|
 Z99 !s107 C:/altera/13.0/projects/multiciclo32/CONTROL/mux4.vhd|
 R11
@@ -614,7 +614,7 @@ L13
 Vi?fNdWbk3gaSHM[OeObe11
 R7
 31
-Z103 !s108 1481126855.245000
+Z103 !s108 1481204299.438000
 Z104 !s90 -reportprogress|300|-93|-work|work|C:/altera/13.0/projects/multiciclo32/PC_BRANCH/PC_enable_combinacional.vhd|
 Z105 !s107 C:/altera/13.0/projects/multiciclo32/PC_BRANCH/PC_enable_combinacional.vhd|
 R11
@@ -649,7 +649,7 @@ L42
 Vc1EWHk1@iS0d0fSfj_z=z0
 R7
 31
-Z108 !s108 1481126857.786000
+Z108 !s108 1481204302.654000
 Z109 !s90 -reportprogress|300|-93|-work|work|C:/altera/13.0/projects/multiciclo32/MEM/RAM_MIPS.vhd|
 Z110 !s107 C:/altera/13.0/projects/multiciclo32/MEM/RAM_MIPS.vhd|
 R11
@@ -684,7 +684,7 @@ L86
 VHin_]XlThHH=Kjc3GI4IK1
 R7
 31
-Z113 !s108 1481126854.821000
+Z113 !s108 1481204298.175000
 Z114 !s90 -reportprogress|300|-93|-work|work|C:/altera/13.0/projects/multiciclo32/REG32/reg32.vhd|
 Z115 !s107 C:/altera/13.0/projects/multiciclo32/REG32/reg32.vhd|
 R11
@@ -719,7 +719,7 @@ L4
 VEZ`0h2oVX;PHj_FLVn@e`0
 R7
 31
-Z119 !s108 1481126859.383000
+Z119 !s108 1481204304.465000
 Z120 !s90 -reportprogress|300|-93|-work|work|C:/altera/13.0/projects/multiciclo32/CONTROL/romDespacho1.vhd|
 Z121 !s107 C:/altera/13.0/projects/multiciclo32/CONTROL/romDespacho1.vhd|
 R11
@@ -754,7 +754,7 @@ L4
 VQN`WEME_j8i^UIJ4[cH:32
 R7
 31
-Z124 !s108 1481126858.985000
+Z124 !s108 1481204303.965000
 Z125 !s90 -reportprogress|300|-93|-work|work|C:/altera/13.0/projects/multiciclo32/CONTROL/romDespacho2.vhd|
 Z126 !s107 C:/altera/13.0/projects/multiciclo32/CONTROL/romDespacho2.vhd|
 R11
@@ -790,7 +790,7 @@ L5
 Vj9JHM3RPzXl1A6c0KcHnl3
 R7
 31
-Z130 !s108 1481126854.315000
+Z130 !s108 1481204296.953000
 Z131 !s90 -reportprogress|300|-93|-work|work|C:/altera/13.0/projects/multiciclo32/SHIFT_2LEFT/26bits/SHIFT_2LEFT_26.vhd|
 Z132 !s107 C:/altera/13.0/projects/multiciclo32/SHIFT_2LEFT/26bits/SHIFT_2LEFT_26.vhd|
 R11
@@ -827,7 +827,7 @@ L5
 V4DT1H877i7D5<@7^SUX863
 R7
 31
-Z135 !s108 1481126853.914000
+Z135 !s108 1481204296.298000
 Z136 !s90 -reportprogress|300|-93|-work|work|C:/altera/13.0/projects/multiciclo32/SHIFT_2LEFT/32bits/SHIFT_2LEFT_32.vhd|
 Z137 !s107 C:/altera/13.0/projects/multiciclo32/SHIFT_2LEFT/32bits/SHIFT_2LEFT_32.vhd|
 R11
@@ -864,7 +864,7 @@ L5
 VF7W@`_cjIGOdm5d0I@zhM0
 R7
 31
-Z140 !s108 1481126858.504000
+Z140 !s108 1481204303.496000
 Z141 !s90 -reportprogress|300|-93|-work|work|C:/altera/13.0/projects/multiciclo32/CONTROL/somador.vhd|
 Z142 !s107 C:/altera/13.0/projects/multiciclo32/CONTROL/somador.vhd|
 R11
@@ -901,7 +901,7 @@ L17
 VbH;flVGV2JjzVRZNT^lRZ1
 R7
 31
-Z146 !s108 1481126862.493000
+Z146 !s108 1481204307.979000
 Z147 !s90 -reportprogress|300|-93|-work|work|C:/altera/13.0/projects/multiciclo32/ALU/ULA_OAC.vhd|
 Z148 !s107 C:/altera/13.0/projects/multiciclo32/ALU/ULA_OAC.vhd|
 R11

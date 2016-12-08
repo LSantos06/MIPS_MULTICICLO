@@ -255,6 +255,8 @@
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
 #    Time: 0 ps  Iteration: 0  Instance: /mips_multiciclo_tb/uut/BREG
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 50 ps  Iteration: 5  Instance: /mips_multiciclo_tb/uut/ULA
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
 #    Time: 50 ps  Iteration: 5  Instance: /mips_multiciclo_tb/uut/BREG
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
 #    Time: 150 ps  Iteration: 2  Instance: /mips_multiciclo_tb/uut/MEM/altsyncram_component

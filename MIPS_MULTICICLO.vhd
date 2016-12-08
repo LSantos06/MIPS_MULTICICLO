@@ -270,8 +270,7 @@ architecture comportamento of MIPS_MULTICICLO is
 	---- MEM
 		-- Entradas
 			-- Saida IouD
-			-- Saida B
-			signal SaidaB			: std_logic_vector((WSIZE-1) downto 0);
+			-- SaidaRegB
 			-- Cntr_EscreveMem
 		-- Saidas
 			-- Dados lidos da memoria
@@ -407,17 +406,17 @@ architecture comportamento of MIPS_MULTICICLO is
 	begin
 		
 		---- PC
-		PC_32: reg32 port map (clock,WrEnPC, SaidaOrigPC, SaidaPC);
+		PC_32: reg32 port map (Clock, WrEnPC, SaidaOrigPC, SaidaPC);
 		
 		---- MUXIouD
-		 SaidaALU_8bits <= '1' & SaidaULA(8 downto 2);
+		 SaidaALU_8bits <= '1' & RegALU(8 downto 2);
 		MUXIouD: MIPS_Mux2x1_8bits_IouD port map (SaidaPC(7 downto 0), SaidaALU_8bits, Cntr_IouD, SaidaIouD);
 		
 		---- MEM
-		MEM: RAM_MIPS port map (SaidaIouD, Clock, SaidaB, Cntr_EscreveMem, DadosMem);
+		MEM: RAM_MIPS port map (SaidaIouD, Clock, SaidaRegB, Cntr_EscreveMem, DadosMem);
 	
 		---- RI
-		RI_32: reg32 port map (clock,Cntr_EscreveIR, DadosMem, SaidaRI);
+		RI_32: reg32 port map (Clock, Cntr_EscreveIR, DadosMem, SaidaRI);
 		---- Sinais RI,destrinchado
 			 Ri_Opcode <= SaidaRI(31 downto 26);
 			 Ri_funct<= SaidaRI(5 downto 0);
@@ -429,7 +428,7 @@ architecture comportamento of MIPS_MULTICICLO is
 			 Ri_K_26<= SaidaRI(25 downto 0);
 			
 		---- RDM
-		RDM_32: reg32 port map (Clock,'1', DadosMem, SaidaRDM);
+		RDM_32: reg32 port map (Clock, '1', DadosMem, SaidaRDM);
 		
 		---- CONTROLE
 		CONTROLE: cntrMIPS port map(Clock, Ri_Opcode,Ri_Funct, Cntr_OpALU, Cntr_OrigBALU, Cntr_OrigPC, Cntr_OrigAALU, 
@@ -461,7 +460,7 @@ architecture comportamento of MIPS_MULTICICLO is
 		REG_B_32: reg32 port map(Clock, '1', RegB, SaidaRegB);
 		
 		-- Mux A
-		MUX_A: mipS_Mux2x1_32bits_OrigAALU port map(SaidaRegA, SaidaOrigPC, Cntr_OrigAALU, SaidaOrigAALU);
+		MUX_A: mipS_Mux2x1_32bits_OrigAALU port map(SaidaRegA, SaidaPC, Cntr_OrigAALU, SaidaOrigAALU);
 		
 		-- Mux B
 		MUX_B: mipS_Mux4x1_32bits_OrigBALU port map(SaidaRegB, SaidaExtSinal, SaidaExtDesloc, ShamtExtendido, Cntr_OrigBALU, SaidaOrigBALU);
@@ -502,7 +501,7 @@ architecture comportamento of MIPS_MULTICICLO is
 				PC	<=SaidaPC;	
 			   RI	<= SaidaRI;				
 		    	RDM <= SaidaRDM;			
-			   SaidaALU	<= RegALU;		
+			   SaidaALU	<= SaidaULA;		
 				OPCode_ALU <=OperacaoALU;
 				A_ALU <= SaidaOrigAALU;
 				B_ALU <=SaidaOrigBALU;
