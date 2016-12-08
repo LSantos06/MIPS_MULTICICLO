@@ -6,7 +6,10 @@ entity converter_bin_para_7seg is
 Port (
 DADOSBIN:in STD_LOGIC_VECTOR(3 downto 0);
 saida:out STD_LOGIC_VECTOR (7 downto 0));
+
 end converter_bin_para_7seg;
+
+
 architecture Behavioral of converter_bin_para_7seg is
 begin
 
@@ -28,6 +31,6 @@ with DADOSBIN select
 				"10000101"when"1101",--D
 				"01100001"when"1110",--E
 				"01110001"when"1111",--F
-				"11111111"when others;
+				"10000011"when others; -- desenhar um 'U'
 end Behavioral;
 

@@ -416,9 +416,9 @@ architecture comportamento of MIPS_MULTICICLO is
 	
 	------------------------------------------------------------------------------------------------------------
 	begin
-		clk_negado <= not(clock);
+		
 		---- PC
-		PC_32: reg32 port map (clk_negado,WrEnPC, SaidaOrigPC, SaidaPC);
+		PC_32: reg32 port map (clock,WrEnPC, SaidaOrigPC, SaidaPC);
 		
 		---- MUXIouD
 		 SaidaALU_8bits <= '1' & RegALU(8 downto 2);
@@ -428,7 +428,7 @@ architecture comportamento of MIPS_MULTICICLO is
 		MEM: RAM_MIPS port map (SaidaIouD, Clock, SaidaRegB, Cntr_EscreveMem, DadosMem);
 	
 		---- RI
-		RI_32: reg32 port map (clk_negado,Cntr_EscreveIR, DadosMem, SaidaRI);
+		RI_32: reg32 port map (clock,Cntr_EscreveIR, DadosMem, SaidaRI);
 		---- Sinais RI,destrinchado
 			 Ri_Opcode <= SaidaRI(31 downto 26);
 			 Ri_funct<= SaidaRI(5 downto 0);
@@ -441,10 +441,10 @@ architecture comportamento of MIPS_MULTICICLO is
 			 
 			
 		---- RDM
-		RDM_32: reg32 port map (Clk_negado,'1', DadosMem, SaidaRDM);
+		RDM_32: reg32 port map (Clock,'1', DadosMem, SaidaRDM);
 		
 		---- CONTROLE
-		CONTROLE: cntrMIPS port map( Clk_negado, Ri_Opcode, Ri_Funct, Ri_Rt, Cntr_OpALU, Cntr_OrigBALU, Cntr_OrigPC, Cntr_OrigAALU, 
+		CONTROLE: cntrMIPS port map( Clock, Ri_Opcode, Ri_Funct, Ri_Rt, Cntr_OpALU, Cntr_OrigBALU, Cntr_OrigPC, Cntr_OrigAALU, 
 		Cntr_EscreveReg, Cntr_RegDst, Cntr_MemparaReg, Cntr_EscrevePC, Cntr_EscrevePCBeq, Cntr_IouD, Cntr_EscreveMem,
 		Cntr_LeMem, Cntr_EscreveIR, Cntr_EscrevePCBne, Cntr_EscrevePCBgez , Cntr_EscrevePCBltz, Cntr_cntEnd);
 		
@@ -456,6 +456,7 @@ architecture comportamento of MIPS_MULTICICLO is
 		
 		-- BREG 	
 		BREG: bregMIPS port map(Clock, Cntr_EscreveReg, RI_rs, RI_rt, SaidaRegDst, SaidaMemParaReg, RegA, RegB);
+		-- bit de sinal 
 		Ri_Rs_Sinal <= RegA(31);
 		-- Extensao de Sinal 
 		EXT_SINAL: extend_signal port map(RI_K_16, SaidaExtSinal);
@@ -467,13 +468,13 @@ architecture comportamento of MIPS_MULTICICLO is
 		DESLOC: SHIFT_2LEFT_32 port map(SaidaExtSinal, SaidaExtDesloc);
 		
 		-- Reg A
-		REG_A_32: reg32 port map(Clk_negado,'1', RegA, SaidaRegA);
+		REG_A_32: reg32 port map(Clock,'1', RegA, SaidaRegA);
 		
 		-- Reg B
-		REG_B_32: reg32 port map(Clk_negado, '1', RegB, SaidaRegB);
+		REG_B_32: reg32 port map(Clock, '1', RegB, SaidaRegB);
 		
 		-- Mux A
-		MUX_A: mipS_Mux2x1_32bits_OrigAALU port map(SaidaRegA, SaidaOrigPC, Cntr_OrigAALU, SaidaOrigAALU);
+		MUX_A: mipS_Mux2x1_32bits_OrigAALU port map(SaidaRegA, SaidaPC, Cntr_OrigAALU, SaidaOrigAALU);
 		
 		-- Mux B
 		MUX_B: mipS_Mux4x1_32bits_OrigBALU port map(SaidaRegB, SaidaExtSinal, SaidaExtDesloc, ShamtExtendido, Cntr_OrigBALU, SaidaOrigBALU);
@@ -509,7 +510,7 @@ architecture comportamento of MIPS_MULTICICLO is
 				EscrevePC <= cntr_EscrevePC;
 				EscrevePCBeq<= cntr_EscrevePCBeq;
 				IouD <= cntr_IouD;
-				EscreveMem <= cntr_IouD; 
+				EscreveMem <= cntr_EscreveMem; 
 				LeMem <= cntr_LeMem;
 				EscreveIR<=cntr_EscreveIR;
 				EscrevePCBne<= cntr_EscrevePCBne; 
@@ -522,7 +523,7 @@ architecture comportamento of MIPS_MULTICICLO is
 				PC	<=SaidaPC;	
 			   RI	<= SaidaRI;				
 		    	RDM <= SaidaRDM;			
-			   SaidaALU	<= RegALU;		
+			   SaidaALU	<= SaidaULA;		
 		
 			--ULA  e seus membros 
 				OPCode_ALU <=OperacaoALU;
