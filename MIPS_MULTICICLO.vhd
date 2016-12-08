@@ -438,7 +438,7 @@ architecture comportamento of MIPS_MULTICICLO is
 			 Ri_Rd<= SaidaRI(15 downto 11);
 			 Ri_K_16<= SaidaRI(15 downto 0);
 			 Ri_K_26<= SaidaRI(25 downto 0);
-			 Ri_Rs_Sinal <= Ri_Rs(4);
+			 
 			
 		---- RDM
 		RDM_32: reg32 port map (Clk_negado,'1', DadosMem, SaidaRDM);
@@ -456,7 +456,7 @@ architecture comportamento of MIPS_MULTICICLO is
 		
 		-- BREG 	
 		BREG: bregMIPS port map(Clock, Cntr_EscreveReg, RI_rs, RI_rt, SaidaRegDst, SaidaMemParaReg, RegA, RegB);
-		
+		Ri_Rs_Sinal <= RegA(31);
 		-- Extensao de Sinal 
 		EXT_SINAL: extend_signal port map(RI_K_16, SaidaExtSinal);
 		
