@@ -61,6 +61,8 @@
 # -- Loading package std_logic_1164
 # -- Compiling entity MIPS_Mux4x1_32bits_OrigBALU
 # -- Compiling architecture Mux4x1_32bits_BALU of MIPS_Mux4x1_32bits_OrigBALU
+# ** Warning: C:/altera/13.0/projects/multiciclo32/MUX/Mux4x1/MIPS_Mux4x1_32bits_ORIGBALU.vhd(25): (vcom-1445) Duplicate signal "Seletor_OrigBALU" found in sensitivity list.
+# 
 # vcom -93 -work work {C:/altera/13.0/projects/multiciclo32/MUX/Mux3x1/Mux3x1_32bits_OrigPC.vhd}
 # Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
 # -- Loading package STANDARD
@@ -254,91 +256,287 @@
 #    Time: 0 ps  Iteration: 0  Instance: /mips_multiciclo_tb/uut/BREG
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
 #    Time: 0 ps  Iteration: 0  Instance: /mips_multiciclo_tb/uut/BREG
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 50 ps  Iteration: 5  Instance: /mips_multiciclo_tb/uut/ULA
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 50 ps  Iteration: 5  Instance: /mips_multiciclo_tb/uut/BREG
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 150 ps  Iteration: 2  Instance: /mips_multiciclo_tb/uut/MEM/altsyncram_component
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 150 ps  Iteration: 2  Instance: /mips_multiciclo_tb/uut/MEM/altsyncram_component
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 150 ps  Iteration: 2  Instance: /mips_multiciclo_tb/uut/MEM/altsyncram_component
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 150 ps  Iteration: 2  Instance: /mips_multiciclo_tb/uut/MEM/altsyncram_component
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 150 ps  Iteration: 2  Instance: /mips_multiciclo_tb/uut/MEM/altsyncram_component
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 150 ps  Iteration: 2  Instance: /mips_multiciclo_tb/uut/MEM/altsyncram_component
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 200 ps  Iteration: 2  Instance: /mips_multiciclo_tb/uut/MEM/altsyncram_component
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 200 ps  Iteration: 2  Instance: /mips_multiciclo_tb/uut/MEM/altsyncram_component
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 200 ps  Iteration: 2  Instance: /mips_multiciclo_tb/uut/MEM/altsyncram_component
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 200 ps  Iteration: 2  Instance: /mips_multiciclo_tb/uut/MEM/altsyncram_component
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 200 ps  Iteration: 2  Instance: /mips_multiciclo_tb/uut/MEM/altsyncram_component
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 200 ps  Iteration: 2  Instance: /mips_multiciclo_tb/uut/MEM/altsyncram_component
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 200 ps  Iteration: 2  Instance: /mips_multiciclo_tb/uut/MEM/altsyncram_component
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 200 ps  Iteration: 2  Instance: /mips_multiciclo_tb/uut/MEM/altsyncram_component
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 250 ps  Iteration: 2  Instance: /mips_multiciclo_tb/uut/MEM/altsyncram_component
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 250 ps  Iteration: 2  Instance: /mips_multiciclo_tb/uut/MEM/altsyncram_component
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 250 ps  Iteration: 2  Instance: /mips_multiciclo_tb/uut/MEM/altsyncram_component
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 250 ps  Iteration: 2  Instance: /mips_multiciclo_tb/uut/MEM/altsyncram_component
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 250 ps  Iteration: 2  Instance: /mips_multiciclo_tb/uut/MEM/altsyncram_component
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 250 ps  Iteration: 2  Instance: /mips_multiciclo_tb/uut/MEM/altsyncram_component
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 300 ps  Iteration: 2  Instance: /mips_multiciclo_tb/uut/MEM/altsyncram_component
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 300 ps  Iteration: 2  Instance: /mips_multiciclo_tb/uut/MEM/altsyncram_component
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 300 ps  Iteration: 2  Instance: /mips_multiciclo_tb/uut/MEM/altsyncram_component
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 300 ps  Iteration: 2  Instance: /mips_multiciclo_tb/uut/MEM/altsyncram_component
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 300 ps  Iteration: 2  Instance: /mips_multiciclo_tb/uut/MEM/altsyncram_component
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 300 ps  Iteration: 2  Instance: /mips_multiciclo_tb/uut/MEM/altsyncram_component
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 300 ps  Iteration: 2  Instance: /mips_multiciclo_tb/uut/MEM/altsyncram_component
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 300 ps  Iteration: 2  Instance: /mips_multiciclo_tb/uut/MEM/altsyncram_component
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 350 ps  Iteration: 2  Instance: /mips_multiciclo_tb/uut/MEM/altsyncram_component
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 350 ps  Iteration: 2  Instance: /mips_multiciclo_tb/uut/MEM/altsyncram_component
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 350 ps  Iteration: 2  Instance: /mips_multiciclo_tb/uut/MEM/altsyncram_component
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 350 ps  Iteration: 2  Instance: /mips_multiciclo_tb/uut/MEM/altsyncram_component
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 350 ps  Iteration: 2  Instance: /mips_multiciclo_tb/uut/MEM/altsyncram_component
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 350 ps  Iteration: 2  Instance: /mips_multiciclo_tb/uut/MEM/altsyncram_component
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 400 ps  Iteration: 2  Instance: /mips_multiciclo_tb/uut/MEM/altsyncram_component
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 400 ps  Iteration: 2  Instance: /mips_multiciclo_tb/uut/MEM/altsyncram_component
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 400 ps  Iteration: 2  Instance: /mips_multiciclo_tb/uut/MEM/altsyncram_component
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 400 ps  Iteration: 2  Instance: /mips_multiciclo_tb/uut/MEM/altsyncram_component
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 400 ps  Iteration: 2  Instance: /mips_multiciclo_tb/uut/MEM/altsyncram_component
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 400 ps  Iteration: 2  Instance: /mips_multiciclo_tb/uut/MEM/altsyncram_component
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 400 ps  Iteration: 2  Instance: /mips_multiciclo_tb/uut/MEM/altsyncram_component
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 400 ps  Iteration: 2  Instance: /mips_multiciclo_tb/uut/MEM/altsyncram_component
+# ** Warning: (vsim-151) NUMERIC_STD.TO_INTEGER: Value -2 is not in bounds of NATURAL.
+#    Time: 1650 ps  Iteration: 3  Instance: /mips_multiciclo_tb/uut/ULA
+# ** Warning: (vsim-151) NUMERIC_STD.TO_INTEGER: Value -2 is not in bounds of NATURAL.
+#    Time: 1850 ps  Iteration: 5  Instance: /mips_multiciclo_tb/uut/ULA
+# ** Warning: (vsim-151) NUMERIC_STD.TO_INTEGER: Value -2 is not in bounds of NATURAL.
+#    Time: 27250 ps  Iteration: 3  Instance: /mips_multiciclo_tb/uut/ULA
+# ** Warning: (vsim-151) NUMERIC_STD.TO_INTEGER: Value -2 is not in bounds of NATURAL.
+#    Time: 27450 ps  Iteration: 5  Instance: /mips_multiciclo_tb/uut/ULA
+# ** Warning: (vsim-151) NUMERIC_STD.TO_INTEGER: Value -2 is not in bounds of NATURAL.
+#    Time: 52850 ps  Iteration: 3  Instance: /mips_multiciclo_tb/uut/ULA
+# ** Warning: (vsim-151) NUMERIC_STD.TO_INTEGER: Value -2 is not in bounds of NATURAL.
+#    Time: 53050 ps  Iteration: 5  Instance: /mips_multiciclo_tb/uut/ULA
+# ** Warning: (vsim-151) NUMERIC_STD.TO_INTEGER: Value -2 is not in bounds of NATURAL.
+#    Time: 78450 ps  Iteration: 3  Instance: /mips_multiciclo_tb/uut/ULA
+# ** Warning: (vsim-151) NUMERIC_STD.TO_INTEGER: Value -2 is not in bounds of NATURAL.
+#    Time: 78650 ps  Iteration: 5  Instance: /mips_multiciclo_tb/uut/ULA
+# ** Warning: (vsim-151) NUMERIC_STD.TO_INTEGER: Value -2 is not in bounds of NATURAL.
+#    Time: 104050 ps  Iteration: 3  Instance: /mips_multiciclo_tb/uut/ULA
+# ** Warning: (vsim-151) NUMERIC_STD.TO_INTEGER: Value -2 is not in bounds of NATURAL.
+#    Time: 104250 ps  Iteration: 5  Instance: /mips_multiciclo_tb/uut/ULA
+# ** Warning: (vsim-151) NUMERIC_STD.TO_INTEGER: Value -2 is not in bounds of NATURAL.
+#    Time: 129650 ps  Iteration: 3  Instance: /mips_multiciclo_tb/uut/ULA
+# ** Warning: (vsim-151) NUMERIC_STD.TO_INTEGER: Value -2 is not in bounds of NATURAL.
+#    Time: 129850 ps  Iteration: 5  Instance: /mips_multiciclo_tb/uut/ULA
+# ** Warning: (vsim-151) NUMERIC_STD.TO_INTEGER: Value -2 is not in bounds of NATURAL.
+#    Time: 155250 ps  Iteration: 3  Instance: /mips_multiciclo_tb/uut/ULA
+# ** Warning: (vsim-151) NUMERIC_STD.TO_INTEGER: Value -2 is not in bounds of NATURAL.
+#    Time: 155450 ps  Iteration: 5  Instance: /mips_multiciclo_tb/uut/ULA
+# ** Warning: (vsim-151) NUMERIC_STD.TO_INTEGER: Value -2 is not in bounds of NATURAL.
+#    Time: 180850 ps  Iteration: 3  Instance: /mips_multiciclo_tb/uut/ULA
+# ** Warning: (vsim-151) NUMERIC_STD.TO_INTEGER: Value -2 is not in bounds of NATURAL.
+#    Time: 181050 ps  Iteration: 5  Instance: /mips_multiciclo_tb/uut/ULA
+# ** Warning: (vsim-151) NUMERIC_STD.TO_INTEGER: Value -2 is not in bounds of NATURAL.
+#    Time: 206450 ps  Iteration: 3  Instance: /mips_multiciclo_tb/uut/ULA
+# ** Warning: (vsim-151) NUMERIC_STD.TO_INTEGER: Value -2 is not in bounds of NATURAL.
+#    Time: 206650 ps  Iteration: 5  Instance: /mips_multiciclo_tb/uut/ULA
+# ** Warning: (vsim-151) NUMERIC_STD.TO_INTEGER: Value -2 is not in bounds of NATURAL.
+#    Time: 232050 ps  Iteration: 3  Instance: /mips_multiciclo_tb/uut/ULA
+# ** Warning: (vsim-151) NUMERIC_STD.TO_INTEGER: Value -2 is not in bounds of NATURAL.
+#    Time: 232250 ps  Iteration: 5  Instance: /mips_multiciclo_tb/uut/ULA
+# ** Warning: (vsim-151) NUMERIC_STD.TO_INTEGER: Value -2 is not in bounds of NATURAL.
+#    Time: 257650 ps  Iteration: 3  Instance: /mips_multiciclo_tb/uut/ULA
+# ** Warning: (vsim-151) NUMERIC_STD.TO_INTEGER: Value -2 is not in bounds of NATURAL.
+#    Time: 257850 ps  Iteration: 5  Instance: /mips_multiciclo_tb/uut/ULA
+# ** Warning: (vsim-151) NUMERIC_STD.TO_INTEGER: Value -2 is not in bounds of NATURAL.
+#    Time: 283250 ps  Iteration: 3  Instance: /mips_multiciclo_tb/uut/ULA
+# ** Warning: (vsim-151) NUMERIC_STD.TO_INTEGER: Value -2 is not in bounds of NATURAL.
+#    Time: 283450 ps  Iteration: 5  Instance: /mips_multiciclo_tb/uut/ULA
+# ** Warning: (vsim-151) NUMERIC_STD.TO_INTEGER: Value -2 is not in bounds of NATURAL.
+#    Time: 308850 ps  Iteration: 3  Instance: /mips_multiciclo_tb/uut/ULA
+# ** Warning: (vsim-151) NUMERIC_STD.TO_INTEGER: Value -2 is not in bounds of NATURAL.
+#    Time: 309050 ps  Iteration: 5  Instance: /mips_multiciclo_tb/uut/ULA
+# ** Warning: (vsim-151) NUMERIC_STD.TO_INTEGER: Value -2 is not in bounds of NATURAL.
+#    Time: 334450 ps  Iteration: 3  Instance: /mips_multiciclo_tb/uut/ULA
+# ** Warning: (vsim-151) NUMERIC_STD.TO_INTEGER: Value -2 is not in bounds of NATURAL.
+#    Time: 334650 ps  Iteration: 5  Instance: /mips_multiciclo_tb/uut/ULA
+# ** Warning: (vsim-151) NUMERIC_STD.TO_INTEGER: Value -2 is not in bounds of NATURAL.
+#    Time: 360050 ps  Iteration: 3  Instance: /mips_multiciclo_tb/uut/ULA
+# ** Warning: (vsim-151) NUMERIC_STD.TO_INTEGER: Value -2 is not in bounds of NATURAL.
+#    Time: 360250 ps  Iteration: 5  Instance: /mips_multiciclo_tb/uut/ULA
+# ** Warning: (vsim-151) NUMERIC_STD.TO_INTEGER: Value -2 is not in bounds of NATURAL.
+#    Time: 385650 ps  Iteration: 3  Instance: /mips_multiciclo_tb/uut/ULA
+# ** Warning: (vsim-151) NUMERIC_STD.TO_INTEGER: Value -2 is not in bounds of NATURAL.
+#    Time: 385850 ps  Iteration: 5  Instance: /mips_multiciclo_tb/uut/ULA
+# ** Warning: (vsim-151) NUMERIC_STD.TO_INTEGER: Value -2 is not in bounds of NATURAL.
+#    Time: 411250 ps  Iteration: 3  Instance: /mips_multiciclo_tb/uut/ULA
+# ** Warning: (vsim-151) NUMERIC_STD.TO_INTEGER: Value -2 is not in bounds of NATURAL.
+#    Time: 411450 ps  Iteration: 5  Instance: /mips_multiciclo_tb/uut/ULA
+# ** Warning: (vsim-151) NUMERIC_STD.TO_INTEGER: Value -2 is not in bounds of NATURAL.
+#    Time: 436850 ps  Iteration: 3  Instance: /mips_multiciclo_tb/uut/ULA
+# ** Warning: (vsim-151) NUMERIC_STD.TO_INTEGER: Value -2 is not in bounds of NATURAL.
+#    Time: 437050 ps  Iteration: 5  Instance: /mips_multiciclo_tb/uut/ULA
+# ** Warning: (vsim-151) NUMERIC_STD.TO_INTEGER: Value -2 is not in bounds of NATURAL.
+#    Time: 462450 ps  Iteration: 3  Instance: /mips_multiciclo_tb/uut/ULA
+# ** Warning: (vsim-151) NUMERIC_STD.TO_INTEGER: Value -2 is not in bounds of NATURAL.
+#    Time: 462650 ps  Iteration: 5  Instance: /mips_multiciclo_tb/uut/ULA
+# ** Warning: (vsim-151) NUMERIC_STD.TO_INTEGER: Value -2 is not in bounds of NATURAL.
+#    Time: 488050 ps  Iteration: 3  Instance: /mips_multiciclo_tb/uut/ULA
+# ** Warning: (vsim-151) NUMERIC_STD.TO_INTEGER: Value -2 is not in bounds of NATURAL.
+#    Time: 488250 ps  Iteration: 5  Instance: /mips_multiciclo_tb/uut/ULA
+# ** Warning: (vsim-151) NUMERIC_STD.TO_INTEGER: Value -2 is not in bounds of NATURAL.
+#    Time: 513650 ps  Iteration: 3  Instance: /mips_multiciclo_tb/uut/ULA
+# ** Warning: (vsim-151) NUMERIC_STD.TO_INTEGER: Value -2 is not in bounds of NATURAL.
+#    Time: 513850 ps  Iteration: 5  Instance: /mips_multiciclo_tb/uut/ULA
+# ** Warning: (vsim-151) NUMERIC_STD.TO_INTEGER: Value -2 is not in bounds of NATURAL.
+#    Time: 539250 ps  Iteration: 3  Instance: /mips_multiciclo_tb/uut/ULA
+# ** Warning: (vsim-151) NUMERIC_STD.TO_INTEGER: Value -2 is not in bounds of NATURAL.
+#    Time: 539450 ps  Iteration: 5  Instance: /mips_multiciclo_tb/uut/ULA
+# ** Warning: (vsim-151) NUMERIC_STD.TO_INTEGER: Value -2 is not in bounds of NATURAL.
+#    Time: 564850 ps  Iteration: 3  Instance: /mips_multiciclo_tb/uut/ULA
+# ** Warning: (vsim-151) NUMERIC_STD.TO_INTEGER: Value -2 is not in bounds of NATURAL.
+#    Time: 565050 ps  Iteration: 5  Instance: /mips_multiciclo_tb/uut/ULA
+# ** Warning: (vsim-151) NUMERIC_STD.TO_INTEGER: Value -2 is not in bounds of NATURAL.
+#    Time: 590450 ps  Iteration: 3  Instance: /mips_multiciclo_tb/uut/ULA
+# ** Warning: (vsim-151) NUMERIC_STD.TO_INTEGER: Value -2 is not in bounds of NATURAL.
+#    Time: 590650 ps  Iteration: 5  Instance: /mips_multiciclo_tb/uut/ULA
+# ** Warning: (vsim-151) NUMERIC_STD.TO_INTEGER: Value -2 is not in bounds of NATURAL.
+#    Time: 616050 ps  Iteration: 3  Instance: /mips_multiciclo_tb/uut/ULA
+# ** Warning: (vsim-151) NUMERIC_STD.TO_INTEGER: Value -2 is not in bounds of NATURAL.
+#    Time: 616250 ps  Iteration: 5  Instance: /mips_multiciclo_tb/uut/ULA
+# ** Warning: (vsim-151) NUMERIC_STD.TO_INTEGER: Value -2 is not in bounds of NATURAL.
+#    Time: 641650 ps  Iteration: 3  Instance: /mips_multiciclo_tb/uut/ULA
+# ** Warning: (vsim-151) NUMERIC_STD.TO_INTEGER: Value -2 is not in bounds of NATURAL.
+#    Time: 641850 ps  Iteration: 5  Instance: /mips_multiciclo_tb/uut/ULA
+# ** Warning: (vsim-151) NUMERIC_STD.TO_INTEGER: Value -2 is not in bounds of NATURAL.
+#    Time: 667250 ps  Iteration: 3  Instance: /mips_multiciclo_tb/uut/ULA
+# ** Warning: (vsim-151) NUMERIC_STD.TO_INTEGER: Value -2 is not in bounds of NATURAL.
+#    Time: 667450 ps  Iteration: 5  Instance: /mips_multiciclo_tb/uut/ULA
+# ** Warning: (vsim-151) NUMERIC_STD.TO_INTEGER: Value -2 is not in bounds of NATURAL.
+#    Time: 692850 ps  Iteration: 3  Instance: /mips_multiciclo_tb/uut/ULA
+# ** Warning: (vsim-151) NUMERIC_STD.TO_INTEGER: Value -2 is not in bounds of NATURAL.
+#    Time: 693050 ps  Iteration: 5  Instance: /mips_multiciclo_tb/uut/ULA
+# ** Warning: (vsim-151) NUMERIC_STD.TO_INTEGER: Value -2 is not in bounds of NATURAL.
+#    Time: 718450 ps  Iteration: 3  Instance: /mips_multiciclo_tb/uut/ULA
+# ** Warning: (vsim-151) NUMERIC_STD.TO_INTEGER: Value -2 is not in bounds of NATURAL.
+#    Time: 718650 ps  Iteration: 5  Instance: /mips_multiciclo_tb/uut/ULA
+# ** Warning: (vsim-151) NUMERIC_STD.TO_INTEGER: Value -2 is not in bounds of NATURAL.
+#    Time: 744050 ps  Iteration: 3  Instance: /mips_multiciclo_tb/uut/ULA
+# ** Warning: (vsim-151) NUMERIC_STD.TO_INTEGER: Value -2 is not in bounds of NATURAL.
+#    Time: 744250 ps  Iteration: 5  Instance: /mips_multiciclo_tb/uut/ULA
+# ** Warning: (vsim-151) NUMERIC_STD.TO_INTEGER: Value -2 is not in bounds of NATURAL.
+#    Time: 769650 ps  Iteration: 3  Instance: /mips_multiciclo_tb/uut/ULA
+# ** Warning: (vsim-151) NUMERIC_STD.TO_INTEGER: Value -2 is not in bounds of NATURAL.
+#    Time: 769850 ps  Iteration: 5  Instance: /mips_multiciclo_tb/uut/ULA
+# ** Warning: (vsim-151) NUMERIC_STD.TO_INTEGER: Value -2 is not in bounds of NATURAL.
+#    Time: 795250 ps  Iteration: 3  Instance: /mips_multiciclo_tb/uut/ULA
+# ** Warning: (vsim-151) NUMERIC_STD.TO_INTEGER: Value -2 is not in bounds of NATURAL.
+#    Time: 795450 ps  Iteration: 5  Instance: /mips_multiciclo_tb/uut/ULA
+# ** Warning: (vsim-151) NUMERIC_STD.TO_INTEGER: Value -2 is not in bounds of NATURAL.
+#    Time: 820850 ps  Iteration: 3  Instance: /mips_multiciclo_tb/uut/ULA
+# ** Warning: (vsim-151) NUMERIC_STD.TO_INTEGER: Value -2 is not in bounds of NATURAL.
+#    Time: 821050 ps  Iteration: 5  Instance: /mips_multiciclo_tb/uut/ULA
+# ** Warning: (vsim-151) NUMERIC_STD.TO_INTEGER: Value -2 is not in bounds of NATURAL.
+#    Time: 846450 ps  Iteration: 3  Instance: /mips_multiciclo_tb/uut/ULA
+# ** Warning: (vsim-151) NUMERIC_STD.TO_INTEGER: Value -2 is not in bounds of NATURAL.
+#    Time: 846650 ps  Iteration: 5  Instance: /mips_multiciclo_tb/uut/ULA
+# ** Warning: (vsim-151) NUMERIC_STD.TO_INTEGER: Value -2 is not in bounds of NATURAL.
+#    Time: 872050 ps  Iteration: 3  Instance: /mips_multiciclo_tb/uut/ULA
+# ** Warning: (vsim-151) NUMERIC_STD.TO_INTEGER: Value -2 is not in bounds of NATURAL.
+#    Time: 872250 ps  Iteration: 5  Instance: /mips_multiciclo_tb/uut/ULA
+# ** Warning: (vsim-151) NUMERIC_STD.TO_INTEGER: Value -2 is not in bounds of NATURAL.
+#    Time: 897650 ps  Iteration: 3  Instance: /mips_multiciclo_tb/uut/ULA
+# ** Warning: (vsim-151) NUMERIC_STD.TO_INTEGER: Value -2 is not in bounds of NATURAL.
+#    Time: 897850 ps  Iteration: 5  Instance: /mips_multiciclo_tb/uut/ULA
+# ** Warning: (vsim-151) NUMERIC_STD.TO_INTEGER: Value -2 is not in bounds of NATURAL.
+#    Time: 923250 ps  Iteration: 3  Instance: /mips_multiciclo_tb/uut/ULA
+# ** Warning: (vsim-151) NUMERIC_STD.TO_INTEGER: Value -2 is not in bounds of NATURAL.
+#    Time: 923450 ps  Iteration: 5  Instance: /mips_multiciclo_tb/uut/ULA
+# ** Warning: (vsim-151) NUMERIC_STD.TO_INTEGER: Value -2 is not in bounds of NATURAL.
+#    Time: 948850 ps  Iteration: 3  Instance: /mips_multiciclo_tb/uut/ULA
+# ** Warning: (vsim-151) NUMERIC_STD.TO_INTEGER: Value -2 is not in bounds of NATURAL.
+#    Time: 949050 ps  Iteration: 5  Instance: /mips_multiciclo_tb/uut/ULA
+# ** Warning: (vsim-151) NUMERIC_STD.TO_INTEGER: Value -2 is not in bounds of NATURAL.
+#    Time: 974450 ps  Iteration: 3  Instance: /mips_multiciclo_tb/uut/ULA
+# ** Warning: (vsim-151) NUMERIC_STD.TO_INTEGER: Value -2 is not in bounds of NATURAL.
+#    Time: 974650 ps  Iteration: 5  Instance: /mips_multiciclo_tb/uut/ULA
+# ** Warning: (vsim-151) NUMERIC_STD.TO_INTEGER: Value -2 is not in bounds of NATURAL.
+#    Time: 1000050 ps  Iteration: 3  Instance: /mips_multiciclo_tb/uut/ULA
+# ** Warning: (vsim-151) NUMERIC_STD.TO_INTEGER: Value -2 is not in bounds of NATURAL.
+#    Time: 1000250 ps  Iteration: 5  Instance: /mips_multiciclo_tb/uut/ULA
+# ** Warning: (vsim-151) NUMERIC_STD.TO_INTEGER: Value -2 is not in bounds of NATURAL.
+#    Time: 1025650 ps  Iteration: 3  Instance: /mips_multiciclo_tb/uut/ULA
+# ** Warning: (vsim-151) NUMERIC_STD.TO_INTEGER: Value -2 is not in bounds of NATURAL.
+#    Time: 1025850 ps  Iteration: 5  Instance: /mips_multiciclo_tb/uut/ULA
+# ** Warning: (vsim-151) NUMERIC_STD.TO_INTEGER: Value -2 is not in bounds of NATURAL.
+#    Time: 1051250 ps  Iteration: 3  Instance: /mips_multiciclo_tb/uut/ULA
+# ** Warning: (vsim-151) NUMERIC_STD.TO_INTEGER: Value -2 is not in bounds of NATURAL.
+#    Time: 1051450 ps  Iteration: 5  Instance: /mips_multiciclo_tb/uut/ULA
+# ** Warning: (vsim-151) NUMERIC_STD.TO_INTEGER: Value -2 is not in bounds of NATURAL.
+#    Time: 1076850 ps  Iteration: 3  Instance: /mips_multiciclo_tb/uut/ULA
+# ** Warning: (vsim-151) NUMERIC_STD.TO_INTEGER: Value -2 is not in bounds of NATURAL.
+#    Time: 1077050 ps  Iteration: 5  Instance: /mips_multiciclo_tb/uut/ULA
+# ** Warning: (vsim-151) NUMERIC_STD.TO_INTEGER: Value -2 is not in bounds of NATURAL.
+#    Time: 1102450 ps  Iteration: 3  Instance: /mips_multiciclo_tb/uut/ULA
+# ** Warning: (vsim-151) NUMERIC_STD.TO_INTEGER: Value -2 is not in bounds of NATURAL.
+#    Time: 1102650 ps  Iteration: 5  Instance: /mips_multiciclo_tb/uut/ULA
+# ** Warning: (vsim-151) NUMERIC_STD.TO_INTEGER: Value -2 is not in bounds of NATURAL.
+#    Time: 1128050 ps  Iteration: 3  Instance: /mips_multiciclo_tb/uut/ULA
+# ** Warning: (vsim-151) NUMERIC_STD.TO_INTEGER: Value -2 is not in bounds of NATURAL.
+#    Time: 1128250 ps  Iteration: 5  Instance: /mips_multiciclo_tb/uut/ULA
+# ** Warning: (vsim-151) NUMERIC_STD.TO_INTEGER: Value -2 is not in bounds of NATURAL.
+#    Time: 1153650 ps  Iteration: 3  Instance: /mips_multiciclo_tb/uut/ULA
+# ** Warning: (vsim-151) NUMERIC_STD.TO_INTEGER: Value -2 is not in bounds of NATURAL.
+#    Time: 1153850 ps  Iteration: 5  Instance: /mips_multiciclo_tb/uut/ULA
+# ** Warning: (vsim-151) NUMERIC_STD.TO_INTEGER: Value -2 is not in bounds of NATURAL.
+#    Time: 1179250 ps  Iteration: 3  Instance: /mips_multiciclo_tb/uut/ULA
+# ** Warning: (vsim-151) NUMERIC_STD.TO_INTEGER: Value -2 is not in bounds of NATURAL.
+#    Time: 1179450 ps  Iteration: 5  Instance: /mips_multiciclo_tb/uut/ULA
+# ** Warning: (vsim-151) NUMERIC_STD.TO_INTEGER: Value -2 is not in bounds of NATURAL.
+#    Time: 1204850 ps  Iteration: 3  Instance: /mips_multiciclo_tb/uut/ULA
+# ** Warning: (vsim-151) NUMERIC_STD.TO_INTEGER: Value -2 is not in bounds of NATURAL.
+#    Time: 1205050 ps  Iteration: 5  Instance: /mips_multiciclo_tb/uut/ULA
+# ** Warning: (vsim-151) NUMERIC_STD.TO_INTEGER: Value -2 is not in bounds of NATURAL.
+#    Time: 1230450 ps  Iteration: 3  Instance: /mips_multiciclo_tb/uut/ULA
+# ** Warning: (vsim-151) NUMERIC_STD.TO_INTEGER: Value -2 is not in bounds of NATURAL.
+#    Time: 1230650 ps  Iteration: 5  Instance: /mips_multiciclo_tb/uut/ULA
+# ** Warning: (vsim-151) NUMERIC_STD.TO_INTEGER: Value -2 is not in bounds of NATURAL.
+#    Time: 1256050 ps  Iteration: 3  Instance: /mips_multiciclo_tb/uut/ULA
+# ** Warning: (vsim-151) NUMERIC_STD.TO_INTEGER: Value -2 is not in bounds of NATURAL.
+#    Time: 1256250 ps  Iteration: 5  Instance: /mips_multiciclo_tb/uut/ULA
+# ** Warning: (vsim-151) NUMERIC_STD.TO_INTEGER: Value -2 is not in bounds of NATURAL.
+#    Time: 1281650 ps  Iteration: 3  Instance: /mips_multiciclo_tb/uut/ULA
+# ** Warning: (vsim-151) NUMERIC_STD.TO_INTEGER: Value -2 is not in bounds of NATURAL.
+#    Time: 1281850 ps  Iteration: 5  Instance: /mips_multiciclo_tb/uut/ULA
+# ** Warning: (vsim-151) NUMERIC_STD.TO_INTEGER: Value -2 is not in bounds of NATURAL.
+#    Time: 1307250 ps  Iteration: 3  Instance: /mips_multiciclo_tb/uut/ULA
+# ** Warning: (vsim-151) NUMERIC_STD.TO_INTEGER: Value -2 is not in bounds of NATURAL.
+#    Time: 1307450 ps  Iteration: 5  Instance: /mips_multiciclo_tb/uut/ULA
+# ** Warning: (vsim-151) NUMERIC_STD.TO_INTEGER: Value -2 is not in bounds of NATURAL.
+#    Time: 1332850 ps  Iteration: 3  Instance: /mips_multiciclo_tb/uut/ULA
+# ** Warning: (vsim-151) NUMERIC_STD.TO_INTEGER: Value -2 is not in bounds of NATURAL.
+#    Time: 1333050 ps  Iteration: 5  Instance: /mips_multiciclo_tb/uut/ULA
+# ** Warning: (vsim-151) NUMERIC_STD.TO_INTEGER: Value -2 is not in bounds of NATURAL.
+#    Time: 1358450 ps  Iteration: 3  Instance: /mips_multiciclo_tb/uut/ULA
+# ** Warning: (vsim-151) NUMERIC_STD.TO_INTEGER: Value -2 is not in bounds of NATURAL.
+#    Time: 1358650 ps  Iteration: 5  Instance: /mips_multiciclo_tb/uut/ULA
+# ** Warning: (vsim-151) NUMERIC_STD.TO_INTEGER: Value -2 is not in bounds of NATURAL.
+#    Time: 1384050 ps  Iteration: 3  Instance: /mips_multiciclo_tb/uut/ULA
+# ** Warning: (vsim-151) NUMERIC_STD.TO_INTEGER: Value -2 is not in bounds of NATURAL.
+#    Time: 1384250 ps  Iteration: 5  Instance: /mips_multiciclo_tb/uut/ULA
+# ** Warning: (vsim-151) NUMERIC_STD.TO_INTEGER: Value -2 is not in bounds of NATURAL.
+#    Time: 1409650 ps  Iteration: 3  Instance: /mips_multiciclo_tb/uut/ULA
+# ** Warning: (vsim-151) NUMERIC_STD.TO_INTEGER: Value -2 is not in bounds of NATURAL.
+#    Time: 1409850 ps  Iteration: 5  Instance: /mips_multiciclo_tb/uut/ULA
+# ** Warning: (vsim-151) NUMERIC_STD.TO_INTEGER: Value -2 is not in bounds of NATURAL.
+#    Time: 1435250 ps  Iteration: 3  Instance: /mips_multiciclo_tb/uut/ULA
+# ** Warning: (vsim-151) NUMERIC_STD.TO_INTEGER: Value -2 is not in bounds of NATURAL.
+#    Time: 1435450 ps  Iteration: 5  Instance: /mips_multiciclo_tb/uut/ULA
+# ** Warning: (vsim-151) NUMERIC_STD.TO_INTEGER: Value -2 is not in bounds of NATURAL.
+#    Time: 1460850 ps  Iteration: 3  Instance: /mips_multiciclo_tb/uut/ULA
+# ** Warning: (vsim-151) NUMERIC_STD.TO_INTEGER: Value -2 is not in bounds of NATURAL.
+#    Time: 1461050 ps  Iteration: 5  Instance: /mips_multiciclo_tb/uut/ULA
+# ** Warning: (vsim-151) NUMERIC_STD.TO_INTEGER: Value -2 is not in bounds of NATURAL.
+#    Time: 1486450 ps  Iteration: 3  Instance: /mips_multiciclo_tb/uut/ULA
+# ** Warning: (vsim-151) NUMERIC_STD.TO_INTEGER: Value -2 is not in bounds of NATURAL.
+#    Time: 1486650 ps  Iteration: 5  Instance: /mips_multiciclo_tb/uut/ULA
+# ** Warning: (vsim-151) NUMERIC_STD.TO_INTEGER: Value -2 is not in bounds of NATURAL.
+#    Time: 1512050 ps  Iteration: 3  Instance: /mips_multiciclo_tb/uut/ULA
+# ** Warning: (vsim-151) NUMERIC_STD.TO_INTEGER: Value -2 is not in bounds of NATURAL.
+#    Time: 1512250 ps  Iteration: 5  Instance: /mips_multiciclo_tb/uut/ULA
+# ** Warning: (vsim-151) NUMERIC_STD.TO_INTEGER: Value -2 is not in bounds of NATURAL.
+#    Time: 1537650 ps  Iteration: 3  Instance: /mips_multiciclo_tb/uut/ULA
+# ** Warning: (vsim-151) NUMERIC_STD.TO_INTEGER: Value -2 is not in bounds of NATURAL.
+#    Time: 1537850 ps  Iteration: 5  Instance: /mips_multiciclo_tb/uut/ULA
+# ** Warning: (vsim-151) NUMERIC_STD.TO_INTEGER: Value -2 is not in bounds of NATURAL.
+#    Time: 1563250 ps  Iteration: 3  Instance: /mips_multiciclo_tb/uut/ULA
+# ** Warning: (vsim-151) NUMERIC_STD.TO_INTEGER: Value -2 is not in bounds of NATURAL.
+#    Time: 1563450 ps  Iteration: 5  Instance: /mips_multiciclo_tb/uut/ULA
+# ** Warning: (vsim-151) NUMERIC_STD.TO_INTEGER: Value -2 is not in bounds of NATURAL.
+#    Time: 1588850 ps  Iteration: 3  Instance: /mips_multiciclo_tb/uut/ULA
+# ** Warning: (vsim-151) NUMERIC_STD.TO_INTEGER: Value -2 is not in bounds of NATURAL.
+#    Time: 1589050 ps  Iteration: 5  Instance: /mips_multiciclo_tb/uut/ULA
+# ** Warning: (vsim-151) NUMERIC_STD.TO_INTEGER: Value -2 is not in bounds of NATURAL.
+#    Time: 1614450 ps  Iteration: 3  Instance: /mips_multiciclo_tb/uut/ULA
+# ** Warning: (vsim-151) NUMERIC_STD.TO_INTEGER: Value -2 is not in bounds of NATURAL.
+#    Time: 1614650 ps  Iteration: 5  Instance: /mips_multiciclo_tb/uut/ULA
+# ** Warning: (vsim-151) NUMERIC_STD.TO_INTEGER: Value -2 is not in bounds of NATURAL.
+#    Time: 1640050 ps  Iteration: 3  Instance: /mips_multiciclo_tb/uut/ULA
+# ** Warning: (vsim-151) NUMERIC_STD.TO_INTEGER: Value -2 is not in bounds of NATURAL.
+#    Time: 1640250 ps  Iteration: 5  Instance: /mips_multiciclo_tb/uut/ULA
+# ** Warning: (vsim-151) NUMERIC_STD.TO_INTEGER: Value -2 is not in bounds of NATURAL.
+#    Time: 1665650 ps  Iteration: 3  Instance: /mips_multiciclo_tb/uut/ULA
+# ** Warning: (vsim-151) NUMERIC_STD.TO_INTEGER: Value -2 is not in bounds of NATURAL.
+#    Time: 1665850 ps  Iteration: 5  Instance: /mips_multiciclo_tb/uut/ULA
+# ** Warning: (vsim-151) NUMERIC_STD.TO_INTEGER: Value -2 is not in bounds of NATURAL.
+#    Time: 1691250 ps  Iteration: 3  Instance: /mips_multiciclo_tb/uut/ULA
+# ** Warning: (vsim-151) NUMERIC_STD.TO_INTEGER: Value -2 is not in bounds of NATURAL.
+#    Time: 1691450 ps  Iteration: 5  Instance: /mips_multiciclo_tb/uut/ULA
+# ** Warning: (vsim-151) NUMERIC_STD.TO_INTEGER: Value -2 is not in bounds of NATURAL.
+#    Time: 1716850 ps  Iteration: 3  Instance: /mips_multiciclo_tb/uut/ULA
+# ** Warning: (vsim-151) NUMERIC_STD.TO_INTEGER: Value -2 is not in bounds of NATURAL.
+#    Time: 1717050 ps  Iteration: 5  Instance: /mips_multiciclo_tb/uut/ULA
+# ** Warning: (vsim-151) NUMERIC_STD.TO_INTEGER: Value -2 is not in bounds of NATURAL.
+#    Time: 1742450 ps  Iteration: 3  Instance: /mips_multiciclo_tb/uut/ULA
+# ** Warning: (vsim-151) NUMERIC_STD.TO_INTEGER: Value -2 is not in bounds of NATURAL.
+#    Time: 1742650 ps  Iteration: 5  Instance: /mips_multiciclo_tb/uut/ULA
+# ** Warning: (vsim-151) NUMERIC_STD.TO_INTEGER: Value -2 is not in bounds of NATURAL.
+#    Time: 1768050 ps  Iteration: 3  Instance: /mips_multiciclo_tb/uut/ULA
+# ** Warning: (vsim-151) NUMERIC_STD.TO_INTEGER: Value -2 is not in bounds of NATURAL.
+#    Time: 1768250 ps  Iteration: 5  Instance: /mips_multiciclo_tb/uut/ULA
+# ** Warning: (vsim-151) NUMERIC_STD.TO_INTEGER: Value -2 is not in bounds of NATURAL.
+#    Time: 1793650 ps  Iteration: 3  Instance: /mips_multiciclo_tb/uut/ULA
+# ** Warning: (vsim-151) NUMERIC_STD.TO_INTEGER: Value -2 is not in bounds of NATURAL.
+#    Time: 1793850 ps  Iteration: 5  Instance: /mips_multiciclo_tb/uut/ULA

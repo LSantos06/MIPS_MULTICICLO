@@ -20,7 +20,7 @@ end MIPS_Mux2x1_32bits_MemparaReg;
 architecture Mux2x1_32bits of MIPS_Mux2x1_32bits_MemparaReg is
 
 begin
-	process(Seletor_MemparaReg)
+	process(RegDadoMem,SaidaALU,Seletor_MemparaReg)
 			begin 
 			case Seletor_MemparaReg is 
 				when '0' => Saida_32bits <= SaidaALU;

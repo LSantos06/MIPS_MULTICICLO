@@ -21,7 +21,7 @@ end MIPS_Mux3x1_32bits_OrigPC;
 architecture Mux3x1_32bits_OrigPC of MIPS_Mux3x1_32bits_OrigPC is
 
 begin
-	process(Seletor_OrigPC)
+	process(PCmais4,PC_saidaALU_BEQ,PC_Jump,Seletor_OrigPC)
 			begin 
 			case Seletor_OrigPC is 
 				when "00" => Saida_32bits_PC <= PCmais4;

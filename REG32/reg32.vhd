@@ -86,7 +86,7 @@ use IEEE.STD_LOGIC_1164.ALL;
 entity reg32 is
     Port ( clk, enable : in STD_LOGIC;
            estado_in : in  STD_LOGIC_VECTOR (31 downto 0);
-           estado_out : out  STD_LOGIC_VECTOR (31 downto 0));
+           estado_out : out  STD_LOGIC_VECTOR (31 downto 0) := X"00000000");
 end reg32;
 
 architecture reg32_op of reg32 is

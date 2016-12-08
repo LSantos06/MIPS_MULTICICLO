@@ -20,7 +20,7 @@ end MIPS_Mux2x1_5bits_RegEscrita;
 architecture Mux2x1_5bits of MIPS_Mux2x1_5bits_RegEscrita is
 
 begin
-	process(Seletor_RegDst)
+	process(Rt,Rd,Seletor_RegDst)
 			begin 
 			case Seletor_RegDst is 
 				when '0' => Saida_5bits <= Rt;

@@ -20,7 +20,7 @@ end MIPS_Mux2x1_8bits_IouD;
 architecture Mux2x1_8bits_IouD of MIPS_Mux2x1_8bits_IouD is
 
 begin
-	process(Seletor_IouD)
+	process(RegPC,SaidaALU_beq,Seletor_IouD)
 			begin 
 			case Seletor_IouD is 
 				when '0' => Saida_8bits_IouD <= RegPC;
