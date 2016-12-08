@@ -249,38 +249,40 @@ architecture comportamento of MIPS_MULTICICLO is
 				);
 	end component;
 	------------------------------------------------------------------------------------------------------------
-	
+-- SINAIS
+	--CLOck
+	signal clk_negado: std_logic;
 	---- PC
 		-- Entradas
 			-- Clock
 			-- Enable de escrita PC
-			signal WrEnPC			: std_logic;
+			signal WrEnPC			: std_logic := '0';
 		-- Saidas
 			-- Saida do Mux Orig PC
-			signal SaidaOrigPC	: std_logic_vector((WSIZE-1) downto 0):=X"00000000";
+			signal SaidaOrigPC	: std_logic_vector((WSIZE-1) downto 0):=(others => '0');
 			-- Saida do PC
-			signal SaidaPC			: std_logic_vector((WSIZE-1) downto 0):=X"00000000";
+			signal SaidaPC			: std_logic_vector((WSIZE-1) downto 0):=(others => '0');
 	
 	---- MUX IouD
 		-- Entradas
 			-- PC
 			-- Saida da ULA
-			signal SaidaALU_8bits : std_LOGIC_VECTOR(7 downto 0);
-			signal RegALU			: std_logic_vector((WSIZE-1) downto 0):=X"00000000";
+			signal SaidaALU_8bits : std_LOGIC_VECTOR(7 downto 0):=(others => '0');
+			signal RegALU			: std_logic_vector((WSIZE-1) downto 0):=(others => '0');
 		-- Saidas
 			-- Cntr_IouD	
 			-- Saida IouD
-			signal SaidaIouD		: std_logic_vector(7 downto 0);
+			signal SaidaIouD		: std_logic_vector(7 downto 0):=(others => '0');
 			
 	---- MEM
 		-- Entradas
 			-- Saida IouD
 			-- Saida B
-			signal SaidaB			: std_logic_vector((WSIZE-1) downto 0);
+			signal SaidaB			: std_logic_vector((WSIZE-1) downto 0):=(others => '0');
 			-- Cntr_EscreveMem
 		-- Saidas
 			-- Dados lidos da memoria
-			signal DadosMem		: std_logic_vector((WSIZE-1) downto 0);
+			signal DadosMem		: std_logic_vector((WSIZE-1) downto 0):=(others => '0');
 	
 	---- RI
 		-- Entradas
@@ -289,18 +291,18 @@ architecture comportamento of MIPS_MULTICICLO is
 			-- Dados lidos da memoria			
 		-- Saidas
 			-- Saida do RI
-			signal SaidaRI			: std_logic_vector((WSIZE-1) downto 0):=X"00000000";
+			signal SaidaRI			: std_logic_vector((WSIZE-1) downto 0):=(others => '0');
 		
 			-- Sinais RI
-			signal RI_Opcode		: std_logic_vector(5 downto 0);
-			signal RI_funct		: std_logic_vector(5 downto 0);
-			signal RI_shamt		: std_logic_vector(4 downto 0);				
-			signal RI_rs			: std_logic_vector(4 downto 0);
-			signal RI_rt			: std_logic_vector(4 downto 0);
-			signal RI_rd			: std_logic_vector(4 downto 0);
-			signal RI_K_16			: std_logic_vector(15 downto 0);
-			signal RI_K_26			: std_logic_vector(25 downto 0);	
-			signal RI_Rs_Sinal   : std_logic;
+			signal RI_Opcode		: std_logic_vector(5 downto 0):=(others => '0');
+			signal RI_funct		: std_logic_vector(5 downto 0):=(others => '0');
+			signal RI_shamt		: std_logic_vector(4 downto 0):=(others => '0');				
+			signal RI_rs			: std_logic_vector(4 downto 0):=(others => '0');
+			signal RI_rt			: std_logic_vector(4 downto 0):=(others => '0');
+			signal RI_rd			: std_logic_vector(4 downto 0):=(others => '0');
+			signal RI_K_16			: std_logic_vector(15 downto 0):=(others => '0');
+			signal RI_K_26			: std_logic_vector(25 downto 0):=(others => '0');	
+			signal RI_Rs_Sinal   : std_logic :='0';
 	---- RDM
 		-- Entradas
 			-- Clock
@@ -308,20 +310,20 @@ architecture comportamento of MIPS_MULTICICLO is
 			-- Dados lidos da memoria
 		-- Saidas
 			-- Saida do RDM
-			signal SaidaRDM		: std_logic_vector((WSIZE-1) downto 0):=X"00000000";
+			signal SaidaRDM		: std_logic_vector((WSIZE-1) downto 0):=(others => '0');
 				
 	---- CONTROLE
 		-- Entradas
 			-- Clock
 			-- Opcode
 		-- Saidas
-			signal Cntr_OrigBALU					: STD_LOGIC_VECTOR(2 DOWNTO 0);
+			signal Cntr_OrigBALU					: STD_LOGIC_VECTOR(2 DOWNTO 0):=(others => '0');
 			signal Cntr_OpALU,Cntr_OrigPC	   : std_logic_vector(1 downto 0);	
 			signal Cntr_OrigAALU, Cntr_EscreveReg, Cntr_RegDst, 
 			Cntr_MemparaReg, Cntr_EscrevePC, Cntr_EscrevePCBeq	: std_logic;
 			signal Cntr_IouD, Cntr_EscreveMem, Cntr_LeMem, 
 			Cntr_EscreveIR, Cntr_EscrevePCBne, Cntr_EscrevePCBgez, Cntr_EscrevePCBltz					: std_logic;
-			signal Cntr_cntEnd											: std_logic_vector(1 downto 0);
+			signal Cntr_cntEnd											: std_logic_vector(1 downto 0):=(others => '0');
 	
 	---- MUX RegDst
 		-- Entradas
@@ -329,7 +331,7 @@ architecture comportamento of MIPS_MULTICICLO is
 			-- rd
 		-- Saidas
 			-- Saida do Mux RegDst
-			signal SaidaRegDst						: std_logic_vector(4 downto 0);
+			signal SaidaRegDst						: std_logic_vector(4 downto 0):=(others => '0');
 				
 	---- MUX MemParaReg
 		-- Entradas
@@ -337,7 +339,7 @@ architecture comportamento of MIPS_MULTICICLO is
 			-- SaidaRDM
 		-- Saidas
 			-- Saida do Mux MemParaReg
-			signal SaidaMemParaReg					: std_logic_vector((WSIZE-1) downto 0);	
+			signal SaidaMemParaReg					: std_logic_vector((WSIZE-1) downto 0):=(others => '0');	
 	
 	---- BREG
 		-- Entradas
@@ -347,34 +349,38 @@ architecture comportamento of MIPS_MULTICICLO is
 			-- SaidaMemParaReg
 		-- Saidas
 			-- RegA e RegB
-			signal RegA, RegB 						: std_logic_vector((WSIZE-1) downto 0);
+			signal RegA							: std_logic_vector((WSIZE-1) downto 0):=(others => '0');
+			signal RegB 						: std_logic_vector((WSIZE-1) downto 0):=(others => '0');
 	
 	---- Registradores A e B
 		-- Entradas
 			-- A: RegA
 			-- B: RegB
 		-- Saidas	
-			signal SaidaRegA, SaidaRegB 			: std_logic_vector((WSIZE-1) downto 0);
+			signal SaidaRegA							: std_logic_vector((WSIZE-1) downto 0):=(others => '0');
+			signal SaidaRegB 						   : std_logic_vector((WSIZE-1) downto 0):=(others => '0');
+	
 			
 	---- MUX OrigAALU e OrigBALU		
 		-- Entradas
 			-- A: SaidaPC, SaidaRegA
 			-- B: SaidaRegB, 4, SaidaExtSinal, SaidaExtDesloc ,ShamtExtendido
 		-- Saidas	
-			signal SaidaOrigAALU, SaidaOrigBALU : std_logic_vector((WSIZE-1) downto 0);
+			signal SaidaOrigAALU : std_logic_vector((WSIZE-1) downto 0):=(others => '0');
+			signal SaidaOrigBALU : std_logic_vector((WSIZE-1) downto 0):=(others => '0');
 	
 	---- Extensao de Sinal
 		-- Entradas
 			-- K16
 		-- Saidas
 			-- Signed K16
-			signal SaidaExtSinal 					: std_logic_vector((WSIZE-1) downto 0);
+			signal SaidaExtSinal 					: std_logic_vector((WSIZE-1) downto 0):=(others => '0');
 	---- Extensao do Shamt
 		-- Entradas
 			--Shamt
 		-- Saidas
 			-- Shamt extendido e preparado pra ir pra ALU
-			signal ShamtExtendido 					: std_logic_vector((WSIZE-1) downto 0);
+			signal ShamtExtendido 					: std_logic_vector((WSIZE-1) downto 0):=(others => '0');
 	
 	
 	---- Deslocamento de 2 bits (32)
@@ -382,7 +388,7 @@ architecture comportamento of MIPS_MULTICICLO is
 			-- SaidaExtSinal
 		-- Saidas
 			-- SaidaExt deslocada de 2 bits
-			signal SaidaExtDesloc		 			: std_logic_vector((WSIZE-1) downto 0);
+			signal SaidaExtDesloc		 			: std_logic_vector((WSIZE-1) downto 0):=(others => '0');
 	
 	----- Controle ALU
 		-- Entradas
@@ -390,14 +396,14 @@ architecture comportamento of MIPS_MULTICICLO is
 			-- Opcode
 			-- OpALU
 		-- Saidas
-			signal OperacaoALU 						: std_logic_vector(3 downto 0);
+			signal OperacaoALU 						: std_logic_vector(3 downto 0):=(others => '0');
 	
 	---- Deslocamento de 2 bits p/ o Jump(26)
 		-- Entradas
 			-- k26
 		-- Saidas
 			-- PC[31:38] & k26 & 00
-			signal EndJump 							: std_LOGIC_VECTOR((WSIZE-1) downto 0);
+			signal EndJump 							: std_LOGIC_VECTOR((WSIZE-1) downto 0):=(others => '0');
 	
 	-- ALU
 		-- Entradas
@@ -405,14 +411,14 @@ architecture comportamento of MIPS_MULTICICLO is
 			-- SaidaOrigBALU
 			-- OperacaoALU
 		-- Saidas
-			signal SaidaULA 							: std_LOGIC_VECTOR((WSIZE-1) downto 0);
-			signal VaiALU,ZeroALU,OvflALU 		: std_LOGIC;
+			signal SaidaULA 							: std_LOGIC_VECTOR((WSIZE-1) downto 0):=(others => '0');
+			signal VaiALU,ZeroALU,OvflALU 		: std_LOGIC ;
 	
 	------------------------------------------------------------------------------------------------------------
 	begin
-		
+		clk_negado <= not(clock);
 		---- PC
-		PC_32: reg32 port map (clock,WrEnPC, SaidaOrigPC, SaidaPC);
+		PC_32: reg32 port map (clk_negado,WrEnPC, SaidaOrigPC, SaidaPC);
 		
 		---- MUXIouD
 		 SaidaALU_8bits <= '1' & SaidaULA(8 downto 2);
@@ -422,7 +428,7 @@ architecture comportamento of MIPS_MULTICICLO is
 		MEM: RAM_MIPS port map (SaidaIouD, Clock, SaidaB, Cntr_EscreveMem, DadosMem);
 	
 		---- RI
-		RI_32: reg32 port map (clock,Cntr_EscreveIR, DadosMem, SaidaRI);
+		RI_32: reg32 port map (clk_negado,Cntr_EscreveIR, DadosMem, SaidaRI);
 		---- Sinais RI,destrinchado
 			 Ri_Opcode <= SaidaRI(31 downto 26);
 			 Ri_funct<= SaidaRI(5 downto 0);
@@ -435,7 +441,7 @@ architecture comportamento of MIPS_MULTICICLO is
 			 Ri_Rs_Sinal <= Ri_Rs(4);
 			
 		---- RDM
-		RDM_32: reg32 port map (Clock,'1', DadosMem, SaidaRDM);
+		RDM_32: reg32 port map (Clk_negado,'1', DadosMem, SaidaRDM);
 		
 		---- CONTROLE
 		CONTROLE: cntrMIPS port map(Clock, Ri_Opcode, Ri_Funct, Ri_Rt, Cntr_OpALU, Cntr_OrigBALU, Cntr_OrigPC, Cntr_OrigAALU, 
@@ -461,10 +467,10 @@ architecture comportamento of MIPS_MULTICICLO is
 		DESLOC: SHIFT_2LEFT_32 port map(SaidaExtSinal, SaidaExtDesloc);
 		
 		-- Reg A
-		REG_A_32: reg32 port map(Clock,'1', RegA, SaidaRegA);
+		REG_A_32: reg32 port map(Clk_negado,'1', RegA, SaidaRegA);
 		
 		-- Reg B
-		REG_B_32: reg32 port map(Clock, '1', RegB, SaidaRegB);
+		REG_B_32: reg32 port map(Clk_negado, '1', RegB, SaidaRegB);
 		
 		-- Mux A
 		MUX_A: mipS_Mux2x1_32bits_OrigAALU port map(SaidaRegA, SaidaOrigPC, Cntr_OrigAALU, SaidaOrigAALU);
@@ -482,7 +488,7 @@ architecture comportamento of MIPS_MULTICICLO is
 		ULA: ula_OAC port map(OperacaoALU, SaidaOrigAALU, SaidaOrigBALU, SaidaULA, VaiALU, ZeroALU, OvflALU);
 		
 		-- Saida ALU
-		REG_ULA: reg32 port map(Clock, '1', SaidaULA, RegALU);
+		REG_ULA: reg32 port map(Clk_negado, '1', SaidaULA, RegALU);
 		
 		-- MUX OrigPC
 		MUX_ORIGPC: MipS_Mux3x1_32bits_OrigPC port map (SaidaULA, RegALU, EndJump, Cntr_OrigPC, SaidaOrigPC);
