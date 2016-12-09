@@ -261,8 +261,6 @@ architecture comportamento of MIPS_MULTICICLO is
 
 	------------------------------------------------------------------------------------------------------------
 -- SINAIS
-	--CLOck
-	signal clk_negado: std_logic;
 	---- PC
 		-- Entradas
 			-- Clock
@@ -432,7 +430,7 @@ architecture comportamento of MIPS_MULTICICLO is
 		PC_32: reg32 port map (clock,WrEnPC, SaidaOrigPC, SaidaPC);
 		
 		---- MUXIouD
-		 SaidaALU_8bits <= '1' & RegALU(8 downto 2);
+		SaidaALU_8bits <= '1' & RegALU(8 downto 2);
 		 -- como nossa memoria "anda" de um em um e o pc anda de 4 em 4 devemos dividir por 4 ou seja deslocar 2 bits .....
 		MUXIouD: MIPS_Mux2x1_8bits_IouD port map (SaidaPC(9 downto 2), SaidaALU_8bits, Cntr_IouD, SaidaIouD);
 		
@@ -464,7 +462,7 @@ architecture comportamento of MIPS_MULTICICLO is
 		MUX_REGDST: MIPS_Mux2x1_5bits_RegEscrita port map(RI_rt, RI_rd, Cntr_RegDst, SaidaRegDst);
 
 		-- MUX MemParaReg
-		MUX_MEMPARAREG: MIPS_Mux2x1_32bits_MemparaReg port map(SaidaRDM, RegALU, Cntr_MemParaReg, SaidaMemParaReg);
+		MUX_MEMPARAREG: MIPS_Mux2x1_32bits_MemparaReg port map(DadosMem, RegALU, Cntr_MemParaReg, SaidaMemParaReg);
 		
 		-- BREG 	
 		BREG: bregMIPS port map(Clock, Cntr_EscreveReg, RI_rs, RI_rt, SaidaRegDst, SaidaMemParaReg, RegA, RegB);
@@ -501,7 +499,7 @@ architecture comportamento of MIPS_MULTICICLO is
 		ULA: ula_OAC port map(OperacaoALU, SaidaOrigAALU, SaidaOrigBALU, SaidaULA, VaiALU, ZeroALU, OvflALU);
 		
 		-- Saida ALU
-		REG_ULA: reg32 port map(Clk_negado, '1', SaidaULA, RegALU);
+		REG_ULA: reg32 port map(Clock, '1', SaidaULA, RegALU);
 		
 		-- MUX OrigPC
 		MUX_ORIGPC: MipS_Mux3x1_32bits_OrigPC port map (SaidaULA, RegALU, EndJump, Cntr_OrigPC, SaidaOrigPC);
