@@ -462,7 +462,7 @@ architecture comportamento of MIPS_MULTICICLO is
 		MUX_REGDST: MIPS_Mux2x1_5bits_RegEscrita port map(RI_rt, RI_rd, Cntr_RegDst, SaidaRegDst);
 
 		-- MUX MemParaReg
-		MUX_MEMPARAREG: MIPS_Mux2x1_32bits_MemparaReg port map(DadosMem, RegALU, Cntr_MemParaReg, SaidaMemParaReg);
+		MUX_MEMPARAREG: MIPS_Mux2x1_32bits_MemparaReg port map(SaidaRDM, RegALU, Cntr_MemParaReg, SaidaMemParaReg);
 		
 		-- BREG 	
 		BREG: bregMIPS port map(Clock, Cntr_EscreveReg, RI_rs, RI_rt, SaidaRegDst, SaidaMemParaReg, RegA, RegB);
@@ -532,7 +532,7 @@ architecture comportamento of MIPS_MULTICICLO is
 		-- registradores especiais 		
 				PC	<=SaidaPC;	
 			   RI	<= SaidaRI;				
-		    	RDM <= DadosMem;			
+		    	RDM <= SaidaRDM;			
 			   SaidaALU	<= SaidaULA;		
 		
 			--ULA  e seus membros 
