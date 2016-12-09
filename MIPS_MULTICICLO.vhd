@@ -422,9 +422,13 @@ architecture comportamento of MIPS_MULTICICLO is
 		-- Saidas
 			signal SaidaULA 							: std_LOGIC_VECTOR((WSIZE-1) downto 0):=(others => '0');
 			signal VaiALU,ZeroALU,OvflALU 		: std_LOGIC ;
-	
+			
+			signal clk_negado							: std_LOGIC;
+			
 	------------------------------------------------------------------------------------------------------------
 	begin
+	
+		clk_negado <= not(clock);
 		
 		---- PC
 		PC_32: reg32 port map (clock,WrEnPC, SaidaOrigPC, SaidaPC);
@@ -435,7 +439,7 @@ architecture comportamento of MIPS_MULTICICLO is
 		MUXIouD: MIPS_Mux2x1_8bits_IouD port map (SaidaPC(9 downto 2), SaidaALU_8bits, Cntr_IouD, SaidaIouD);
 		
 		---- MEM
-		MEM: RAM_MIPS port map (SaidaIouD, Clock, SaidaRegB, Cntr_EscreveMem, DadosMem);
+		MEM: RAM_MIPS port map (SaidaIouD, clk_negado, SaidaRegB, Cntr_EscreveMem, DadosMem);
 	
 		---- RI
 		RI_32: reg32 port map (clock,Cntr_EscreveIR, DadosMem, SaidaRI);
