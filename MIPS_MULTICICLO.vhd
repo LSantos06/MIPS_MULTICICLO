@@ -422,7 +422,8 @@ architecture comportamento of MIPS_MULTICICLO is
 		
 		---- MUXIouD
 		 SaidaALU_8bits <= '1' & RegALU(8 downto 2);
-		MUXIouD: MIPS_Mux2x1_8bits_IouD port map (SaidaPC(7 downto 0), SaidaALU_8bits, Cntr_IouD, SaidaIouD);
+		 -- como nossa memoria "anda" de um em um e o pc anda de 4 em 4 devemos dividir por 4 ou seja deslocar 2 bits .....
+		MUXIouD: MIPS_Mux2x1_8bits_IouD port map (SaidaPC(9 downto 2), SaidaALU_8bits, Cntr_IouD, SaidaIouD);
 		
 		---- MEM
 		MEM: RAM_MIPS port map (SaidaIouD, Clock, SaidaRegB, Cntr_EscreveMem, DadosMem);
@@ -520,7 +521,7 @@ architecture comportamento of MIPS_MULTICICLO is
 				
 				
 		-- registradores especiais 		
-				PC	<=SaidaPC;	
+				PC	<=X"000000"& SaidaIouD;	
 			   RI	<= SaidaRI;				
 		    	RDM <= SaidaRDM;			
 			   SaidaALU	<= SaidaULA;		
