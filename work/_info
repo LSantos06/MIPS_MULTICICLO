@@ -15,7 +15,7 @@ L13
 VBfYThl>U1LUh?Qd91YY4l2
 Z6 OV;C;10.1d;51
 32
-Z7 !s108 1481243655.708000
+Z7 !s108 1481244363.864000
 Z8 !s90 -reportprogress|300|-work|work|-2002|-explicit|C:/Users/User/Desktop/MIPS_MULTICILO/ALU_CONTROL/ALUcontrol.vhd|
 Z9 !s107 C:/Users/User/Desktop/MIPS_MULTICILO/ALU_CONTROL/ALUcontrol.vhd|
 Z10 o-work work -2002 -explicit -O0
@@ -51,7 +51,7 @@ L13
 VC]V:2`9[>X]@Uk]aTz4EL0
 R6
 32
-Z16 !s108 1481243656.266000
+Z16 !s108 1481244364.584000
 Z17 !s90 -reportprogress|300|-work|work|-2002|-explicit|C:/Users/User/Desktop/MIPS_MULTICILO/BREG/bregMIPS.vhd|
 Z18 !s107 C:/Users/User/Desktop/MIPS_MULTICILO/BREG/bregMIPS.vhd|
 R10
@@ -87,7 +87,7 @@ L9
 VJ?aRP@YN>>ah<?M;YY57j2
 R6
 32
-Z22 !s108 1481243659.175000
+Z22 !s108 1481244367.839000
 Z23 !s90 -reportprogress|300|-work|work|-2002|-explicit|C:/Users/User/Desktop/MIPS_MULTICILO/CONTROL/cntrMIPS.vhd|
 Z24 !s107 C:/Users/User/Desktop/MIPS_MULTICILO/CONTROL/cntrMIPS.vhd|
 R10
@@ -122,7 +122,7 @@ L5
 V_niXReFXYYF`@Tj95T@7z3
 R6
 32
-Z28 !s108 1481243655.976000
+Z28 !s108 1481244364.283000
 Z29 !s90 -reportprogress|300|-work|work|-2002|-explicit|C:/Users/User/Desktop/MIPS_MULTICILO/BIN_7SEG/converter_bin_para_7seg.vhdl|
 Z30 !s107 C:/Users/User/Desktop/MIPS_MULTICILO/BIN_7SEG/converter_bin_para_7seg.vhdl|
 R10
@@ -157,7 +157,7 @@ L4
 VT7<6CHL^PX2<m1L2?=X=j0
 R6
 32
-Z34 !s108 1481243656.521000
+Z34 !s108 1481244364.980000
 Z35 !s90 -reportprogress|300|-work|work|-2002|-explicit|C:/Users/User/Desktop/MIPS_MULTICILO/CONTROL/enderecamento.vhd|
 Z36 !s107 C:/Users/User/Desktop/MIPS_MULTICILO/CONTROL/enderecamento.vhd|
 R10
@@ -194,7 +194,7 @@ V5zf=mzjk08m0IGTHEm`e>2
 R6
 32
 !i10b 1
-Z40 !s108 1481243663.954000
+Z40 !s108 1481244372.536000
 Z41 !s90 -reportprogress|300|-work|work|-2002|-explicit|C:/Users/User/Desktop/MIPS_MULTICILO/EXTEND_SIGNAL/EXTEND_SHAMT.vhd|
 Z42 !s107 C:/Users/User/Desktop/MIPS_MULTICILO/EXTEND_SIGNAL/EXTEND_SHAMT.vhd|
 R10
@@ -227,7 +227,7 @@ L5
 VkNDCUiWO:kLUXGB=`lT<61
 R6
 32
-Z49 !s108 1481243659.665000
+Z49 !s108 1481244368.234000
 Z50 !s90 -reportprogress|300|-work|work|-2002|-explicit|C:/Users/User/Desktop/MIPS_MULTICILO/EXTEND_SIGNAL/EXTEND_SIGNAL.vhd|
 Z51 !s107 C:/Users/User/Desktop/MIPS_MULTICILO/EXTEND_SIGNAL/EXTEND_SIGNAL.vhd|
 R10
@@ -262,7 +262,7 @@ L4
 V1?L96[DMhhNga04O`f8XO2
 R6
 32
-Z55 !s108 1481243656.793000
+Z55 !s108 1481244365.563000
 Z56 !s90 -reportprogress|300|-work|work|-2002|-explicit|C:/Users/User/Desktop/MIPS_MULTICILO/CONTROL/microCodigo.vhd|
 Z57 !s107 C:/Users/User/Desktop/MIPS_MULTICILO/CONTROL/microCodigo.vhd|
 R10
@@ -297,7 +297,7 @@ L4
 V638J=oc;T4O>[B;3fWQLA0
 R6
 32
-Z61 !s108 1481243657.067000
+Z61 !s108 1481244366.046000
 Z62 !s90 -reportprogress|300|-work|work|-2002|-explicit|C:/Users/User/Desktop/MIPS_MULTICILO/CONTROL/microPC.vhd|
 Z63 !s107 C:/Users/User/Desktop/MIPS_MULTICILO/CONTROL/microPC.vhd|
 R10
@@ -321,7 +321,7 @@ R11
 !s100 2aMDHGVD5z97;85mj[GSA3
 !i10b 1
 Emips_multiciclo
-Z64 w1481243571
+Z64 w1481244211
 R13
 R1
 R2
@@ -333,7 +333,7 @@ L5
 V^Q`JFc8FFS43:0Jja3EdF2
 R6
 32
-Z67 !s108 1481243663.110000
+Z67 !s108 1481244371.833000
 Z68 !s90 -reportprogress|300|-work|work|-2002|-explicit|C:/Users/User/Desktop/MIPS_MULTICILO/MIPS_MULTICICLO.vhd|
 Z69 !s107 C:/Users/User/Desktop/MIPS_MULTICILO/MIPS_MULTICICLO.vhd|
 R10
@@ -347,7 +347,7 @@ R2
 DEx4 work 15 mips_multiciclo 0 22 ^Q`JFc8FFS43:0Jja3EdF2
 l418
 L27
-VG1TT[8l3YDZ=bF885@eab3
+V5?D4^jdoW`<cCUDfX?^<z1
 R6
 32
 R67
@@ -355,10 +355,10 @@ R68
 R69
 R10
 R11
-!s100 0?:=dWEW`I:[1_2jiM]JL2
+!s100 cYRY6^G@:FjUJYIOWV_7L1
 !i10b 1
 Emips_multiciclo_tb
-Z70 w1481243127
+Z70 w1481244097
 R1
 R2
 R3
@@ -369,7 +369,7 @@ L8
 V^nU647N=9i51ZzQffbLUS3
 R6
 32
-Z73 !s108 1481243653.085000
+Z73 !s108 1481244361.577000
 Z74 !s90 -reportprogress|300|-work|work|-2002|-explicit|C:/Users/User/Desktop/MIPS_MULTICILO/MIPS_MULTICILO_tb.vhd|
 Z75 !s107 C:/Users/User/Desktop/MIPS_MULTICILO/MIPS_MULTICILO_tb.vhd|
 R10
@@ -382,7 +382,7 @@ R2
 DEx4 work 18 mips_multiciclo_tb 0 22 ^nU647N=9i51ZzQffbLUS3
 l69
 L11
-V`cnU2i=3F8mNI@]UfTC`N2
+V7oiib6<_VHACIPQJTSEX[1
 R6
 32
 R73
@@ -390,7 +390,7 @@ R74
 R75
 R10
 R11
-!s100 5?HW?9A=66]3CzA]DUB_]0
+!s100 DjLbCPUEFDX4:hPOOiNAV1
 !i10b 1
 Emips_mux2x1_32bits_memparareg
 Z76 w1481195223
@@ -404,7 +404,7 @@ L13
 Va1jLOdW>5Qe>ZdiN8izNH0
 R6
 32
-Z79 !s108 1481243661.238000
+Z79 !s108 1481244369.935000
 Z80 !s90 -reportprogress|300|-work|work|-2002|-explicit|C:/Users/User/Desktop/MIPS_MULTICILO/MUX/Mux2x1/MIPS_Mux2x1_32bits_MemparaReg.vhd|
 Z81 !s107 C:/Users/User/Desktop/MIPS_MULTICILO/MUX/Mux2x1/MIPS_Mux2x1_32bits_MemparaReg.vhd|
 R10
@@ -439,7 +439,7 @@ L13
 VNI9S9;ZKm]0@^o<S1CK@d1
 R6
 32
-Z85 !s108 1481243662.042000
+Z85 !s108 1481244370.305000
 Z86 !s90 -reportprogress|300|-work|work|-2002|-explicit|C:/Users/User/Desktop/MIPS_MULTICILO/MUX/Mux2x1/MIPS_Mux2x1_32bits_OrigAALU.vhd|
 Z87 !s107 C:/Users/User/Desktop/MIPS_MULTICILO/MUX/Mux2x1/MIPS_Mux2x1_32bits_OrigAALU.vhd|
 R10
@@ -474,7 +474,7 @@ L13
 VicK6D0K:2ocA0aYnWVNKa1
 R6
 32
-Z91 !s108 1481243660.507000
+Z91 !s108 1481244369.100000
 Z92 !s90 -reportprogress|300|-work|work|-2002|-explicit|C:/Users/User/Desktop/MIPS_MULTICILO/MUX/Mux2x1/MIPS_Mux2x1_5bits_RegEscrita.vhd|
 Z93 !s107 C:/Users/User/Desktop/MIPS_MULTICILO/MUX/Mux2x1/MIPS_Mux2x1_5bits_RegEscrita.vhd|
 R10
@@ -509,7 +509,7 @@ L13
 Vm7MAi292zE;m:HDAj<dez1
 R6
 32
-Z97 !s108 1481243660.826000
+Z97 !s108 1481244369.555000
 Z98 !s90 -reportprogress|300|-work|work|-2002|-explicit|C:/Users/User/Desktop/MIPS_MULTICILO/MUX/Mux2x1/MIPS_Mux2x1_8bits_IouD.vhd|
 Z99 !s107 C:/Users/User/Desktop/MIPS_MULTICILO/MUX/Mux2x1/MIPS_Mux2x1_8bits_IouD.vhd|
 R10
@@ -544,7 +544,7 @@ L13
 VzXeWRl12;djPmI6Cz<zM41
 R6
 32
-Z103 !s108 1481243662.373000
+Z103 !s108 1481244370.791000
 Z104 !s90 -reportprogress|300|-work|work|-2002|-explicit|C:/Users/User/Desktop/MIPS_MULTICILO/MUX/Mux3x1/Mux3x1_32bits_OrigPC.vhd|
 Z105 !s107 C:/Users/User/Desktop/MIPS_MULTICILO/MUX/Mux3x1/Mux3x1_32bits_OrigPC.vhd|
 R10
@@ -579,7 +579,7 @@ L13
 VC>V<]=hKB_V0cR4[0haej2
 R6
 32
-Z109 !s108 1481243662.742000
+Z109 !s108 1481244371.492000
 Z110 !s90 -reportprogress|300|-work|work|-2002|-explicit|C:/Users/User/Desktop/MIPS_MULTICILO/MUX/Mux4x1/MIPS_Mux4x1_32bits_ORIGBALU.vhd|
 Z111 !s107 C:/Users/User/Desktop/MIPS_MULTICILO/MUX/Mux4x1/MIPS_Mux4x1_32bits_ORIGBALU.vhd|
 R10
@@ -614,7 +614,7 @@ L4
 VS:;jiCj5XlgY[zgAVn0gd3
 R6
 32
-Z115 !s108 1481243657.712000
+Z115 !s108 1481244366.373000
 Z116 !s90 -reportprogress|300|-work|work|-2002|-explicit|C:/Users/User/Desktop/MIPS_MULTICILO/CONTROL/mux4.vhd|
 Z117 !s107 C:/Users/User/Desktop/MIPS_MULTICILO/CONTROL/mux4.vhd|
 R10
@@ -649,7 +649,7 @@ L13
 V13hAHchC5HNz_9ZSI8eKK1
 R6
 32
-Z121 !s108 1481243655.093000
+Z121 !s108 1481244363.555000
 Z122 !s90 -reportprogress|300|-work|work|-2002|-explicit|C:/Users/User/Desktop/MIPS_MULTICILO/PC_BRANCH/PC_enable_combinacional.vhd|
 Z123 !s107 C:/Users/User/Desktop/MIPS_MULTICILO/PC_BRANCH/PC_enable_combinacional.vhd|
 R10
@@ -684,7 +684,7 @@ L42
 VOb=9ZliDV^kD@oOi^QRUO3
 R6
 32
-Z127 !s108 1481243660.236000
+Z127 !s108 1481244368.585000
 Z128 !s90 -reportprogress|300|-work|work|-2002|-explicit|C:/Users/User/Desktop/MIPS_MULTICILO/MEM/RAM_MIPS.vhd|
 Z129 !s107 C:/Users/User/Desktop/MIPS_MULTICILO/MEM/RAM_MIPS.vhd|
 R10
@@ -719,7 +719,7 @@ L86
 V4>O9MDn];KC_BcLAN]`IF2
 R6
 32
-Z133 !s108 1481243654.718000
+Z133 !s108 1481244363.031000
 Z134 !s90 -reportprogress|300|-work|work|-2002|-explicit|C:/Users/User/Desktop/MIPS_MULTICILO/REG32/reg32.vhd|
 Z135 !s107 C:/Users/User/Desktop/MIPS_MULTICILO/REG32/reg32.vhd|
 R10
@@ -754,7 +754,7 @@ L31
 VXRYCENe@;JBaT5iSkdc<l0
 R6
 32
-Z139 !s108 1481243663.646000
+Z139 !s108 1481244372.188000
 Z140 !s90 -reportprogress|300|-work|work|-2002|-explicit|C:/Users/User/Desktop/MIPS_MULTICILO/REG32/reg32_sem_clock_e_sem_enable.vhd|
 Z141 !s107 C:/Users/User/Desktop/MIPS_MULTICILO/REG32/reg32_sem_clock_e_sem_enable.vhd|
 R10
@@ -789,7 +789,7 @@ L4
 V8X8b[oJ^TTn3M[<zDgPaa1
 R6
 32
-Z145 !s108 1481243658.066000
+Z145 !s108 1481244366.671000
 Z146 !s90 -reportprogress|300|-work|work|-2002|-explicit|C:/Users/User/Desktop/MIPS_MULTICILO/CONTROL/romDespacho1.vhd|
 Z147 !s107 C:/Users/User/Desktop/MIPS_MULTICILO/CONTROL/romDespacho1.vhd|
 R10
@@ -824,7 +824,7 @@ L4
 VQD?IC6SE]A6fddA^[cRXM2
 R6
 32
-Z151 !s108 1481243658.435000
+Z151 !s108 1481244367.026000
 Z152 !s90 -reportprogress|300|-work|work|-2002|-explicit|C:/Users/User/Desktop/MIPS_MULTICILO/CONTROL/romDespacho2.vhd|
 Z153 !s107 C:/Users/User/Desktop/MIPS_MULTICILO/CONTROL/romDespacho2.vhd|
 R10
@@ -860,7 +860,7 @@ L5
 V=QTDigF_GJ705=Z1a4BGf2
 R6
 32
-Z157 !s108 1481243654.132000
+Z157 !s108 1481244362.470000
 Z158 !s90 -reportprogress|300|-work|work|-2002|-explicit|C:/Users/User/Desktop/MIPS_MULTICILO/SHIFT_2LEFT/26bits/SHIFT_2LEFT_26.vhd|
 Z159 !s107 C:/Users/User/Desktop/MIPS_MULTICILO/SHIFT_2LEFT/26bits/SHIFT_2LEFT_26.vhd|
 R10
@@ -897,7 +897,7 @@ L5
 VilLL?5iO;?YLKHm3PW`:_1
 R6
 32
-Z163 !s108 1481243653.474000
+Z163 !s108 1481244361.889000
 Z164 !s90 -reportprogress|300|-work|work|-2002|-explicit|C:/Users/User/Desktop/MIPS_MULTICILO/SHIFT_2LEFT/32bits/SHIFT_2LEFT_32.vhd|
 Z165 !s107 C:/Users/User/Desktop/MIPS_MULTICILO/SHIFT_2LEFT/32bits/SHIFT_2LEFT_32.vhd|
 R10
@@ -934,7 +934,7 @@ L5
 V^4c_KALEQ`[efUl;P6:AR0
 R6
 32
-Z169 !s108 1481243658.787000
+Z169 !s108 1481244367.510000
 Z170 !s90 -reportprogress|300|-work|work|-2002|-explicit|C:/Users/User/Desktop/MIPS_MULTICILO/CONTROL/somador.vhd|
 Z171 !s107 C:/Users/User/Desktop/MIPS_MULTICILO/CONTROL/somador.vhd|
 R10
@@ -971,7 +971,7 @@ L17
 VBKd5WC?[;[CTT`Z4a0hGd1
 R6
 32
-Z175 !s108 1481243653.807000
+Z175 !s108 1481244362.178000
 Z176 !s90 -reportprogress|300|-work|work|-2002|-explicit|C:/Users/User/Desktop/MIPS_MULTICILO/ALU/ULA_OAC.vhd|
 Z177 !s107 C:/Users/User/Desktop/MIPS_MULTICILO/ALU/ULA_OAC.vhd|
 R10

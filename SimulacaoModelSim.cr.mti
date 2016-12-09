@@ -205,14 +205,6 @@ Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
 -- Compiling entity MIPS_Mux4x1_32bits_OrigBALU
 -- Compiling architecture Mux4x1_32bits_BALU of MIPS_Mux4x1_32bits_OrigBALU
 
-} {} {}} C:/Users/User/Desktop/MIPS_MULTICILO/BIN_7SEG/converter_bin_para_7seg.vhdl {1 {vcom -work work -2002 -explicit C:/Users/User/Desktop/MIPS_MULTICILO/BIN_7SEG/converter_bin_para_7seg.vhdl
-Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
--- Loading package STANDARD
--- Loading package TEXTIO
--- Loading package std_logic_1164
--- Compiling entity converter_bin_para_7seg
--- Compiling architecture Behavioral of converter_bin_para_7seg
-
 } {} {}} C:/Users/User/Desktop/MIPS_MULTICILO/REG32/reg32_sem_clock_e_sem_enable.vhd {1 {vcom -work work -2002 -explicit C:/Users/User/Desktop/MIPS_MULTICILO/REG32/reg32_sem_clock_e_sem_enable.vhd
 Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
 -- Loading package STANDARD

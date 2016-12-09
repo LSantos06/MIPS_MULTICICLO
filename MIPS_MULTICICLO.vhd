@@ -97,7 +97,7 @@ architecture comportamento of MIPS_MULTICICLO is
 				SK16  : out  STD_LOGIC_VECTOR ((WSIZE-1) downto 0)
 				);
 	end component;
-	-- Extensão do Shamt pra entrar na ALU(ULA)	
+	-- ExtensÃ£o do Shamt pra entrar na ALU(ULA)	
 		component extend_shamt is
 		Port ( Shamt : in  STD_LOGIC_VECTOR (4 downto 0);
            ShamtALU : out  STD_LOGIC_VECTOR (31 downto 0));
@@ -213,7 +213,7 @@ architecture comportamento of MIPS_MULTICICLO is
 	end component;	
 	
 	-- 4x1
-	-- Mux da entrada B da ULA notar que a entrada sempre ÃƒÂ© 4 entao foi omitida estÃƒÂ¡ porta	
+	-- Mux da entrada B da ULA notar que a entrada sempre ÃƒÆ’Ã‚Â© 4 entao foi omitida estÃƒÆ’Ã‚Â¡ porta	
 	component MIPS_Mux4x1_32bits_OrigBALU is
 		 port (
 				 -- Entradas
@@ -240,14 +240,25 @@ architecture comportamento of MIPS_MULTICICLO is
 	
 	------------------------------------------------------------------------------------------------------------
 	-- Binario para 7 segmentos
-	component converter_bin_para_7seg is
-		port (
-				-- Entradas
-				DADOSBIN : in STD_LOGIC_VECTOR(3 downto 0);
-				-- Saidas			
-				saida 	: out STD_LOGIC_VECTOR (7 downto 0)
-				);
+	component MIPS_Mux4x1_ESCOLHER_SAIDA_7SEG is
+		 Port ( --Entradas 
+		        Saida_PC : in  STD_LOGIC_VECTOR (31 downto 0);
+				  Saida_RI : in  STD_LOGIC_VECTOR (31 downto 0);
+				  Saida_SaidaALU : in  STD_LOGIC_VECTOR (31 downto 0);
+				  Saida_RDM: in  STD_LOGIC_VECTOR (31 downto 0);			  
+				  Seletor_Saida : in  STD_LOGIC_vector(1 downto 0);
+				  --Saida
+				  Saida_Primeiro_7seg : out STD_LOGIC_VECTOR(6 downto 0);
+				  Saida_Segundo_7seg : out STD_LOGIC_VECTOR(6 downto 0);
+				  Saida_Terceiro_7seg : out STD_LOGIC_VECTOR(6 downto 0);
+				  Saida_Quarto_7seg : out STD_LOGIC_VECTOR(6 downto 0);
+				  Saida_Quinto_7seg : out STD_LOGIC_VECTOR(6 downto 0);
+				  Saida_Sexta_7seg : out STD_LOGIC_VECTOR(6 downto 0);
+				  Saida_Setimo_7seg : out STD_LOGIC_VECTOR(6 downto 0);
+				  Saida_Oitavo_7seg : out STD_LOGIC_VECTOR(6 downto 0)
+				  );
 	end component;
+
 	------------------------------------------------------------------------------------------------------------
 -- SINAIS
 	--CLOck
@@ -499,7 +510,7 @@ architecture comportamento of MIPS_MULTICICLO is
 		PC_DESVIOS: Pc_enable_combinacional port map(Cntr_EscrevePCBeq, Cntr_EscrevePCBne, Cntr_EscrevePCBgez, Cntr_EscrevePCBltz, Ri_Rs_Sinal ,ZeroALU, Cntr_EscrevePC, WrEnPC);
 			
 		
-		-- associaÃƒÂ§ÃƒÂ£o das saidas aos respectivos sinais 
+		-- associaÃƒÆ’Ã‚Â§ÃƒÆ’Ã‚Â£o das saidas aos respectivos sinais 
 			-- sinais de controle 	
 				OpALU <= cntr_OpALU;
 				OrigBALU<= cntr_origBALU;
@@ -521,7 +532,7 @@ architecture comportamento of MIPS_MULTICICLO is
 				
 				
 		-- registradores especiais 		
-				PC	<=X"000000"& SaidaIouD;	
+				PC	<=SaidaPC;	
 			   RI	<= SaidaRI;				
 		    	RDM <= DadosMem;			
 			   SaidaALU	<= SaidaULA;		
