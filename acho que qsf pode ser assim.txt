@@ -72,3 +72,20 @@ set_location_assignment PIN_H1 -to  Saida_Oitavo_7seg [3]
 set_location_assignment PIN_H2 -to  Saida_Oitavo_7seg [2]
 set_location_assignment PIN_H3 -to  Saida_Oitavo_7seg [1]
 set_location_assignment PIN_G1 -to  Saida_Oitavo_7seg [0]
+
+#################################
+########## ENTRADAS #############
+####### Seletor Saida ###########
+#SW[0] PIN_AA23 Toggle Switch[0]#
+#SW[1] PIN_AB26 Toggle Switch[1]#
+############ Clock ##############
+## KEY[0] PIN_T29 Pushbutton[0]##
+#################################
+#Seletor_Saida
+set_location_assignment PIN_AA23 -to  Seletor_Saida [0]
+set_location_assignment PIN_AB26 -to  Seletor_Saida [1]
+#Clock
+set_location_assignment PIN_T29 -to  Clock
+
+set_location_assignment PIN_G1 -to  Saida_Oitavo_7seg [0]
+
