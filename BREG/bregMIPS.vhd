@@ -17,7 +17,7 @@ architecture bregMIPS_op of bregMIPS is
 	-- Registradores 1 - 31
 	signal reg1,reg2,reg3,reg4,reg5,reg6,reg7,reg8,reg9,reg10,reg11,reg12,
 	reg13,reg14,reg15,reg16,reg17,reg18,reg19,reg20,reg21,reg22,reg23,reg24,
-	reg25,reg26,reg27,reg28,reg29,reg30,reg31: STD_LOGIC_VECTOR(31 downto 0);
+	reg25,reg26,reg27,reg28,reg29,reg30,reg31: STD_LOGIC_VECTOR(31 downto 0) := X"00000000";
 begin
 	
 	-- Lógica combinacional de habilitação de escrita que precede os registradores (decoder seguido de AND's)
