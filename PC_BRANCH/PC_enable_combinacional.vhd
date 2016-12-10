@@ -31,9 +31,9 @@ aux1 <= s_PCBeq and s_Zero;
 
 aux2 <= s_PCBne and not(s_Zero);
 
-aux3 <= s_PCBgez and s_RtSinal;
+aux3 <= s_PCBgez and not(s_RtSinal);
 
-aux4 <= s_PCBltz and not(s_RtSinal);
+aux4 <= s_PCBltz and s_RtSinal;
 
 aux5 <= aux1 or aux2 or aux3 or aux4;
 PCenable<= aux5 or s_EscrevePC;
