@@ -13,9 +13,9 @@ use IEEE.STD_LOGIC_1164.ALL;
 entity ALUcontrol is
     Port ( 
             Opcode_ALU : in  STD_LOGIC_VECTOR (5 downto 0);
-			funct_ALU: in  STD_LOGIC_VECTOR (5 downto 0);
-           Seletor_OPALU : in  STD_LOGIC_vector(1 downto 0);
-           Saida_seletorALU : out  STD_LOGIC_VECTOR (3 downto 0));
+				funct_ALU: in  STD_LOGIC_VECTOR (5 downto 0);
+				Seletor_OPALU : in  STD_LOGIC_vector(1 downto 0);
+				Saida_seletorALU : out  STD_LOGIC_VECTOR (3 downto 0));
 end ALUcontrol;
 
 architecture ALUcontrol of ALUcontrol is

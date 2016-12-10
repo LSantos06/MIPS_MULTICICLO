@@ -68,8 +68,8 @@ begin
 	microPrograma(10) <= mIformat1;
 	microPrograma(11) <= mIAUX2;
 	microPrograma(12) <= mBNE1;
-	microPrograma(13) <= mIAUX2;
-	microPrograma(14) <= mBNE1;
+	microPrograma(13) <= mSRLformat;
+	microPrograma(14) <= mSRLAUX;
 	microPrograma(15) <= mBGEZ1;
 	microPrograma(16) <= mBLTZ1;
 	
