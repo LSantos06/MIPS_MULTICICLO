@@ -48,7 +48,7 @@ begin
 					--SLL (já implementado na ULA); Opcode = 000000 Funct = 10 1010
 					   when "000000" =>Saida_seletorALU<="1010";	
 					--SRL  (já implementado na ULA); Opcode = 000000 Funct = 10 1010
-					   when "000010" =>Saida_seletorALU<="1100";	
+					   when "000010" =>Saida_seletorALU<="1011";	
 				
 				
 						when others => Saida_seletorALU <="0000";
