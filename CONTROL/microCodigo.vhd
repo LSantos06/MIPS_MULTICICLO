@@ -42,7 +42,7 @@ architecture microCodigo_op of microCodigo is
 	constant	mBEQ1 : microInstrucao_T := ("01100000000000101000", FETCH);
 	constant	mJUMP1 : microInstrucao_T := ("00000000000001010000", FETCH);
 	constant	mIformat1 : microInstrucao_T := ("11101000000000000000", SEQ);
-	constant	mIAUX2 : microInstrucao_T := ("00000011000000000000", FETCH);
+	constant	mIAUX2 : microInstrucao_T := ("00000010000000000000", FETCH);
 	constant	mBNE1 : microInstrucao_T := ("01100000000000100100", FETCH);
 	constant	mSRLformat : microInstrucao_T := ("10110000000000000000", SEQ);
 	constant	mSRLAUX : microInstrucao_T := ("00000011000000000000", FETCH);
