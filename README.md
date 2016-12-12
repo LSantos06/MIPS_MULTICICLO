@@ -1,5 +1,13 @@
-# MIPS_MULTICILO
+# MIPS_MULTICICLO
 ### Projeto Final de Organizacão e Arquitetura de Computadores 2/2016
+
+##### Alunos:
+* Filipe Teixeira - 14/0139486
+
+* Lucas Santos - 14/0151010
+
+* Marcos Tonin – 14/0153233
+
 
 ## Objetivo
 Montar e simular uma versão do processador MIPS Muticilo, no ambiente *Quartus* / *ModelSim-Altera*.
