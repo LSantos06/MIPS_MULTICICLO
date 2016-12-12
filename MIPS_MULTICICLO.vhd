@@ -7,21 +7,21 @@ entity MIPS_MULTICICLO is
 	port (
 			-- Entradas
 			Clock					: in std_logic;
+			Seletor_Saida		: in std_LOGIC_VECTOR(1 downto 0);
 			-- Saidas
-			OpALU						   		 :out std_LOGIC_VECTOR(1 downto 0);
-			OrigBALU								 :out std_LOGIC_VECTOR(2 downto 0);		
-			OrigPC 						       : out STD_LOGIC_VECTOR(1 downto 0);
-			OrigAALU 							 : out STD_LOGIC;
-			EscreveReg, RegDst, MemparaReg, EscrevePC, EscrevePCBeq, IouD, EscreveMem, 
-			LeMem, EscreveIR, EscrevePCBne ,EscrevePCBgez,EscrevePCBltz: out STD_LOGIC;
-			CtlEnd 								 : out STD_LOGIC_VECTOR(1 downto 0);
-			Opcode_ALU				: out std_logic_vector(3 downto 0);
-			A_ALU, B_ALU					: out std_logic_vector((WSIZE-1) downto 0);
-			PC						: out std_logic_vector((WSIZE-1) downto 0);
-			RI						: out std_logic_vector((WSIZE-1) downto 0);
-			RDM					: out std_logic_vector((WSIZE-1) downto 0);
-			SaidaALU				: out std_logic_vector((WSIZE-1) downto 0)
-			);
+			  mudanca_clock : out std_logic;				
+			  Saida_Primeiro_7seg : out STD_LOGIC_VECTOR(6 downto 0);
+			  Saida_Segundo_7seg : out STD_LOGIC_VECTOR(6 downto 0);
+			  Saida_Terceiro_7seg : out STD_LOGIC_VECTOR(6 downto 0);
+			  Saida_Quarto_7seg : out STD_LOGIC_VECTOR(6 downto 0);
+   		  Saida_Quinto_7seg : out STD_LOGIC_VECTOR(6 downto 0);
+			  Saida_Sexto_7seg : out STD_LOGIC_VECTOR(6 downto 0);
+			  Saida_Setimo_7seg : out STD_LOGIC_VECTOR(6 downto 0);
+			  Saida_Oitavo_7seg : out STD_LOGIC_VECTOR(6 downto 0)
+			  	
+
+
+		);
 end MIPS_MULTICICLO;
 
 architecture comportamento of MIPS_MULTICICLO is
@@ -511,37 +511,11 @@ architecture comportamento of MIPS_MULTICICLO is
 		-- Desvios
 		PC_DESVIOS: Pc_enable_combinacional port map(Cntr_EscrevePCBeq, Cntr_EscrevePCBne, Cntr_EscrevePCBgez, Cntr_EscrevePCBltz, Ri_Rs_Sinal ,ZeroALU, Cntr_EscrevePC, WrEnPC);
 			
-		
-		-- associaÃƒÆ’Ã‚Â§ÃƒÆ’Ã‚Â£o das saidas aos respectivos sinais 
-			-- sinais de controle 	
-				OpALU <= cntr_OpALU;
-				OrigBALU<= cntr_origBALU;
-				OrigPC <= cntr_OrigPC;
-				OrigAALU <= cntr_OrigAALU; 							 
-				EscreveReg <= cntr_EscreveReg;
-				RegDst <= cntr_RegDst;
-				MemparaReg <= cntr_MemParaReg;
-				EscrevePC <= cntr_EscrevePC;
-				EscrevePCBeq<= cntr_EscrevePCBeq;
-				IouD <= cntr_IouD;
-				EscreveMem <= cntr_EscreveMem; 
-				LeMem <= cntr_LeMem;
-				EscreveIR<=cntr_EscreveIR;
-				EscrevePCBne<= cntr_EscrevePCBne; 
-				EscrevePCBgez <= cntr_EscrevePCBgez;
-				EscrevePCBltz <= cntr_EscrevePCBltz;
-				CtlEnd <= cntr_cntEnd;							
-				
-				
-		-- registradores especiais 		
-				PC	<=SaidaPC;	
-			   RI	<= SaidaRI;				
-		    	RDM <= SaidaRDM;			
-			   SaidaALU	<= SaidaULA;		
-		
-			--ULA  e seus membros 
-				OPCode_ALU <=OperacaoALU;
-				A_ALU <= SaidaOrigAALU;
-				B_ALU <=SaidaOrigBALU;
-				
+	  -- MUX DE SAIDA
+		MUX_para_SAIDA : MIPS_Mux4x1_ESCOLHER_SAIDA_7SEG port map ( SaidaPC, SaidaRI, SaidaULA, SaidaRDM, Seletor_Saida, 
+		Saida_Primeiro_7seg, Saida_Segundo_7seg, Saida_Terceiro_7seg, Saida_Quarto_7seg, Saida_Quinto_7seg, 
+		Saida_Sexto_7seg, Saida_Setimo_7seg, Saida_Oitavo_7seg);	
+		-- sinal mudanca clock 
+		mudanca_clock <= clock;
+	
 end architecture;
