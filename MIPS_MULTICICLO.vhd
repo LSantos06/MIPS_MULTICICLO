@@ -10,14 +10,14 @@ entity MIPS_MULTICICLO is
 			Seletor_Saida		: in std_LOGIC_VECTOR(1 downto 0);
 			-- Saidas
 			  mudanca_clock : out std_logic;				
-			  Saida_Primeiro_7seg : out STD_LOGIC_VECTOR(6 downto 0);
-			  Saida_Segundo_7seg : out STD_LOGIC_VECTOR(6 downto 0);
-			  Saida_Terceiro_7seg : out STD_LOGIC_VECTOR(6 downto 0);
-			  Saida_Quarto_7seg : out STD_LOGIC_VECTOR(6 downto 0);
-   		  Saida_Quinto_7seg : out STD_LOGIC_VECTOR(6 downto 0);
-			  Saida_Sexto_7seg : out STD_LOGIC_VECTOR(6 downto 0);
-			  Saida_Setimo_7seg : out STD_LOGIC_VECTOR(6 downto 0);
-			  Saida_Oitavo_7seg : out STD_LOGIC_VECTOR(6 downto 0)
+			  Saida_Primeiro_7seg : out STD_LOGIC_VECTOR(7 downto 0);
+			  Saida_Segundo_7seg : out STD_LOGIC_VECTOR(7 downto 0);
+			  Saida_Terceiro_7seg : out STD_LOGIC_VECTOR(7 downto 0);
+			  Saida_Quarto_7seg : out STD_LOGIC_VECTOR(7 downto 0);
+   		  Saida_Quinto_7seg : out STD_LOGIC_VECTOR(7 downto 0);
+			  Saida_Sexto_7seg : out STD_LOGIC_VECTOR(7 downto 0);
+			  Saida_Setimo_7seg : out STD_LOGIC_VECTOR(7 downto 0);
+			  Saida_Oitavo_7seg : out STD_LOGIC_VECTOR(7 downto 0)
 			  	
 
 
@@ -248,14 +248,14 @@ architecture comportamento of MIPS_MULTICICLO is
 				  Saida_RDM: in  STD_LOGIC_VECTOR (31 downto 0);			  
 				  Seletor_Saida : in  STD_LOGIC_vector(1 downto 0);
 				  --Saida
-				  Saida_Primeiro_7seg : out STD_LOGIC_VECTOR(6 downto 0);
-				  Saida_Segundo_7seg : out STD_LOGIC_VECTOR(6 downto 0);
-				  Saida_Terceiro_7seg : out STD_LOGIC_VECTOR(6 downto 0);
-				  Saida_Quarto_7seg : out STD_LOGIC_VECTOR(6 downto 0);
-				  Saida_Quinto_7seg : out STD_LOGIC_VECTOR(6 downto 0);
-				  Saida_Sexta_7seg : out STD_LOGIC_VECTOR(6 downto 0);
-				  Saida_Setimo_7seg : out STD_LOGIC_VECTOR(6 downto 0);
-				  Saida_Oitavo_7seg : out STD_LOGIC_VECTOR(6 downto 0)
+				  Saida_Primeiro_7seg : out STD_LOGIC_VECTOR(7 downto 0);
+				  Saida_Segundo_7seg : out STD_LOGIC_VECTOR(7 downto 0);
+				  Saida_Terceiro_7seg : out STD_LOGIC_VECTOR(7 downto 0);
+				  Saida_Quarto_7seg : out STD_LOGIC_VECTOR(7 downto 0);
+				  Saida_Quinto_7seg : out STD_LOGIC_VECTOR(7 downto 0);
+				  Saida_Sexta_7seg : out STD_LOGIC_VECTOR(7 downto 0);
+				  Saida_Setimo_7seg : out STD_LOGIC_VECTOR(7 downto 0);
+				  Saida_Oitavo_7seg : out STD_LOGIC_VECTOR(7 downto 0)
 				  );
 	end component;
 

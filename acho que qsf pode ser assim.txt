@@ -1,77 +1,94 @@
-#							Hexadecimal 
-#				  Saida_Primeiro_7seg : out STD_LOGIC_VECTOR(6 downto 0);
-#				  Saida_Segundo_7seg : out STD_LOGIC_VECTOR(6 downto 0);
-#				  Saida_Terceiro_7seg : out STD_LOGIC_VECTOR(6 downto 0);
-#				  Saida_Quarto_7seg : out STD_LOGIC_VECTOR(6 downto 0);
-#				  Saida_Quinto_7seg : out STD_LOGIC_VECTOR(6 downto 0);
-#				  Saida_Sexta_7seg : out STD_LOGIC_VECTOR(6 downto 0);
-#				  Saida_Setimo_7seg : out STD_LOGIC_VECTOR(6 downto 0);
-#				  Saida_Oitavo_7seg : out STD_LOGIC_VECTOR(6 downto 0
 
-#Primeiro sete segmentos Saida_Primeiro_7seg (6 downto 0)
-set_location_assignment PIN_AE8 -to Saida_Primeiro_7seg[6]
-set_location_assignment PIN_AF9 -to Saida_Primeiro_7seg[5]
-set_location_assignment PIN_AH9 -to Saida_Primeiro_7seg[4]
-set_location_assignment PIN_AD10 -to Saida_Primeiro_7seg[3]
-set_location_assignment PIN_AF10 -to Saida_Primeiro_7seg[2]
-set_location_assignment PIN_AD11 -to Saida_Primeiro_7seg[1]
-set_location_assignment PIN_AD12 -to Saida_Primeiro_7seg[0]
+#							Hexadecimal 
+#				  Saida_Primeiro_7seg : out STD_LOGIC_VECTOR(7 downto 0);
+#				  Saida_Segundo_7seg : out STD_LOGIC_VECTOR(7 downto 0);
+#				  Saida_Terceiro_7seg : out STD_LOGIC_VECTOR(7 downto 0);
+#				  Saida_Quarto_7seg : out STD_LOGIC_VECTOR(7 downto 0);
+#				  Saida_Quinto_7seg : out STD_LOGIC_VECTOR(7 downto 0);
+#				  Saida_Sexta_7seg : out STD_LOGIC_VECTOR(7 downto 0);
+#				  Saida_Setimo_7seg : out STD_LOGIC_VECTOR(7 downto 0);
+#				  Saida_Oitavo_7seg : out STD_LOGIC_VECTOR(7 downto 0
+
+#Primeiro sete segmentos Saida_Primeiro_7seg (7 downto 0)
+set_location_assignment PIN_AE8 -to Saida_Primeiro_7seg[7]
+set_location_assignment PIN_AF9 -to Saida_Primeiro_7seg[6]
+set_location_assignment PIN_AH9 -to Saida_Primeiro_7seg[5]
+set_location_assignment PIN_AD10 -to Saida_Primeiro_7seg[4]
+set_location_assignment PIN_AF10 -to Saida_Primeiro_7seg[3]
+set_location_assignment PIN_AD11 -to Saida_Primeiro_7seg[2]
+set_location_assignment PIN_AD12 -to Saida_Primeiro_7seg[1]
+set_location_assignment PIN_AF12 -to Saida_Primeiro_7seg[0]
+
 		   #Segundo sete segmentos 
-set_location_assignment PIN_AG13 -to  Saida_Segundo_7seg[6]
-set_location_assignment PIN_AE16 -to  Saida_Segundo_7seg[5]
-set_location_assignment PIN_AF16 -to  Saida_Segundo_7seg[4]
-set_location_assignment PIN_AG16 -to  Saida_Segundo_7seg[3]
-set_location_assignment PIN_AE17 -to  Saida_Segundo_7seg[2]
-set_location_assignment PIN_AF17 -to  Saida_Segundo_7seg[1]
-set_location_assignment PIN_AD17 -to  Saida_Segundo_7seg[0]
+set_location_assignment PIN_AG13 -to Saida_Segundo_7seg[7]
+set_location_assignment PIN_AE16 -to Saida_Segundo_7seg[6]
+set_location_assignment PIN_AF16 -to Saida_Segundo_7seg[5]
+set_location_assignment PIN_AG16 -to Saida_Segundo_7seg[4]
+set_location_assignment PIN_AE17 -to Saida_Segundo_7seg[3]
+set_location_assignment PIN_AF17 -to Saida_Segundo_7seg[2]
+set_location_assignment PIN_AD17 -to Saida_Segundo_7seg[1]
+set_location_assignment PIN_AC17 -to Saida_Segundo_7seg[0]
+
 		    #Terceiro sete segmentos 
-set_location_assignment PIN_AE7 -to  Saida_Terceiro_7seg[6]
-set_location_assignment PIN_AF7 -to  Saida_Terceiro_7seg[5]
-set_location_assignment PIN_AH5 -to  Saida_Terceiro_7seg[4]
-set_location_assignment PIN_AG4 -to  Saida_Terceiro_7seg[3]
-set_location_assignment PIN_AB18 -to  Saida_Terceiro_7seg[2]
-set_location_assignment PIN_AB19 -to  Saida_Terceiro_7seg[1]
-set_location_assignment PIN_AE19 -to  Saida_Terceiro_7seg[0]
+set_location_assignment PIN_AE7 -to Saida_Terceiro_7seg[7]
+set_location_assignment PIN_AF7 -to Saida_Terceiro_7seg[6]
+set_location_assignment PIN_AH5 -to Saida_Terceiro_7seg[5]
+set_location_assignment PIN_AG4 -to Saida_Terceiro_7seg[4]
+set_location_assignment PIN_AB18 -to Saida_Terceiro_7seg[3]
+set_location_assignment PIN_AB19 -to Saida_Terceiro_7seg[2]
+set_location_assignment PIN_AE19 -to Saida_Terceiro_7seg[1]
+set_location_assignment PIN_AC19 -to Saida_Terceiro_7seg[0]
+
 			 #Quarto sete segmentos 
-set_location_assignment PIN_P6 -to  Saida_Quarto_7seg[6]
-set_location_assignment PIN_P4 -to  Saida_Quarto_7seg[5]
-set_location_assignment PIN_N10 -to  Saida_Quarto_7seg[4]
-set_location_assignment PIN_N7 -to  Saida_Quarto_7seg[3]
-set_location_assignment PIN_M8 -to  Saida_Quarto_7seg[2]
-set_location_assignment PIN_M7 -to  Saida_Quarto_7seg[1]
-set_location_assignment PIN_M6 -to  Saida_Quarto_7seg[0]
+set_location_assignment PIN_P6 -to Saida_Quarto_7seg[7]
+set_location_assignment PIN_P4 -to Saida_Quarto_7seg[6]
+set_location_assignment PIN_N10 -to Saida_Quarto_7seg[5]
+set_location_assignment PIN_N7 -to Saida_Quarto_7seg[4]
+set_location_assignment PIN_M8 -to Saida_Quarto_7seg[3]
+set_location_assignment PIN_M7 -to Saida_Quarto_7seg[2]
+set_location_assignment PIN_M6 -to Saida_Quarto_7seg[1]
+set_location_assignment PIN_M4 -to Saida_Quarto_7seg[0]
+
 			  #Quinto sete segmentos 
-set_location_assignment PIN_P1 -to  Saida_Quinto_7seg[6]
-set_location_assignment PIN_P2 -to  Saida_Quinto_7seg[5]
-set_location_assignment PIN_P3 -to  Saida_Quinto_7seg[4]
-set_location_assignment PIN_N2 -to  Saida_Quinto_7seg[3]
-set_location_assignment PIN_N3 -to  Saida_Quinto_7seg[2]
-set_location_assignment PIN_M1 -to  Saida_Quinto_7seg[1]
-set_location_assignment PIN_M2 -to  Saida_Quinto_7seg[0]
+set_location_assignment PIN_P1 -to Saida_Quinto_7seg[7]
+set_location_assignment PIN_P2 -to Saida_Quinto_7seg[6]
+set_location_assignment PIN_P3 -to Saida_Quinto_7seg[5]
+set_location_assignment PIN_N2 -to Saida_Quinto_7seg[4]
+set_location_assignment PIN_N3 -to Saida_Quinto_7seg[3]
+set_location_assignment PIN_M1 -to Saida_Quinto_7seg[2]
+set_location_assignment PIN_M2 -to Saida_Quinto_7seg[1]
+set_location_assignment PIN_L6 -to Saida_Quinto_7seg[0]
+
 			   #Sexto sete segmentos 
-set_location_assignment PIN_M3 -to  Saida_Sexto_7seg[6]
-set_location_assignment PIN_L1 -to  Saida_Sexto_7seg[5]
-set_location_assignment PIN_L2 -to  Saida_Sexto_7seg[4]
-set_location_assignment PIN_L3 -to  Saida_Sexto_7seg[3]
-set_location_assignment PIN_K1 -to  Saida_Sexto_7seg[2]
-set_location_assignment PIN_K4 -to  Saida_Sexto_7seg[1]
-set_location_assignment PIN_K5 -to  Saida_Sexto_7seg[0]
+set_location_assignment PIN_M3 -to Saida_Sexto_7seg[7]
+set_location_assignment PIN_L1 -to Saida_Sexto_7seg[6]
+set_location_assignment PIN_L2 -to Saida_Sexto_7seg[5]
+set_location_assignment PIN_L3 -to Saida_Sexto_7seg[4]
+set_location_assignment PIN_K1 -to Saida_Sexto_7seg[3]
+set_location_assignment PIN_K4 -to Saida_Sexto_7seg[2]
+set_location_assignment PIN_K5 -to Saida_Sexto_7seg[1]
+set_location_assignment PIN_K6 -to Saida_Sexto_7seg[0]
+
 				#Sete sete segmentos 
-set_location_assignment PIN_H6 -to  Saida_Setimo_7seg[6]
-set_location_assignment PIN_H4 -to  Saida_Setimo_7seg[5]
-set_location_assignment PIN_H7 -to  Saida_Setimo_7seg[4]
-set_location_assignment PIN_H8 -to  Saida_Setimo_7seg[3]
-set_location_assignment PIN_G4 -to  Saida_Setimo_7seg[2]
-set_location_assignment PIN_F4 -to  Saida_Setimo_7seg[1]
-set_location_assignment PIN_E4 -to  Saida_Setimo_7seg[0]
+set_location_assignment PIN_H6 -to Saida_Setimo_7seg[7]
+set_location_assignment PIN_H4 -to Saida_Setimo_7seg[6]
+set_location_assignment PIN_H7 -to Saida_Setimo_7seg[5]
+set_location_assignment PIN_H8 -to Saida_Setimo_7seg[4]
+set_location_assignment PIN_G4 -to Saida_Setimo_7seg[3]
+set_location_assignment PIN_F4 -to Saida_Setimo_7seg[2]
+set_location_assignment PIN_E4 -to Saida_Setimo_7seg[1]
+set_location_assignment PIN_K2 -to Saida_Setimo_7seg[0]
+
 				#Oitavo sete segmentos 
-set_location_assignment PIN_K3 -to  Saida_Oitavo_7seg[6]
-set_location_assignment PIN_J1 -to  Saida_Oitavo_7seg[5]
-set_location_assignment PIN_J2 -to  Saida_Oitavo_7seg[4]
-set_location_assignment PIN_H1 -to  Saida_Oitavo_7seg[3]
-set_location_assignment PIN_H2 -to  Saida_Oitavo_7seg[2]
-set_location_assignment PIN_H3 -to  Saida_Oitavo_7seg[1]
-set_location_assignment PIN_G1 -to  Saida_Oitavo_7seg[0]
+set_location_assignment PIN_K3 -to Saida_Oitavo_7seg[7]
+set_location_assignment PIN_J1 -to Saida_Oitavo_7seg[6]
+set_location_assignment PIN_J2 -to Saida_Oitavo_7seg[5]
+set_location_assignment PIN_H1 -to Saida_Oitavo_7seg[4]
+set_location_assignment PIN_H2 -to Saida_Oitavo_7seg[3]
+set_location_assignment PIN_H3 -to Saida_Oitavo_7seg[2]
+set_location_assignment PIN_G1 -to Saida_Oitavo_7seg[1]
+set_location_assignment PIN_G2 -to Saida_Oitavo_7seg[0]
+
 
 		#################################
 		########## ENTRADAS #############
@@ -82,11 +99,13 @@ set_location_assignment PIN_G1 -to  Saida_Oitavo_7seg[0]
 		## KEY[0] PIN_T29 Pushbutton[0]##
 		#################################
 		
+#Mudanca_clock
+set_location_assignment PIN_AJ6 -to mudanca_clock
 #Clock
-set_location_assignment PIN_T29 -to  Clock
+set_location_assignment PIN_T29 -to Clock
 #Seletor_Saida
-set_location_assignment PIN_AA23 -to  Seletor_Saida[0]
-set_location_assignment PIN_AB26 -to  Seletor_Saida[1]
+set_location_assignment PIN_AA23 -to Seletor_Saida[0]
+set_location_assignment PIN_AB26 -to Seletor_Saida[1]
 
 
-set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top			
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
